@@ -1,0 +1,11 @@
+{
+  "codeowners": ["@TripleWhy"],
+  "config_flow": false,
+  "dependencies": [],
+  "documentation": "https://github.com/TripleWhy/ampere_iq_smartbox_homeassistant",
+  "domain": "ampere_iq_smartbox_homeassistant",
+  "iot_class": "local_polling",
+  "name": "Ampere.IQ SmartBox Home Assistant",
+  "requirements": [],
+  "version": "1.0.0"
+}

@@ -1,6 +1,6 @@
 {
   "codeowners": ["@TripleWhy"],
-  "config_flow": false,
+  "config_flow": true,
   "dependencies": [],
   "documentation": "https://github.com/TripleWhy/ampere_iq_smartbox_homeassistant",
   "domain": "ampere_iq_smartbox_homeassistant",

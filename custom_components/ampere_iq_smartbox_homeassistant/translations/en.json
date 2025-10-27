@@ -10,13 +10,11 @@
         },
         "errors": {
           "invalid_password": "The password is incorrect.",
-          "missing_cookie": "Authentication cookie not received.",
-          "unexpected_response": "Unexpected response from device.",
-          "unexpected_redirect": "Unexpected redirect received.",
-          "unexpected_login_response": "Unexpected login response.",
+          "unexpected_response": "Unexpected response from device: {error_detail}",
           "cannot_connect": "Cannot connect to the device.",
           "timeout": "Connection timed out.",
-          "required": "Password is required for authentication."
+          "required": "Password is required for authentication.",
+          "unexpected_error": "An unexpected error occurred: {error_detail}"
         }
       }
     }

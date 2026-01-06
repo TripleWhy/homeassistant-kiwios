@@ -12,6 +12,12 @@ import aiohttp
 
 from homeassistant.components.http import URL
 
+_DBG_DISABLE_CONTENT_CHECK = True
+_JSON_CONTENT_TYPE = "application/json"
+
+if _DBG_DISABLE_CONTENT_CHECK:
+    _JSON_CONTENT_TYPE = None
+
 
 class PasswordRequiredException(Exception):
     """Exception raised when the device requires a password but none is provided."""
@@ -139,7 +145,7 @@ class KiwiOsApi:
     async def _get_json(self, path: str) -> Any:
         """Perform a GET request and return parsed JSON."""
         async with self._get(path, retry=True) as response:
-            return await response.json()
+            return await response.json(content_type=_JSON_CONTENT_TYPE)
 
     async def login(self) -> None:
         """Perform login to obtain kiwisessionid cookie.

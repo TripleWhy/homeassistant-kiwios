@@ -11,12 +11,12 @@ import voluptuous as vol
 from homeassistant import config_entries
 from homeassistant.components.http import URL
 from homeassistant.const import CONF_PASSWORD, CONF_URL
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
+from homeassistant.helpers import aiohttp_client
 
 from .const import DOMAIN
-from .kiwios_api import KiwiOsApi, PasswordInvalidException, PasswordRequiredException
+from .kiwi_os_api import KiwiOsApi, PasswordInvalidException, PasswordRequiredException
 
-# import aiohttp_socks
+import aiohttp_socks
 
 DATA_SCHEMA = vol.Schema(
     {
@@ -57,15 +57,24 @@ class AmpereConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             #         total=60, connect=30, sock_connect=10, sock_read=30
             #     ),
             # ) as session:
-            ### debug <<<
-            session = async_create_clientsession(
-                self.hass,
+            session = aiohttp.ClientSession(
+                connector=aiohttp_socks.ProxyConnector.from_url(
+                    "socks5://192.168.178.62:8889"
+                ),
                 cookie_jar=aiohttp.CookieJar(unsafe=True),
                 timeout=aiohttp.ClientTimeout(
                     total=60, connect=30, sock_connect=10, sock_read=30
                 ),
-                auto_cleanup=False,
             )
+            ### debug <<<
+            # session = aiohttp_client.async_create_clientsession(
+            #     self.hass,
+            #     cookie_jar=aiohttp.CookieJar(unsafe=True),
+            #     timeout=aiohttp.ClientTimeout(
+            #         total=60, connect=30, sock_connect=10, sock_read=30
+            #     ),
+            #     auto_cleanup=False,
+            # )
             try:
                 url_str = user_input[CONF_URL].rstrip("/")
                 if "://" not in url_str:
@@ -85,7 +94,7 @@ class AmpereConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 return self.async_create_entry(
                     title=str(url),
                     data={
-                        CONF_URL: url,
+                        CONF_URL: str(url),
                         CONF_PASSWORD: password,
                         "kiwisessionid": api.get_kiwisessionid(),
                     },

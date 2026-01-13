@@ -18,6 +18,8 @@ _JSON_CONTENT_TYPE = "application/json"
 if _DBG_DISABLE_CONTENT_CHECK:
     _JSON_CONTENT_TYPE = None
 
+type KiwiOsApiItems = dict[str, Any]
+
 
 class PasswordRequiredException(Exception):
     """Exception raised when the device requires a password but none is provided."""

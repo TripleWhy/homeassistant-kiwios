@@ -1,0 +1,1623 @@
+[
+    {
+        "link": "http://karaf/rest/items/sajhybrid_powermeter_94_HSR2103J2344E27920_harmonized_work_out",
+        "state": "1760711100000|8912.5 Ws",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "sajhybrid_powermeter_94_HSR2103J2344E27920_harmonized_work_out",
+        "label": "WorkOut",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_inverter_activePowerRaw",
+        "state": "1157 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Power",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_activePowerRaw",
+        "label": "Inverter Power, Register 40A9H Int16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/pvplant_standard_0f7c4ded025b_harmonized_work_out_total",
+        "state": "1760711100000|5689904.2611110695 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "pvplant_standard_0f7c4ded025b_harmonized_work_out_total",
+        "label": "WorkACOut",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_power_buffered_from_grid",
+        "state": "1760711250000|0.0 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_power_buffered_from_grid",
+        "label": "PowerBufferedFromGrid",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_inverter_selfConsumptionPower",
+        "state": "833 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Power",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_selfConsumptionPower",
+        "label": "Self Consumption Power, Register 40A0H Int16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_powermeter_94_HSR2103J2344E27920_harmonized_work_in",
+        "state": "1760711100000|39000.0 Ws",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "sajhybrid_powermeter_94_HSR2103J2344E27920_harmonized_work_in",
+        "label": "WorkIn",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_released",
+        "state": "1760711100000|92.45184027777778 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_released",
+        "label": "Harmonized Value",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_inverter_energyIn",
+        "state": "1053744422.5 Ws",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Energy",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_energyIn",
+        "label": "Total Inverter Energy In",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_2_voltage",
+        "state": "0.0 V",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:ElectricPotential",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_2_voltage",
+        "label": "BMS 2 Voltage, Register A014H Uint16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_power_production_measurable_powerProduction_P",
+        "state": "-402.35 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": true,
+        "type": "Number:Power",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_power_production_measurable_powerProduction_P",
+        "label": "Battery Power calculated from BMS Voltage and Current",
+        "tags": [
+            "emiaas_resolver"
+        ],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_self_consumed",
+        "state": "1760711100000|46.07916666666664 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_self_consumed",
+        "label": "Harmonized Value",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_real_power_3",
+        "state": "-235 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Power",
+        "name": "sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_real_power_3",
+        "label": "Real Power Phase 3, Register A04BH Int16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_real_power_2",
+        "state": "791 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Power",
+        "name": "sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_real_power_2",
+        "label": "Real Power Phase 2, Register A045H Int16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_real_power_1",
+        "state": "153 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Power",
+        "name": "sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_real_power_1",
+        "label": "Real Power Phase 1, Register A03FH Int16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_released_total",
+        "state": "1760711100000|3130979.933506929 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_released_total",
+        "label": "WorkReleased",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_storage",
+        "state": "1760711100000|92.45184027777778 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_storage",
+        "label": "Harmonized Value",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_out_from_storage_total",
+        "state": "1760711100000|52159.64852083191 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_out_from_storage_total",
+        "label": "WorkOutFromStorage",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_work_out",
+        "state": "1760711100000|600622.5 Ws",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_work_out",
+        "label": "WorkACOut",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_consumed_total",
+        "state": "1760711100000|6926948.633277792 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_total",
+        "label": "WorkConsumed",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_has_max_power_consumption_maxPowerConsumption_P_consumption_max",
+        "state": "9216.0 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": true,
+        "type": "Number:Power",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_has_max_power_consumption_maxPowerConsumption_P_consumption_max",
+        "label": "Maximum charge power. Calculated by taking into account the inverters max power, maximum SoC and maximum battery charge power and current SoC.",
+        "tags": [
+            "emiaas_resolver"
+        ],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_in",
+        "state": "1760711100000|10.833333333333334 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_in",
+        "label": "Harmonized Value",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_power_consumed_from_storage",
+        "state": "1760711250000|1029.34 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_power_consumed_from_storage",
+        "label": "PowerConsumedFromStorage",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_harmonized_work_in_total_extrapolated",
+        "state": "12089638806.475 Ws",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Energy",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_harmonized_work_in_total_extrapolated",
+        "label": "WorkACIn",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_grid_total",
+        "state": "1760711100000|1522462.8257082931 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_grid_total",
+        "label": "WorkConsumedFromGrid",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_buffered_total",
+        "state": "1760711100000|3353419.5950486064 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_buffered_total",
+        "label": "WorkBuffered",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_harmonized_work_out_total_extrapolated",
+        "state": "11285182914.475 Ws",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Energy",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_harmonized_work_out_total_extrapolated",
+        "label": "WorkACOut",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_mppt_dc_work_total_extrapolated",
+        "state": "21042735702.5 Ws",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Energy",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_mppt_dc_work_total_extrapolated",
+        "label": "MPPT DC Work Total Value",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_power_consumed",
+        "state": "1760711250000|1856.0066666666667 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_power_consumed",
+        "label": "PowerConsumed",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_harmonized_work_in",
+        "state": "1760711100000|0.0 Ws",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_harmonized_work_in",
+        "label": "WorkACIn",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_battery_power",
+        "state": "-301 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Power",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_battery_power",
+        "label": "Battery Power ,Register 406DH Int16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_4_current",
+        "state": "0.00 A",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:ElectricCurrent",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_4_current",
+        "label": "BMS 4 Current, Register A021H Int16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_harmonized_power_in",
+        "state": "1760711265000|0.0 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_harmonized_power_in",
+        "label": "PowerACIn",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_consumed",
+        "state": "1760711100000|149.36434027777776 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_consumed",
+        "label": "Harmonized Value",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_powermeter_94_HSR2103J2344E27920_metering_getProduction_P_active",
+        "state": "709.0 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": true,
+        "type": "Number:Power",
+        "name": "sajhybrid_powermeter_94_HSR2103J2344E27920_metering_getProduction_P_active",
+        "label": "Total Power over all Phases",
+        "tags": [
+            "emiaas_resolver"
+        ],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_mppt_dc_power",
+        "state": "1760711265000|600.3333333333334 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_mppt_dc_power",
+        "label": "MPPT DC Power",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_1_current",
+        "state": "1.30 A",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:ElectricCurrent",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_1_current",
+        "label": "BMS 1 Current, Register A00FH Int16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_power_buffered_from_producers",
+        "state": "1760711250000|0.0 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_power_buffered_from_producers",
+        "label": "PowerBufferedFromProducers",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_metering_getProduction_P_active",
+        "state": "602 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": true,
+        "type": "Number:Power",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_metering_getProduction_P_active",
+        "label": "PV Power calculated from MPPTs, Register from 4071H till 407CH Uint16",
+        "tags": [
+            "emiaas_resolver"
+        ],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_battery_maxDischargePower",
+        "state": "9216.0 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Power",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_battery_maxDischargePower",
+        "label": "Maximum discharge power. Calculated by taking into account the inverters max power, minimum SoC and maximum battery discharge power and current SoC.",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_pv_power_production_measurable_pvPowerProduction_P_pv",
+        "state": "602 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": true,
+        "type": "Number:Power",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_pv_power_production_measurable_pvPowerProduction_P_pv",
+        "label": "PV Power calculated from MPPTs, Register from 4071H till 407CH Uint16",
+        "tags": [
+            "emiaas_resolver"
+        ],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_self_consumed_total",
+        "state": "1760711100000|4472676.262784725 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_self_consumed_total",
+        "label": "WorkSelfConsumed",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_3_voltage",
+        "state": "0.0 V",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:ElectricPotential",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_3_voltage",
+        "label": "BMS 3 Voltage, Register A01AH Uint16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/pvplant_standard_0f7c4ded025b_harmonized_power_out",
+        "state": "1760711250000|607.6666666666666 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "pvplant_standard_0f7c4ded025b_harmonized_power_out",
+        "label": "PowerACOut",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_totalExport",
+        "state": "1337778982.5 Ws",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Energy",
+        "name": "sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_totalExport",
+        "label": "Aggregated Total Export Energy calculated from Power",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_battery_temperature",
+        "state": "22.0 °C",
+        "stateDescription": {
+            "pattern": "%.1f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Temperature",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_battery_temperature",
+        "label": "Battery Temperature ,Register 406EH Int16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_producers_total",
+        "state": "1760711100000|2415941.21797922 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_producers_total",
+        "label": "WorkConsumedFromProducers",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_power_in",
+        "state": "1760711250000|219.0 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_power_in",
+        "label": "PowerIn",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_inverter_activePower",
+        "state": "893.0 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Power",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_activePower",
+        "label": "Inverter Power, Calculated based on Bat Power, Mppt power and ActivePowerRaw",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_realPower",
+        "state": "709.0 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Power",
+        "name": "sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_realPower",
+        "label": "Total Power over all Phases",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_has_max_power_production_maxPowerProduction_P_production_max",
+        "state": "9216.0 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": true,
+        "type": "Number:Power",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_has_max_power_production_maxPowerProduction_P_production_max",
+        "label": "Maximum discharge power. Calculated by taking into account the inverters max power, minimum SoC and maximum battery discharge power and current SoC.",
+        "tags": [
+            "emiaas_resolver"
+        ],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_work_in",
+        "state": "1760711100000|0.0 Ws",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_work_in",
+        "label": "WorkACIn",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_2_current",
+        "state": "0.00 A",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:ElectricCurrent",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_2_current",
+        "label": "BMS 2 Current, Register A015H Int16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_battery_power_calculated",
+        "state": "-402.35 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Power",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_battery_power_calculated",
+        "label": "Battery Power calculated from BMS Voltage and Current",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_battery_maxChargePower",
+        "state": "9216.0 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Power",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_battery_maxChargePower",
+        "label": "Maximum charge power. Calculated by taking into account the inverters max power, maximum SoC and maximum battery charge power and current SoC.",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_battery_totalChargeEnergy",
+        "state": "3358.23 kWh",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Energy",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_battery_totalChargeEnergy",
+        "label": "Total Charged Energy, Register 40CDH Uint32",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_power_self_consumed",
+        "state": "1760711250000|607.6666666666666 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_power_self_consumed",
+        "label": "PowerSelfConsumed",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_power_produced",
+        "state": "1760711250000|607.6666666666666 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_power_produced",
+        "label": "PowerProduced",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_battery_modeConverter",
+        "state": "DISCHARGING",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_battery_modeConverter",
+        "label": "Read Only String",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_buffered_from_producers_total",
+        "state": "1760711100000|2056735.0448055032 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_buffered_from_producers_total",
+        "label": "WorkBufferedFromProducers",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_power_in",
+        "state": "1760711265000|0.0 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_power_in",
+        "label": "PowerACIn",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_battery_mode",
+        "state": "-1",
+        "stateDescription": {
+            "pattern": "%.0f",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_battery_mode",
+        "label": "Battery Mode: -1: releasing, 0: idle, 1: buffering , Register 4096H Int16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_totalImport",
+        "state": "2.60960511E+9 Ws",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Energy",
+        "name": "sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_totalImport",
+        "label": "Aggregated Total Import Energy calculated from Power",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_4_voltage",
+        "state": "0.0 V",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:ElectricPotential",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_4_voltage",
+        "label": "BMS 4 Voltage, Register A020H Uint16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_powermeter_94_HSR2103J2344E27920_metering_getConsumption_P_active",
+        "state": "709.0 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": true,
+        "type": "Number:Power",
+        "name": "sajhybrid_powermeter_94_HSR2103J2344E27920_metering_getConsumption_P_active",
+        "label": "Total Power over all Phases",
+        "tags": [
+            "emiaas_resolver"
+        ],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_produced",
+        "state": "1760711100000|48.55486111111111 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_produced",
+        "label": "Harmonized Value",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_buffered",
+        "state": "1760711100000|0.0 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_buffered",
+        "label": "Harmonized Value",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_out_from_storage",
+        "state": "1760711100000|0.0 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_out_from_storage",
+        "label": "Harmonized Value",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_storage_total",
+        "state": "1760711100000|2988472.859624956 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_storage_total",
+        "label": "WorkConsumedFromStorage",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_buffered_from_grid_total",
+        "state": "1760711100000|1206376.8867916854 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_buffered_from_grid_total",
+        "label": "WorkBufferedFromGrid",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_buffered_from_grid",
+        "state": "1760711100000|0.0 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_buffered_from_grid",
+        "label": "Harmonized Value",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_grid",
+        "state": "1760711100000|10.833333333333334 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_grid",
+        "label": "Harmonized Value",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_battery_stateOfCharge",
+        "state": "18.60 %",
+        "stateDescription": {
+            "pattern": "%.1f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Dimensionless",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_battery_stateOfCharge",
+        "label": "Battery SoC, Register 406FH Uint16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_powermeter_94_HSR2103J2344E27920_harmonized_power_in",
+        "state": "1760711265000|0.0 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "sajhybrid_powermeter_94_HSR2103J2344E27920_harmonized_power_in",
+        "label": "PowerIn",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_inverter_apparentPower",
+        "state": "1275 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Power",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_apparentPower",
+        "label": "Inverter Apparent Power, Register 40AAH Int16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_produced_total",
+        "state": "1760711100000|5689870.570833292 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_produced_total",
+        "label": "WorkProduced",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_powermeter_94_HSR2103J2344E27920_harmonized_power_out",
+        "state": "1760711265000|123.5 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "sajhybrid_powermeter_94_HSR2103J2344E27920_harmonized_power_out",
+        "label": "PowerOut",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/pvplant_standard_0f7c4ded025b_harmonized_work_out",
+        "state": "1760711100000|48.55486111111111 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "pvplant_standard_0f7c4ded025b_harmonized_work_out",
+        "label": "Harmonized Value",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_power_consumption_measurable_powerConsumption_P",
+        "state": "-402.35 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": true,
+        "type": "Number:Power",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_power_consumption_measurable_powerConsumption_P",
+        "label": "Battery Power calculated from BMS Voltage and Current",
+        "tags": [
+            "emiaas_resolver"
+        ],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_self_supplied",
+        "state": "1760711100000|138.5310069444444 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_self_supplied",
+        "label": "Harmonized Value",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_3_current",
+        "state": "0.00 A",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:ElectricCurrent",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_3_current",
+        "label": "BMS 3 Current, Register A01BH Int16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_inverter_pvPowerMPPT",
+        "state": "602 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Power",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_pvPowerMPPT",
+        "label": "PV Power calculated from MPPTs, Register from 4071H till 407CH Uint16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_self_supplied_total",
+        "state": "1760711100000|5404414.07760426 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_self_supplied_total",
+        "label": "WorkSelfSupplied",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_inverter_pvEnergy",
+        "state": "5845.22 kWh",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Energy",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_pvEnergy",
+        "label": "Total PV Energy, Register 40C5H Uint32",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_inverter_energyOut",
+        "state": "6975189197.5 Ws",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Energy",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_energyOut",
+        "label": "Total Inverter Energy Out",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_power_released",
+        "state": "1760711250000|1029.34 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_power_released",
+        "label": "PowerReleased",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_power_self_supplied",
+        "state": "1760711250000|1637.0066666666667 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_power_self_supplied",
+        "label": "PowerSelfSupplied",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_producers",
+        "state": "1760711100000|46.07916666666664 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_producers",
+        "label": "Harmonized Value",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_power_buffered",
+        "state": "1760711250000|0.0 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_power_buffered",
+        "label": "PowerBuffered",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_inverter_pvPower",
+        "state": "602 W",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Power",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_pvPower",
+        "label": "PV Power, Register 40A5H Int16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_mppt_dc_work",
+        "state": "1760711100000|174797.5 Ws",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_mppt_dc_work",
+        "label": "MPPT DC Work",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_power_out_from_producers",
+        "state": "1760711250000|0.0 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_power_out_from_producers",
+        "label": "PowerOutFromProducers",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_controlling_powerAcOutLimit",
+        "state": "UNDEF",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Power",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_controlling_powerAcOutLimit",
+        "label": "Curtailment currently not supported",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_in_total",
+        "state": "1760711100000|2728922.6395833213 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_in_total",
+        "label": "WorkIn",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_out_total",
+        "state": "1760711100000|1339993.074999997 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_out_total",
+        "label": "WorkOut",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_power_out",
+        "state": "1760711265000|1022.3333333333334 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_power_out",
+        "label": "PowerACOut",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_harmonized_work_out",
+        "state": "1760711100000|332826.625 Ws",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_harmonized_work_out",
+        "label": "WorkACOut",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_1_voltage",
+        "state": "309.3 V",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:ElectricPotential",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_1_voltage",
+        "label": "BMS 1 Voltage, Register A00EH Uint16",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_buffered_from_producers",
+        "state": "1760711100000|0.0 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_buffered_from_producers",
+        "label": "Harmonized Value",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_power_out_from_storage",
+        "state": "1760711250000|0.0 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_power_out_from_storage",
+        "label": "PowerOutFromStorage",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_battery_totalDischargeEnergy",
+        "state": "3134.86 kWh",
+        "stateDescription": {
+            "pattern": "%.2f %unit%",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "Number:Energy",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_battery_totalDischargeEnergy",
+        "label": "Total Discharged Energy, Register 40D5H Uint32",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_power_consumed_from_grid",
+        "state": "1760711250000|219.0 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_power_consumed_from_grid",
+        "label": "PowerConsumedFromGrid",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/sajhybrid_battery_94_HSR2103J2344E27920_harmonized_power_out",
+        "state": "1760711265000|479.145 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "sajhybrid_battery_94_HSR2103J2344E27920_harmonized_power_out",
+        "label": "PowerACOut",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_out_from_producers",
+        "state": "1760711100000|2.4756944444444446 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_out_from_producers",
+        "label": "Harmonized Value",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_power_out",
+        "state": "1760711250000|0.0 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_power_out",
+        "label": "PowerOut",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_out",
+        "state": "1760711100000|2.4756944444444446 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_out",
+        "label": "Harmonized Value",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_work_out_from_producers_total",
+        "state": "1760711100000|1217194.3080486045 Wh",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_work_out_from_producers_total",
+        "label": "WorkOutFromProducers",
+        "tags": [],
+        "groupNames": []
+    },
+    {
+        "link": "http://karaf/rest/items/kiwigrid_location_standard_332de268316e_harmonized_power_consumed_from_producers",
+        "state": "1760711250000|607.6666666666666 W",
+        "stateDescription": {
+            "pattern": "%s",
+            "readOnly": true,
+            "options": []
+        },
+        "editable": false,
+        "type": "String",
+        "name": "kiwigrid_location_standard_332de268316e_harmonized_power_consumed_from_producers",
+        "label": "PowerConsumedFromProducers",
+        "tags": [],
+        "groupNames": []
+    }
+]

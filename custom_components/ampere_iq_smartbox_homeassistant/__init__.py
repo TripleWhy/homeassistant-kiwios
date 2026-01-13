@@ -13,11 +13,29 @@ from homeassistant.components.http import URL
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import CONF_PASSWORD, CONF_URL, Platform
 from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
 from homeassistant.helpers.debounce import Debouncer
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, timedelta
 
-from .kiwi_os_api import KiwiOsApi
+from homeassistant.components.sensor import (
+    SensorDeviceClass,
+    SensorEntity,
+    SensorStateClass,
+)
+
+from .kiwi_os_api import KiwiOsApi, KiwiOsApiItems
+from .kiwi_os_parser import KiwiOsParser
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .sensor import (
+        KiwiOsDataUpdateCoordinator,
+        KiwiOsSensorEntity,
+        KiwiOsTimestampSensorEntity,
+    )
+
+# from kiwi_os_api import KiwiOsApi, KiwiOsApiItems
+# from kiwi_os_parser import KiwiOsParser
 
 _PLATFORMS: list[Platform] = [
     Platform.SENSOR,
@@ -33,15 +51,16 @@ UPDATE_INTERVAL = 60  # seconds
 REQUEST_REFRESH_DELAY = 0.5
 
 type KiwiOsConfigEntry = ConfigEntry[KiwiOsData]
+type KiwiOsDataUpdateCoordinator = DataUpdateCoordinator[KiwiOsApiItems]
 
 
 @dataclass
 class KiwiOsData:
     """Data for the Ampere.IQ integration."""
 
-    coordinator: DataUpdateCoordinator
+    coordinator: KiwiOsDataUpdateCoordinator
     api: KiwiOsApi
-    things: Any
+    parser: KiwiOsParser
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: KiwiOsConfigEntry) -> bool:
@@ -66,19 +85,13 @@ async def async_setup_entry(hass: HomeAssistant, entry: KiwiOsConfigEntry) -> bo
         ),
     )
 
-    api = KiwiOsApi(
-        url=url,
-        session=session,
-        password=password,
-        kiwisessionid=kiwisessionid,
-    )
-    things = await api.get_things()
-
-    async def async_update_data():
+    async def async_update_data() -> None:
         print("async_update_data")
-        return await api.get_items()
+        json_items: Any = await api.get_items()
+        items: KiwiOsApiItems = parser.map_json_items(json_items)
+        parser.parse_item_values(items)
 
-    coordinator = DataUpdateCoordinator(
+    coordinator: KiwiOsDataUpdateCoordinator = DataUpdateCoordinator[Any](
         hass,
         _LOGGER,
         config_entry=entry,
@@ -90,13 +103,30 @@ async def async_setup_entry(hass: HomeAssistant, entry: KiwiOsConfigEntry) -> bo
         ),
     )
 
+    api: KiwiOsApi = KiwiOsApi(
+        url=url,
+        session=session,
+        password=password,
+        kiwisessionid=kiwisessionid,
+    )
+
+    parser: KiwiOsParser = KiwiOsParser()
+    json_things: Any = await api.get_things()
+    json_items: Any = await api.get_items()
+    items: KiwiOsApiItems = parser.map_json_items(json_items)
+    value_sensors: list[KiwiOsSensorEntity] = parser.parse_things(
+        json_things, coordinator
+    )
+    parser.create_entities(items, value_sensors)
+    parser.guess_item_types(items, value_sensors)
+
     # First fetch to initialize coordinator
     await coordinator.async_refresh()
     if not coordinator.last_update_success:
         _LOGGER.error("Failed to fetch initial data from AmpereIQ")
         return False
 
-    entry.runtime_data = KiwiOsData(coordinator=coordinator, api=api, things=things)
+    entry.runtime_data = KiwiOsData(coordinator=coordinator, api=api, parser=parser)
 
     await hass.config_entries.async_forward_entry_setups(entry, _PLATFORMS)
 

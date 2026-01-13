@@ -1,0 +1,1936 @@
+[
+    {
+        "statusInfo": {
+            "status": "ONLINE",
+            "statusDetail": "NONE"
+        },
+        "editable": true,
+        "label": "AMPERE.StoragePro Meter A (HSR2103J2344E27920)",
+        "bridgeUID": "sajhybrid:hybrid:e4ea3ad870f0",
+        "configuration": {},
+        "properties": {
+            "modelId": "94",
+            "displayName": "AMPERE.StoragePro",
+            "controlSWVersionHost": "2.066",
+            "controlSWVersionSlave": "UNDEF",
+            "uuid": "7163ef55-f6f3-4a0a-a87d-62ae611ab091",
+            "bindingVersion": "1.150.1",
+            "vendor": "AMPERE",
+            "pcNumber": "1020092500EN023354",
+            "generatedLabel": "AMPERE.StoragePro Meter A (HSR2103J2344E27920)",
+            "kig.meta.uiCategory": "POWER_METERS",
+            "firmwareVersion": "",
+            "identifier": "94-HSR2103J2344E27920",
+            "ratedPower": "10000 W",
+            "serialNumber": "HSR2103J2344E27920",
+            "startAddress": "41020",
+            "controlHWVersion": "1.100",
+            "kig.meta.deviceClass": "com.kiwigrid.devices.powermeter.PowerMeter",
+            "modelName": "HS2",
+            "kig.meta.balancingtype": "BIDIRECTIONAL_ENERGY_METER",
+            "displaySWVersion": "2.532",
+            "kig.meta.deviceClassVersion": "5.23.0.0",
+            "labelFormat": "${displayName} Meter A (${serialNumber})",
+            "kig.meta.selfMigrating": "true",
+            "displayHWVersion": "1.100",
+            "directionMetering": "BIDIRECTIONAL",
+            "maxPower": "10000 W"
+        },
+        "UID": "sajhybrid:powermeter:94-HSR2103J2344E27920",
+        "thingTypeUID": "sajhybrid:powermeter",
+        "channels": [
+            {
+                "linkedItems": [
+                    "sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_totalImport"
+                ],
+                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:powermeter#totalImport",
+                "id": "powermeter#totalImport",
+                "channelTypeUID": "sajhybrid:roEnergy",
+                "itemType": "Number:Energy",
+                "kind": "STATE",
+                "label": "Aggregated Total Import Energy calculated from Power",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkIn",
+                    "kig.meta.scope": "cloud-mapped"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_powermeter_94_HSR2103J2344E27920_harmonized_power_in"
+                ],
+                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:harmonized#power_in",
+                "id": "harmonized#power_in",
+                "channelTypeUID": "sajhybrid:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerIn",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerIn",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_powermeter_94_HSR2103J2344E27920_harmonized_work_in"
+                ],
+                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:harmonized#work_in",
+                "id": "harmonized#work_in",
+                "channelTypeUID": "sajhybrid:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkIn",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "harmonized",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_powermeter_94_HSR2103J2344E27920_harmonized_power_out"
+                ],
+                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:harmonized#power_out",
+                "id": "harmonized#power_out",
+                "channelTypeUID": "sajhybrid:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerOut",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerOut",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_totalExport"
+                ],
+                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:powermeter#totalExport",
+                "id": "powermeter#totalExport",
+                "channelTypeUID": "sajhybrid:roEnergy",
+                "itemType": "Number:Energy",
+                "kind": "STATE",
+                "label": "Aggregated Total Export Energy calculated from Power",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkOut",
+                    "kig.meta.scope": "cloud-mapped"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_powermeter_94_HSR2103J2344E27920_harmonized_work_out"
+                ],
+                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:harmonized#work_out",
+                "id": "harmonized#work_out",
+                "channelTypeUID": "sajhybrid:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkOut",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "harmonized",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_powermeter_94_HSR2103J2344E27920_metering_getProduction_P_active",
+                    "sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_realPower",
+                    "sajhybrid_powermeter_94_HSR2103J2344E27920_metering_getConsumption_P_active"
+                ],
+                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:powermeter#realPower",
+                "id": "powermeter#realPower",
+                "channelTypeUID": "sajhybrid:roPower",
+                "itemType": "Number:Power",
+                "kind": "STATE",
+                "label": "Total Power over all Phases",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_real_power_1"
+                ],
+                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:powermeter#real_power_1",
+                "id": "powermeter#real_power_1",
+                "channelTypeUID": "sajhybrid:roPower",
+                "itemType": "Number:Power",
+                "kind": "STATE",
+                "label": "Real Power Phase 1, Register A03FH Int16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_real_power_3"
+                ],
+                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:powermeter#real_power_3",
+                "id": "powermeter#real_power_3",
+                "channelTypeUID": "sajhybrid:roPower",
+                "itemType": "Number:Power",
+                "kind": "STATE",
+                "label": "Real Power Phase 3, Register A04BH Int16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_real_power_2"
+                ],
+                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:powermeter#real_power_2",
+                "id": "powermeter#real_power_2",
+                "channelTypeUID": "sajhybrid:roPower",
+                "itemType": "Number:Power",
+                "kind": "STATE",
+                "label": "Real Power Phase 2, Register A045H Int16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            }
+        ]
+    },
+    {
+        "statusInfo": {
+            "status": "ONLINE",
+            "statusDetail": "NONE"
+        },
+        "editable": true,
+        "label": "AMPERE.StoragePro Inverter (HSR2103J2344E27920)",
+        "bridgeUID": "sajhybrid:hybrid:e4ea3ad870f0",
+        "configuration": {},
+        "properties": {
+            "modelId": "94",
+            "displayName": "AMPERE.StoragePro",
+            "controlSWVersionHost": "2.066",
+            "controlSWVersionSlave": "UNDEF",
+            "uuid": "94eeac47-9c48-4dca-816d-e913ff22fb86",
+            "bindingVersion": "1.150.1",
+            "vendor": "AMPERE",
+            "pcNumber": "1020092500EN023354",
+            "generatedLabel": "AMPERE.StoragePro Inverter (HSR2103J2344E27920)",
+            "kig.meta.uiCategory": "INVERTERS",
+            "firmwareVersion": "",
+            "ratedPower": "10000 W",
+            "identifier": "94-HSR2103J2344E27920",
+            "serialNumber": "HSR2103J2344E27920",
+            "controlHWVersion": "1.100",
+            "kig.meta.deviceClass": "com.kiwigrid.devices.inverter.HybridInverter",
+            "modelName": "HS2",
+            "kig.meta.balancingtype": "INVERTER",
+            "displaySWVersion": "2.532",
+            "kig.meta.deviceClassVersion": "1.0.0.0",
+            "labelFormat": "${displayName} Inverter (${serialNumber})",
+            "kig.meta.selfMigrating": "true",
+            "displayHWVersion": "1.100",
+            "maxPower": "10000 W"
+        },
+        "UID": "sajhybrid:inverter:94-HSR2103J2344E27920",
+        "thingTypeUID": "sajhybrid:inverter",
+        "channels": [
+            {
+                "linkedItems": [
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_work_out"
+                ],
+                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:harmonized#work_out",
+                "id": "harmonized#work_out",
+                "channelTypeUID": "sajhybrid:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkACOut",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "harmonized",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_activePower"
+                ],
+                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:inverter#activePower",
+                "id": "inverter#activePower",
+                "channelTypeUID": "sajhybrid:roPower",
+                "itemType": "Number:Power",
+                "kind": "STATE",
+                "label": "Inverter Power, Calculated based on Bat Power, Mppt power and ActivePowerRaw",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_pvEnergy"
+                ],
+                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:inverter#pvEnergy",
+                "id": "inverter#pvEnergy",
+                "channelTypeUID": "sajhybrid:roEnergy",
+                "itemType": "Number:Energy",
+                "kind": "STATE",
+                "label": "Total PV Energy, Register 40C5H Uint32",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_mppt_dc_work_total_extrapolated"
+                ],
+                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:harmonized#mppt_dc_work_total_extrapolated",
+                "id": "harmonized#mppt_dc_work_total_extrapolated",
+                "channelTypeUID": "sajhybrid:roEnergy",
+                "itemType": "Number:Energy",
+                "kind": "STATE",
+                "label": "MPPT DC Work Total Value",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_activePowerRaw"
+                ],
+                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:inverter#activePowerRaw",
+                "id": "inverter#activePowerRaw",
+                "channelTypeUID": "sajhybrid:roPower",
+                "itemType": "Number:Power",
+                "kind": "STATE",
+                "label": "Inverter Power, Register 40A9H Int16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_power_in"
+                ],
+                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:harmonized#power_in",
+                "id": "harmonized#power_in",
+                "channelTypeUID": "sajhybrid:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerACIn",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerACIn",
+                    "kig.meta.scope": "cloud-mapped harmonized",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_energyOut"
+                ],
+                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:inverter#energyOut",
+                "id": "inverter#energyOut",
+                "channelTypeUID": "sajhybrid:roEnergy",
+                "itemType": "Number:Energy",
+                "kind": "STATE",
+                "label": "Total Inverter Energy Out",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkACOut",
+                    "kig.meta.scope": "cloud-mapped"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_pvPowerMPPT",
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_metering_getProduction_P_active",
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_pv_power_production_measurable_pvPowerProduction_P_pv"
+                ],
+                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:inverter#pvPowerMPPT",
+                "id": "inverter#pvPowerMPPT",
+                "channelTypeUID": "sajhybrid:roPower",
+                "itemType": "Number:Power",
+                "kind": "STATE",
+                "label": "PV Power calculated from MPPTs, Register from 4071H till 407CH Uint16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_work_in"
+                ],
+                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:harmonized#work_in",
+                "id": "harmonized#work_in",
+                "channelTypeUID": "sajhybrid:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkACIn",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "harmonized",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_mppt_dc_work"
+                ],
+                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:harmonized#mppt_dc_work",
+                "id": "harmonized#mppt_dc_work",
+                "channelTypeUID": "sajhybrid:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "MPPT DC Work",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "harmonized",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_power_out"
+                ],
+                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:harmonized#power_out",
+                "id": "harmonized#power_out",
+                "channelTypeUID": "sajhybrid:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerACOut",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerACOut",
+                    "kig.meta.scope": "cloud-mapped harmonized",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_pvPower"
+                ],
+                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:inverter#pvPower",
+                "id": "inverter#pvPower",
+                "channelTypeUID": "sajhybrid:roPower",
+                "itemType": "Number:Power",
+                "kind": "STATE",
+                "label": "PV Power, Register 40A5H Int16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_apparentPower"
+                ],
+                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:inverter#apparentPower",
+                "id": "inverter#apparentPower",
+                "channelTypeUID": "sajhybrid:roPower",
+                "itemType": "Number:Power",
+                "kind": "STATE",
+                "label": "Inverter Apparent Power, Register 40AAH Int16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_controlling_powerAcOutLimit"
+                ],
+                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:controlling#powerAcOutLimit",
+                "id": "controlling#powerAcOutLimit",
+                "channelTypeUID": "sajhybrid:roPower",
+                "itemType": "Number:Power",
+                "kind": "STATE",
+                "label": "Curtailment currently not supported",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerACOutLimit",
+                    "kig.meta.scope": "cloud-mapped"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_selfConsumptionPower"
+                ],
+                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:inverter#selfConsumptionPower",
+                "id": "inverter#selfConsumptionPower",
+                "channelTypeUID": "sajhybrid:roPower",
+                "itemType": "Number:Power",
+                "kind": "STATE",
+                "label": "Self Consumption Power, Register 40A0H Int16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_energyIn"
+                ],
+                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:inverter#energyIn",
+                "id": "inverter#energyIn",
+                "channelTypeUID": "sajhybrid:roEnergy",
+                "itemType": "Number:Energy",
+                "kind": "STATE",
+                "label": "Total Inverter Energy In",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkACIn",
+                    "kig.meta.scope": "cloud-mapped"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_mppt_dc_power"
+                ],
+                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:harmonized#mppt_dc_power",
+                "id": "harmonized#mppt_dc_power",
+                "channelTypeUID": "sajhybrid:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "MPPT DC Power",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "harmonized",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            }
+        ]
+    },
+    {
+        "statusInfo": {
+            "status": "ONLINE",
+            "statusDetail": "NONE"
+        },
+        "editable": true,
+        "label": "Location",
+        "configuration": {
+            "city": "Unterschleißheim",
+            "countryCode": "DE",
+            "graph": "{\"links\":[{\"id\":\"pvplant:standard:0f7c4ded025b~sajhybrid:battery:94-HSR2103J2344E27920\",\"source\":\"pvplant:standard:0f7c4ded025b\",\"target\":\"sajhybrid:battery:94-HSR2103J2344E27920\"},{\"id\":\"sajhybrid:battery:94-HSR2103J2344E27920~sajhybrid:inverter:94-HSR2103J2344E27920\",\"source\":\"sajhybrid:battery:94-HSR2103J2344E27920\",\"target\":\"sajhybrid:inverter:94-HSR2103J2344E27920\"},{\"id\":\"sajhybrid:powermeter:94-HSR2103J2344E27920~household\",\"source\":\"sajhybrid:powermeter:94-HSR2103J2344E27920\",\"target\":\"household\"},{\"id\":\"sajhybrid:powermeter:94-HSR2103J2344E27920~grid\",\"source\":\"sajhybrid:powermeter:94-HSR2103J2344E27920\",\"target\":\"grid\"},{\"id\":\"household~sajhybrid:inverter:94-HSR2103J2344E27920\",\"source\":\"household\",\"target\":\"sajhybrid:inverter:94-HSR2103J2344E27920\"}],\"nodes\":[{\"id\":\"pvplant:standard:0f7c4ded025b\",\"uuid\":\"9c25a3bb-4a71-471c-b9b0-c79d9d910ce5\",\"type\":\"PV_PLANT\",\"label\":\"PV Anlage 1\",\"additionalProperties\":{}},{\"id\":\"sajhybrid:battery:94-HSR2103J2344E27920\",\"uuid\":\"24464503-2d2e-4612-bbc3-c86e6b637b64\",\"type\":\"DC_BATTERY\",\"label\":\"AMPERE.StoragePro Battery (HSR2103J2344E27920)\",\"additionalProperties\":{}},{\"id\":\"sajhybrid:powermeter:94-HSR2103J2344E27920\",\"uuid\":\"7163ef55-f6f3-4a0a-a87d-62ae611ab091\",\"type\":\"BIDIRECTIONAL_ENERGY_METER\",\"label\":\"AMPERE.StoragePro Meter A (HSR2103J2344E27920)\",\"additionalProperties\":{}},{\"id\":\"grid\",\"uuid\":null,\"type\":\"GRID\",\"label\":\"Stromnetz\",\"additionalProperties\":{}},{\"id\":\"household\",\"uuid\":null,\"type\":\"HOUSEHOLD\",\"label\":\"Haushalt\",\"additionalProperties\":{}},{\"id\":\"sajhybrid:inverter:94-HSR2103J2344E27920\",\"uuid\":\"94eeac47-9c48-4dca-816d-e913ff22fb86\",\"type\":\"INVERTER\",\"label\":\"AMPERE.StoragePro Inverter (HSR2103J2344E27920)\",\"additionalProperties\":{}}]}",
+            "postalCode": "85716"
+        },
+        "properties": {
+            "kig.meta.deviceClassVersion": "5.23.0.0",
+            "kig.meta.selfMigrating": "true",
+            "kig.meta.deviceClass": "com.kiwigrid.devices.location.Location",
+            "idDevicesMap": "{\n  \"POWERMETER_CONSUMPTION\" : [ \"7163ef55-f6f3-4a0a-a87d-62ae611ab091\" ],\n  \"POWERMETER_PRODUCTION\" : [ \"7163ef55-f6f3-4a0a-a87d-62ae611ab091\" ],\n  \"INNER_BUFFER\" : [ \"24464503-2d2e-4612-bbc3-c86e6b637b64\" ],\n  \"INNER_PRODUCER\" : [ \"9c25a3bb-4a71-471c-b9b0-c79d9d910ce5\" ]\n}",
+            "uuid": "a5658fbf-941e-4aed-bb39-0acd15f0beae",
+            "bindingVersion": "3.136.0"
+        },
+        "UID": "kiwigrid-location:standard:332de268316e",
+        "thingTypeUID": "kiwigrid-location:standard",
+        "channels": [
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_power_in"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_in",
+                "id": "harmonized#power_in",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerIn",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerIn",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_power_out"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_out",
+                "id": "harmonized#power_out",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerOut",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerOut",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_power_out_from_producers"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_out_from_producers",
+                "id": "harmonized#power_out_from_producers",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerOutFromProducers",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerOutFromProducers",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_power_out_from_storage"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_out_from_storage",
+                "id": "harmonized#power_out_from_storage",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerOutFromStorage",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerOutFromStorage",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_power_consumed"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_consumed",
+                "id": "harmonized#power_consumed",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerConsumed",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerConsumed",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_power_consumed_from_grid"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_consumed_from_grid",
+                "id": "harmonized#power_consumed_from_grid",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerConsumedFromGrid",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerConsumedFromGrid",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_power_consumed_from_producers"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_consumed_from_producers",
+                "id": "harmonized#power_consumed_from_producers",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerConsumedFromProducers",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerConsumedFromProducers",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_power_consumed_from_storage"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_consumed_from_storage",
+                "id": "harmonized#power_consumed_from_storage",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerConsumedFromStorage",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerConsumedFromStorage",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_power_produced"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_produced",
+                "id": "harmonized#power_produced",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerProduced",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerProduced",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_power_released"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_released",
+                "id": "harmonized#power_released",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerReleased",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerReleased",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_power_buffered"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_buffered",
+                "id": "harmonized#power_buffered",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerBuffered",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerBuffered",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_power_buffered_from_grid"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_buffered_from_grid",
+                "id": "harmonized#power_buffered_from_grid",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerBufferedFromGrid",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerBufferedFromGrid",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_power_buffered_from_producers"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_buffered_from_producers",
+                "id": "harmonized#power_buffered_from_producers",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerBufferedFromProducers",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerBufferedFromProducers",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_power_self_consumed"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_self_consumed",
+                "id": "harmonized#power_self_consumed",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerSelfConsumed",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerSelfConsumed",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_power_self_supplied"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_self_supplied",
+                "id": "harmonized#power_self_supplied",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerSelfSupplied",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerSelfSupplied",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_in"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_in",
+                "id": "harmonized#work_in",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "Harmonized Value",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only",
+                    "kig.meta.harmonized.itemtype": "Number:Energy",
+                    "totalAggregationChannel": "harmonized#work_in_total"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_in_total"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_in_total",
+                "id": "harmonized#work_in_total",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkIn",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkIn",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_out"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_out",
+                "id": "harmonized#work_out",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "Harmonized Value",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only",
+                    "kig.meta.harmonized.itemtype": "Number:Energy",
+                    "totalAggregationChannel": "harmonized#work_out_total"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_out_total"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_out_total",
+                "id": "harmonized#work_out_total",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkOut",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkOut",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_out_from_producers"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_out_from_producers",
+                "id": "harmonized#work_out_from_producers",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "Harmonized Value",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only",
+                    "kig.meta.harmonized.itemtype": "Number:Energy",
+                    "totalAggregationChannel": "harmonized#work_out_from_producers_total"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_out_from_producers_total"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_out_from_producers_total",
+                "id": "harmonized#work_out_from_producers_total",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkOutFromProducers",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkOutFromProducers",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_out_from_storage"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_out_from_storage",
+                "id": "harmonized#work_out_from_storage",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "Harmonized Value",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only",
+                    "kig.meta.harmonized.itemtype": "Number:Energy",
+                    "totalAggregationChannel": "harmonized#work_out_from_storage_total"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_out_from_storage_total"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_out_from_storage_total",
+                "id": "harmonized#work_out_from_storage_total",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkOutFromStorage",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkOutFromStorage",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_consumed"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_consumed",
+                "id": "harmonized#work_consumed",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "Harmonized Value",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only",
+                    "kig.meta.harmonized.itemtype": "Number:Energy",
+                    "totalAggregationChannel": "harmonized#work_consumed_total"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_total"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_consumed_total",
+                "id": "harmonized#work_consumed_total",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkConsumed",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkConsumed",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_grid"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_consumed_from_grid",
+                "id": "harmonized#work_consumed_from_grid",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "Harmonized Value",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only",
+                    "kig.meta.harmonized.itemtype": "Number:Energy",
+                    "totalAggregationChannel": "harmonized#work_consumed_from_grid_total"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_grid_total"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_consumed_from_grid_total",
+                "id": "harmonized#work_consumed_from_grid_total",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkConsumedFromGrid",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkConsumedFromGrid",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_producers"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_consumed_from_producers",
+                "id": "harmonized#work_consumed_from_producers",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "Harmonized Value",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only",
+                    "kig.meta.harmonized.itemtype": "Number:Energy",
+                    "totalAggregationChannel": "harmonized#work_consumed_from_producers_total"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_producers_total"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_consumed_from_producers_total",
+                "id": "harmonized#work_consumed_from_producers_total",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkConsumedFromProducers",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkConsumedFromProducers",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_storage"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_consumed_from_storage",
+                "id": "harmonized#work_consumed_from_storage",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "Harmonized Value",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only",
+                    "kig.meta.harmonized.itemtype": "Number:Energy",
+                    "totalAggregationChannel": "harmonized#work_consumed_from_storage_total"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_storage_total"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_consumed_from_storage_total",
+                "id": "harmonized#work_consumed_from_storage_total",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkConsumedFromStorage",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkConsumedFromStorage",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_produced"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_produced",
+                "id": "harmonized#work_produced",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "Harmonized Value",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only",
+                    "kig.meta.harmonized.itemtype": "Number:Energy",
+                    "totalAggregationChannel": "harmonized#work_produced_total"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_produced_total"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_produced_total",
+                "id": "harmonized#work_produced_total",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkProduced",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkProduced",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_released"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_released",
+                "id": "harmonized#work_released",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "Harmonized Value",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only",
+                    "kig.meta.harmonized.itemtype": "Number:Energy",
+                    "totalAggregationChannel": "harmonized#work_released_total"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_released_total"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_released_total",
+                "id": "harmonized#work_released_total",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkReleased",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkReleased",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_buffered"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_buffered",
+                "id": "harmonized#work_buffered",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "Harmonized Value",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only",
+                    "kig.meta.harmonized.itemtype": "Number:Energy",
+                    "totalAggregationChannel": "harmonized#work_buffered_total"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_buffered_total"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_buffered_total",
+                "id": "harmonized#work_buffered_total",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkBuffered",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkBuffered",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_buffered_from_grid"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_buffered_from_grid",
+                "id": "harmonized#work_buffered_from_grid",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "Harmonized Value",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only",
+                    "kig.meta.harmonized.itemtype": "Number:Energy",
+                    "totalAggregationChannel": "harmonized#work_buffered_from_grid_total"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_buffered_from_grid_total"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_buffered_from_grid_total",
+                "id": "harmonized#work_buffered_from_grid_total",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkBufferedFromGrid",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkBufferedFromGrid",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_buffered_from_producers"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_buffered_from_producers",
+                "id": "harmonized#work_buffered_from_producers",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "Harmonized Value",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only",
+                    "kig.meta.harmonized.itemtype": "Number:Energy",
+                    "totalAggregationChannel": "harmonized#work_buffered_from_producers_total"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_buffered_from_producers_total"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_buffered_from_producers_total",
+                "id": "harmonized#work_buffered_from_producers_total",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkBufferedFromProducers",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkBufferedFromProducers",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_self_consumed"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_self_consumed",
+                "id": "harmonized#work_self_consumed",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "Harmonized Value",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only",
+                    "kig.meta.harmonized.itemtype": "Number:Energy",
+                    "totalAggregationChannel": "harmonized#work_self_consumed_total"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_self_consumed_total"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_self_consumed_total",
+                "id": "harmonized#work_self_consumed_total",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkSelfConsumed",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkSelfConsumed",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_self_supplied"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_self_supplied",
+                "id": "harmonized#work_self_supplied",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "Harmonized Value",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only",
+                    "kig.meta.harmonized.itemtype": "Number:Energy",
+                    "totalAggregationChannel": "harmonized#work_self_supplied_total"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "kiwigrid_location_standard_332de268316e_harmonized_work_self_supplied_total"
+                ],
+                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_self_supplied_total",
+                "id": "harmonized#work_self_supplied_total",
+                "channelTypeUID": "kiwigrid-location:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkSelfSupplied",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkSelfSupplied",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            }
+        ]
+    },
+    {
+        "statusInfo": {
+            "status": "ONLINE",
+            "statusDetail": "NONE"
+        },
+        "editable": true,
+        "label": "AMPERE.StoragePro Battery (HSR2103J2344E27920)",
+        "bridgeUID": "sajhybrid:hybrid:e4ea3ad870f0",
+        "configuration": {},
+        "properties": {
+            "modelId": "94",
+            "displayName": "AMPERE.StoragePro",
+            "controlSWVersionHost": "2.066",
+            "controlSWVersionSlave": "UNDEF",
+            "uuid": "24464503-2d2e-4612-bbc3-c86e6b637b64",
+            "minSoC": "10 %",
+            "bindingVersion": "1.150.1",
+            "vendor": "AMPERE",
+            "batMaxDischargingPower": "9216.0 W",
+            "pcNumber": "1020092500EN023354",
+            "generatedLabel": "AMPERE.StoragePro Battery (HSR2103J2344E27920)",
+            "kig.meta.uiCategory": "STORAGES",
+            "firmwareVersion": "",
+            "identifier": "94-HSR2103J2344E27920",
+            "ratedPower": "10000 W",
+            "serialNumber": "HSR2103J2344E27920",
+            "controlHWVersion": "1.100",
+            "kig.meta.deviceClass": "com.kiwigrid.devices.batteryconverter.BatteryConverter",
+            "nominalCapacity": "",
+            "maxSoC": "100 %",
+            "batMaxChargingPower": "9216.0 W",
+            "modelName": "HS2",
+            "kig.meta.balancingtype": "DC_BATTERY",
+            "displaySWVersion": "2.532",
+            "kig.meta.deviceClassVersion": "5.24.1.0",
+            "labelFormat": "${displayName} Battery (${serialNumber})",
+            "kig.meta.selfMigrating": "true",
+            "displayHWVersion": "1.100",
+            "moduleCount": "3",
+            "maxPower": "10000 W"
+        },
+        "UID": "sajhybrid:battery:94-HSR2103J2344E27920",
+        "thingTypeUID": "sajhybrid:battery",
+        "channels": [
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_3_voltage"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#bms_3_voltage",
+                "id": "battery#bms_3_voltage",
+                "channelTypeUID": "sajhybrid:roVoltage",
+                "itemType": "Number:ElectricPotential",
+                "kind": "STATE",
+                "label": "BMS 3 Voltage, Register A01AH Uint16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_4_voltage"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#bms_4_voltage",
+                "id": "battery#bms_4_voltage",
+                "channelTypeUID": "sajhybrid:roVoltage",
+                "itemType": "Number:ElectricPotential",
+                "kind": "STATE",
+                "label": "BMS 4 Voltage, Register A020H Uint16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_mode"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#mode",
+                "id": "battery#mode",
+                "channelTypeUID": "sajhybrid:roNumber",
+                "itemType": "Number",
+                "kind": "STATE",
+                "label": "Battery Mode: -1: releasing, 0: idle, 1: buffering , Register 4096H Int16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_harmonized_work_out_total_extrapolated"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:harmonized#work_out_total_extrapolated",
+                "id": "harmonized#work_out_total_extrapolated",
+                "channelTypeUID": "sajhybrid:roEnergy",
+                "itemType": "Number:Energy",
+                "kind": "STATE",
+                "label": "WorkACOut",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkACOut",
+                    "kig.meta.scope": "cloud-mapped"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_totalDischargeEnergy"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#totalDischargeEnergy",
+                "id": "battery#totalDischargeEnergy",
+                "channelTypeUID": "sajhybrid:roEnergy",
+                "itemType": "Number:Energy",
+                "kind": "STATE",
+                "label": "Total Discharged Energy, Register 40D5H Uint32",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_temperature"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#temperature",
+                "id": "battery#temperature",
+                "channelTypeUID": "sajhybrid:roTemperature",
+                "itemType": "Number:Temperature",
+                "kind": "STATE",
+                "label": "Battery Temperature ,Register 406EH Int16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "TemperatureBattery",
+                    "kig.meta.scope": "cloud-mapped"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_has_max_power_production_maxPowerProduction_P_production_max",
+                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_maxDischargePower"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#maxDischargePower",
+                "id": "battery#maxDischargePower",
+                "channelTypeUID": "sajhybrid:roPower",
+                "itemType": "Number:Power",
+                "kind": "STATE",
+                "label": "Maximum discharge power. Calculated by taking into account the inverters max power, minimum SoC and maximum battery discharge power and current SoC.",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_maxChargePower",
+                    "sajhybrid_battery_94_HSR2103J2344E27920_has_max_power_consumption_maxPowerConsumption_P_consumption_max"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#maxChargePower",
+                "id": "battery#maxChargePower",
+                "channelTypeUID": "sajhybrid:roPower",
+                "itemType": "Number:Power",
+                "kind": "STATE",
+                "label": "Maximum charge power. Calculated by taking into account the inverters max power, maximum SoC and maximum battery charge power and current SoC.",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_2_voltage"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#bms_2_voltage",
+                "id": "battery#bms_2_voltage",
+                "channelTypeUID": "sajhybrid:roVoltage",
+                "itemType": "Number:ElectricPotential",
+                "kind": "STATE",
+                "label": "BMS 2 Voltage, Register A014H Uint16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_harmonized_work_in"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:harmonized#work_in",
+                "id": "harmonized#work_in",
+                "channelTypeUID": "sajhybrid:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkACIn",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "harmonized",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_harmonized_work_in_total_extrapolated"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:harmonized#work_in_total_extrapolated",
+                "id": "harmonized#work_in_total_extrapolated",
+                "channelTypeUID": "sajhybrid:roEnergy",
+                "itemType": "Number:Energy",
+                "kind": "STATE",
+                "label": "WorkACIn",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkACIn",
+                    "kig.meta.scope": "cloud-mapped"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_stateOfCharge"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#stateOfCharge",
+                "id": "battery#stateOfCharge",
+                "channelTypeUID": "sajhybrid:roDimensionless",
+                "itemType": "Number:Dimensionless",
+                "kind": "STATE",
+                "label": "Battery SoC, Register 406FH Uint16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "StateOfCharge",
+                    "kig.meta.scope": "cloud-mapped"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_1_voltage"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#bms_1_voltage",
+                "id": "battery#bms_1_voltage",
+                "channelTypeUID": "sajhybrid:roVoltage",
+                "itemType": "Number:ElectricPotential",
+                "kind": "STATE",
+                "label": "BMS 1 Voltage, Register A00EH Uint16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_totalChargeEnergy"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#totalChargeEnergy",
+                "id": "battery#totalChargeEnergy",
+                "channelTypeUID": "sajhybrid:roEnergy",
+                "itemType": "Number:Energy",
+                "kind": "STATE",
+                "label": "Total Charged Energy, Register 40CDH Uint32",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_power"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#power",
+                "id": "battery#power",
+                "channelTypeUID": "sajhybrid:roPower",
+                "itemType": "Number:Power",
+                "kind": "STATE",
+                "label": "Battery Power ,Register 406DH Int16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_3_current"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#bms_3_current",
+                "id": "battery#bms_3_current",
+                "channelTypeUID": "sajhybrid:roCurrent",
+                "itemType": "Number:ElectricCurrent",
+                "kind": "STATE",
+                "label": "BMS 3 Current, Register A01BH Int16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_4_current"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#bms_4_current",
+                "id": "battery#bms_4_current",
+                "channelTypeUID": "sajhybrid:roCurrent",
+                "itemType": "Number:ElectricCurrent",
+                "kind": "STATE",
+                "label": "BMS 4 Current, Register A021H Int16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_harmonized_power_in"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:harmonized#power_in",
+                "id": "harmonized#power_in",
+                "channelTypeUID": "sajhybrid:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerACIn",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerACIn",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_harmonized_power_out"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:harmonized#power_out",
+                "id": "harmonized#power_out",
+                "channelTypeUID": "sajhybrid:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerACOut",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerACOut",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_modeConverter"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#modeConverter",
+                "id": "battery#modeConverter",
+                "channelTypeUID": "sajhybrid:roString",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "Read Only String",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "ModeConverter",
+                    "kig.meta.scope": "cloud-mapped"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_power_production_measurable_powerProduction_P",
+                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_power_calculated",
+                    "sajhybrid_battery_94_HSR2103J2344E27920_power_consumption_measurable_powerConsumption_P"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#power_calculated",
+                "id": "battery#power_calculated",
+                "channelTypeUID": "sajhybrid:roPower",
+                "itemType": "Number:Power",
+                "kind": "STATE",
+                "label": "Battery Power calculated from BMS Voltage and Current",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_1_current"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#bms_1_current",
+                "id": "battery#bms_1_current",
+                "channelTypeUID": "sajhybrid:roCurrent",
+                "itemType": "Number:ElectricCurrent",
+                "kind": "STATE",
+                "label": "BMS 1 Current, Register A00FH Int16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_harmonized_work_out"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:harmonized#work_out",
+                "id": "harmonized#work_out",
+                "channelTypeUID": "sajhybrid:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkACOut",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "harmonized",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_2_current"
+                ],
+                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#bms_2_current",
+                "id": "battery#bms_2_current",
+                "channelTypeUID": "sajhybrid:roCurrent",
+                "itemType": "Number:ElectricCurrent",
+                "kind": "STATE",
+                "label": "BMS 2 Current, Register A015H Int16",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only"
+                },
+                "configuration": {}
+            }
+        ]
+    },
+    {
+        "statusInfo": {
+            "status": "ONLINE",
+            "statusDetail": "NONE"
+        },
+        "editable": true,
+        "label": "AMPERE.StoragePro",
+        "configuration": {
+            "host": "192.168.178.44",
+            "port": 502,
+            "unitId": 1
+        },
+        "properties": {
+            "ratedPower": "10000 W",
+            "serialNumber": "HSR2103J2344E27920",
+            "modelId": "94",
+            "displayName": "AMPERE.StoragePro",
+            "controlSWVersionHost": "2.066",
+            "controlHWVersion": "1.100",
+            "controlSWVersionSlave": "UNDEF",
+            "uuid": "3836c329-c9ed-460c-aca7-5dbd8e28b620",
+            "bindingVersion": "1.150.1",
+            "modelName": "HS2",
+            "displaySWVersion": "2.532",
+            "kig.meta.selfMigrating": "true",
+            "vendor": "AMPERE",
+            "pcNumber": "1020092500EN023354",
+            "displayHWVersion": "1.100",
+            "kig.meta.uiCategory": "INVERTERS",
+            "maxPower": "10000 W"
+        },
+        "UID": "sajhybrid:hybrid:e4ea3ad870f0",
+        "thingTypeUID": "sajhybrid:hybrid",
+        "channels": []
+    },
+    {
+        "statusInfo": {
+            "status": "ONLINE",
+            "statusDetail": "NONE"
+        },
+        "editable": true,
+        "label": "PV Anlage 1",
+        "configuration": {
+            "priceProfitFeedin": 8.03,
+            "deratingLimit": 100,
+            "powerInstalledPeak": 7200,
+            "dateInstallation": "2024-10-15"
+        },
+        "properties": {
+            "kig.meta.balancingtype": "PV_PLANT",
+            "kig.meta.deviceClassVersion": "5.23.0.0",
+            "kig.meta.selfMigrating": "true",
+            "kig.meta.deviceClass": "com.kiwigrid.devices.pvplant.PVPlant",
+            "inverters": "[\"94eeac47-9c48-4dca-816d-e913ff22fb86\"]",
+            "uuid": "9c25a3bb-4a71-471c-b9b0-c79d9d910ce5",
+            "bindingVersion": "1.110.0"
+        },
+        "UID": "pvplant:standard:0f7c4ded025b",
+        "thingTypeUID": "pvplant:standard",
+        "channels": [
+            {
+                "linkedItems": [
+                    "pvplant_standard_0f7c4ded025b_harmonized_power_out"
+                ],
+                "uid": "pvplant:standard:0f7c4ded025b:harmonized#power_out",
+                "id": "harmonized#power_out",
+                "channelTypeUID": "pvplant:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "PowerACOut",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "PowerACOut",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Power"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "pvplant_standard_0f7c4ded025b_harmonized_work_out_total"
+                ],
+                "uid": "pvplant:standard:0f7c4ded025b:harmonized#work_out_total",
+                "id": "harmonized#work_out_total",
+                "channelTypeUID": "pvplant:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "WorkACOut",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.cloudtag": "WorkACOut",
+                    "kig.meta.scope": "harmonized cloud-mapped",
+                    "kig.meta.harmonized.itemtype": "Number:Energy"
+                },
+                "configuration": {}
+            },
+            {
+                "linkedItems": [
+                    "pvplant_standard_0f7c4ded025b_harmonized_work_out"
+                ],
+                "uid": "pvplant:standard:0f7c4ded025b:harmonized#work_out",
+                "id": "harmonized#work_out",
+                "channelTypeUID": "pvplant:harmonized",
+                "itemType": "String",
+                "kind": "STATE",
+                "label": "Harmonized Value",
+                "defaultTags": [],
+                "properties": {
+                    "kig.meta.scope": "local-only",
+                    "kig.meta.harmonized.itemtype": "Number:Energy",
+                    "totalAggregationChannel": "harmonized#work_out_total"
+                },
+                "configuration": {}
+            }
+        ]
+    }
+]

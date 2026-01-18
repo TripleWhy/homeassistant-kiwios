@@ -6,7 +6,7 @@ handling authentication, session management and HTTP requests.
 
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
-from typing import Any
+from typing import Callable, Any
 
 import aiohttp
 
@@ -50,6 +50,7 @@ class KiwiOsApi:
         session: aiohttp.ClientSession,
         password: str = "",
         kiwisessionid: str = "",
+        kiwisessionid_changed_callback: Callable[[str], None] | None = None,
     ) -> None:
         """Initialize the API wrapper.
 
@@ -62,6 +63,7 @@ class KiwiOsApi:
         self.session = session
         self.url = url
         self.password = password
+        self._kiwisessionid_changed = kiwisessionid_changed_callback
         if kiwisessionid and (
             "kiwisessionid" not in session.cookie_jar.filter_cookies(url)
         ):
@@ -176,6 +178,8 @@ class KiwiOsApi:
 
             if 200 <= response.status < 400:
                 if kiwisessionid:
+                    if self._kiwisessionid_changed:
+                        self._kiwisessionid_changed(kiwisessionid)
                     return
                 if location.endswith("/logon-error.html"):
                     raise PasswordInvalidException

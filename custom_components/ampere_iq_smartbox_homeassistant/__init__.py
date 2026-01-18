@@ -103,11 +103,17 @@ async def async_setup_entry(hass: HomeAssistant, entry: KiwiOsConfigEntry) -> bo
         ),
     )
 
+    def update_kiwisessionid(new_kiwisessionid) -> None:
+        new_data = {**entry.data}
+        new_data["kiwisessionid"] = api.get_kiwisessionid()
+        hass.config_entries.async_update_entry(entry, data=new_data)
+
     api: KiwiOsApi = KiwiOsApi(
         url=url,
         session=session,
         password=password,
         kiwisessionid=kiwisessionid,
+        kiwisessionid_changed_callback=update_kiwisessionid
     )
 
     parser: KiwiOsParser = KiwiOsParser()
@@ -135,6 +141,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: KiwiOsConfigEntry) -> bo
 
 async def async_unload_entry(hass: HomeAssistant, entry: KiwiOsConfigEntry) -> bool:
     """Unload a config entry."""
-    # api = entry.runtime_data
+    # api = entry.runtime_data.api
     # await api.close()
     return await hass.config_entries.async_unload_platforms(entry, _PLATFORMS)

@@ -113,7 +113,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: KiwiOsConfigEntry) -> bo
         session=session,
         password=password,
         kiwisessionid=kiwisessionid,
-        kiwisessionid_changed_callback=update_kiwisessionid
+        kiwisessionid_changed_callback=update_kiwisessionid,
     )
 
     parser: KiwiOsParser = KiwiOsParser()

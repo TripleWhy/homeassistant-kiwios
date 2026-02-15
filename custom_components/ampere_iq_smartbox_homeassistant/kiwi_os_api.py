@@ -4,13 +4,12 @@ This module provides an API wrapper for communicating with Ampere IQ Smartbox de
 handling authentication, session management and HTTP requests.
 """
 
-from collections.abc import AsyncIterator
+from collections.abc import AsyncIterator, Callable
 from contextlib import asynccontextmanager
-from typing import Callable, Any
+from typing import Any
 
 import aiohttp
-
-from homeassistant.components.http import URL
+from yarl import URL
 
 _DBG_DISABLE_CONTENT_CHECK = True
 _JSON_CONTENT_TYPE = "application/json"

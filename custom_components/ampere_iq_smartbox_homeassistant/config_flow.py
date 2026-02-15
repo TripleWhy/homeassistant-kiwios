@@ -7,9 +7,9 @@ authentication and initial API validation.
 
 import aiohttp
 import voluptuous as vol
+from yarl import URL
 
 from homeassistant import config_entries
-from homeassistant.components.http import URL
 from homeassistant.const import CONF_PASSWORD, CONF_URL
 from homeassistant.helpers import aiohttp_client
 

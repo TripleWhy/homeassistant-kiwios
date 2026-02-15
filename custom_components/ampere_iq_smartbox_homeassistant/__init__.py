@@ -7,6 +7,7 @@ import logging
 from typing import TYPE_CHECKING, Any
 
 import aiohttp
+from yarl import URL
 
 from homeassistant.components.sensor import (
     SensorDeviceClass,
@@ -19,7 +20,6 @@ from homeassistant.core import HomeAssistant
 
 # import aiohttp_socks
 from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.aiohttp_client import URL
 from homeassistant.helpers.debounce import Debouncer
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, timedelta
 

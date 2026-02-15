@@ -4,28 +4,27 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import logging
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 import aiohttp
-import aiohttp_socks
-
-from homeassistant.components.http import URL
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PASSWORD, CONF_URL, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, timedelta
 
 from homeassistant.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorStateClass,
 )
+from homeassistant.config_entries import ConfigEntry
+from homeassistant.const import CONF_PASSWORD, CONF_URL, Platform
+from homeassistant.core import HomeAssistant
+
+# import aiohttp_socks
+from homeassistant.helpers import aiohttp_client
+from homeassistant.helpers.aiohttp_client import URL
+from homeassistant.helpers.debounce import Debouncer
+from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, timedelta
 
 from .kiwi_os_api import KiwiOsApi, KiwiOsApiItems
 from .kiwi_os_parser import KiwiOsParser
-
-from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from .sensor import (
@@ -69,21 +68,21 @@ async def async_setup_entry(hass: HomeAssistant, entry: KiwiOsConfigEntry) -> bo
     password: str = entry.data[CONF_PASSWORD]
     kiwisessionid: str = entry.data.get("kiwisessionid", "")
 
-    # session = aiohttp_client.async_create_clientsession(
-    #     hass,
-    #     cookie_jar=aiohttp.CookieJar(unsafe=True),
-    #     timeout=aiohttp.ClientTimeout(
-    #         total=60, connect=30, sock_connect=10, sock_read=30
-    #     ),
-    #     auto_cleanup=True,
-    # )
-    session = aiohttp.ClientSession(
-        connector=aiohttp_socks.ProxyConnector.from_url("socks5://192.168.178.62:8889"),
+    session = aiohttp_client.async_create_clientsession(
+        hass,
         cookie_jar=aiohttp.CookieJar(unsafe=True),
         timeout=aiohttp.ClientTimeout(
             total=60, connect=30, sock_connect=10, sock_read=30
         ),
+        auto_cleanup=True,
     )
+    # session = aiohttp.ClientSession(
+    #     connector=aiohttp_socks.ProxyConnector.from_url("socks5://192.168.178.62:8889"),
+    #     cookie_jar=aiohttp.CookieJar(unsafe=True),
+    #     timeout=aiohttp.ClientTimeout(
+    #         total=60, connect=30, sock_connect=10, sock_read=30
+    #     ),
+    # )
 
     async def async_update_data() -> None:
         print("async_update_data")

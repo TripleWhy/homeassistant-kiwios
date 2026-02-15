@@ -222,34 +222,3 @@ class KiwiOsApi:
     async def get_items(self) -> Any:
         """Fetch the /rest/items endpoint."""
         return await self._get_json("/rest/items")
-
-
-# import asyncio
-# import aiohttp
-# from aiohttp_socks import ProxyConnector
-# from aiohttp import CookieJar
-
-
-# async def main():
-#     print("password ")
-#     async with aiohttp.ClientSession(
-#         connector=ProxyConnector.from_url("socks5://192.168.178.62:8889"),
-#         cookie_jar=CookieJar(unsafe=True),
-#     ) as session:
-#         api = KiwiOsApi(
-#             url=URL("http://192.168.178.43/"),
-#             session=session,
-#             password=input().strip(),
-#         )
-#         try:
-#             await api.login()
-#             things = await api.get_things()
-#             items = await api.get_items()
-#             print("Things:", things)
-#             print("Items:", items)
-#         except PasswordInvalidException:
-#             print("Invalid password provided.")
-
-
-# if __name__ == "__main__":
-#     asyncio.run(main())

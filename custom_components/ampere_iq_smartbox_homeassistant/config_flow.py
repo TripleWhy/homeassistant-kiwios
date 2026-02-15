@@ -16,7 +16,7 @@ from homeassistant.helpers import aiohttp_client
 from .const import DOMAIN
 from .kiwi_os_api import KiwiOsApi, PasswordInvalidException, PasswordRequiredException
 
-import aiohttp_socks
+# import aiohttp_socks
 
 DATA_SCHEMA = vol.Schema(
     {
@@ -47,8 +47,7 @@ class AmpereConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         errors = {}
         description_placeholders = {}
         if user_input is not None:
-            ### debug >>>
-            # async with aiohttp.ClientSession(
+            # session = aiohttp.ClientSession(
             #     connector=aiohttp_socks.ProxyConnector.from_url(
             #         "socks5://192.168.178.62:8889"
             #     ),
@@ -56,25 +55,15 @@ class AmpereConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             #     timeout=aiohttp.ClientTimeout(
             #         total=60, connect=30, sock_connect=10, sock_read=30
             #     ),
-            # ) as session:
-            session = aiohttp.ClientSession(
-                connector=aiohttp_socks.ProxyConnector.from_url(
-                    "socks5://192.168.178.62:8889"
-                ),
+            # )
+            session = aiohttp_client.async_create_clientsession(
+                self.hass,
                 cookie_jar=aiohttp.CookieJar(unsafe=True),
                 timeout=aiohttp.ClientTimeout(
                     total=60, connect=30, sock_connect=10, sock_read=30
                 ),
+                auto_cleanup=False,
             )
-            ### debug <<<
-            # session = aiohttp_client.async_create_clientsession(
-            #     self.hass,
-            #     cookie_jar=aiohttp.CookieJar(unsafe=True),
-            #     timeout=aiohttp.ClientTimeout(
-            #         total=60, connect=30, sock_connect=10, sock_read=30
-            #     ),
-            #     auto_cleanup=False,
-            # )
             try:
                 url_str = user_input[CONF_URL].rstrip("/")
                 if "://" not in url_str:

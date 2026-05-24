@@ -91,13 +91,14 @@ class KiwiOsApi:
                     message=f"GET {path} failed",
                     headers=response.headers,
                 )
-            if 300 <= response.status < 400:
-                location = response.headers.get("Location", "")
-                if location.endswith("/logon.html"):
-                    await self.login()
-                    async with self._get(path, retry=False) as retry_response:
-                        yield retry_response
-                    return
+            if (response.status == 401) or (
+                (300 <= response.status < 400)
+                and response.headers.get("Location", "").endswith("/logon.html")
+            ):
+                await self.login()
+                async with self._get(path, retry=False) as retry_response:
+                    yield retry_response
+                return
 
             response.raise_for_status()
             yield response

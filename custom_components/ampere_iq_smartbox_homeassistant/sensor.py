@@ -69,22 +69,6 @@ class KiwiOsSensorEntity(CoordinatorEntity, SensorEntity):
         self.conversion_factor: float | None = None
         self.timestamp_sensor: KiwiOsTimestampSensorEntity | None = None
 
-    # async def async_update(self) -> None:
-    #     print("KiwiOsSensorEntity.async_update", self.item_name)
-    #     self._attr_native_value = 23
-
-    # @property
-    # def native_value(self):
-    #     """Return the state of this sensor."""
-    #     # print("KiwiOsSensorEntity.native_value", self.item_name)
-    #     items: KiwiOsApiItems = self.coordinator.data
-    #     if not items:
-    #         return None
-    #     item = items.get(self.item_name)
-    #     if not item:
-    #         return None
-    #     return item.get("state")
-
 
 class KiwiOsTimestampSensorEntity(CoordinatorEntity, SensorEntity):
     """Representation of a single KiwiOs timestamp sensor entity."""

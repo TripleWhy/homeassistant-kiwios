@@ -1,0 +1,8 @@
+{
+    "production": 0,
+    "feedIn": 0,
+    "feedOut": 511,
+    "householdConsumption": 511,
+    "storagePowerIn": 0,
+    "storagePowerOut": 0
+}

@@ -16,11 +16,15 @@ than the box it happens to run on.
 There is more than one way to reach EKD hardware, and they differ in what they
 offer:
 
-- **Local REST API** — what this integration speaks: the box exposes its
-  measurements at `/rest/things` and `/rest/items` on the local network. Local,
-  no cloud, polling.
-- **Modbus** — some individual devices (inverter, battery) can be polled over
-  Modbus instead of asking the box.
+- **Local REST API** — what this integration speaks: the box answers on the
+  local network. Local, no cloud, polling. Which measurements are available
+  depends on the firmware, see [Firmware generations](#firmware-generations).
+- **Modbus** — the box reaches the devices it manages over Modbus TCP, and some
+  of them (inverter, battery) can be polled directly. This is the only local
+  way to the per-device details that recent firmware stopped publishing over
+  HTTP, and the box exposes the connection settings of each device in
+  `/rest/hems-configurator/things` (`config.host`, `config.port`,
+  `config.unitId`). Polling Modbus is not part of this integration.
 - **Traffic capture** — on your own network the box can be observed while it
   talks: Modbus to the devices it manages, TLS to the EKD cloud. The device
   side carries exactly the values the box itself sees, so a capture shows what
@@ -60,10 +64,33 @@ The setup form asks for the URL of the device (for example
 password. The session cookie is stored in the config entry, so polling keeps
 working without logging in again.
 
-Every channel the device exposes through `/rest/things` becomes a sensor. Each
-measurement that carries a device-side timestamp also gets a matching
-`… Timestamp` sensor, which is disabled by default; enable it in the entity
-settings if you need to know when a value was measured.
+The integration asks the device which API it serves and adapts to it.
+
+### Firmware generations
+
+**Older firmware** serves the OpenHAB style per-channel API. Every channel of
+`/rest/things` becomes a sensor, fetched from `/rest/items`. Each measurement
+that carries a device-side timestamp also gets a matching `… Timestamp` sensor,
+which is disabled by default; enable it in the entity settings if you need to
+know when a value was measured. This is the complete view: state of charge,
+energy counters, temperatures, per-string PV data and so on.
+
+**KiwiOS Edge** (KiwiOS Edge 10.x, EM.setup 4.x) removed that API — `/rest/things`
+and `/rest/items` answer with `404`. What is left is a small aggregated API under
+`/rest/hems-configurator`, which is what this integration uses in that case:
+
+| Endpoint | Sensors |
+| --- | --- |
+| `energy-overview` | Production, Feed-in, Feed-out, Household consumption, Storage power in, Storage power out |
+| `power-indicator` | one power sensor per device (purchase, production, consumption) |
+| `things` | one status sensor per device |
+| `pv-plants` | peak power, curtailment and installation date per PV plant |
+| `public/gateway/info` | the KiwiOS Edge version, and the gateway device itself |
+
+These are instantaneous values only. Recent firmware publishes no state of
+charge, no energy counters and no temperatures over HTTP at all — they are gone
+from the box, not hidden behind a setting. Modbus or a traffic capture are the
+remaining local options for those; see above.
 
 ## Upgrading from `ampere_iq_smartbox_homeassistant`
 

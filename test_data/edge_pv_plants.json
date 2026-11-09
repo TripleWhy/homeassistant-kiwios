@@ -1,0 +1,27 @@
+[
+    {
+        "pvPlantUuid": "pvplant:standard:00000000000c",
+        "assignments": {
+            "dcBatteries": [
+                {
+                    "dcBatteryUuid": "sajhybrid:battery:94-HSR0000000000000000",
+                    "inverterOrMeterAssignment": {
+                        "inverterAssignment": {
+                            "inverterUuid": "sajhybrid:inverter:94-HSR0000000000000000"
+                        },
+                        "inverterReplacementAssignments": null
+                    }
+                }
+            ],
+            "inverterAndMeterAssignments": null
+        },
+        "config": {
+            "peakPower": 7200,
+            "curtailmentPercentage": 100,
+            "installationDate": "2021-06-01",
+            "label": "PV Anlage 1",
+            "degreeDirection": null,
+            "degreeInclination": null
+        }
+    }
+]

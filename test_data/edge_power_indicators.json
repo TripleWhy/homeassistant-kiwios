@@ -1,0 +1,17 @@
+[
+    {
+        "thingId": "sajhybrid:powermeter:94-HSR0000000000000000",
+        "type": "PURCHASE",
+        "value": 514.0
+    },
+    {
+        "thingId": "sajhybrid:inverter:94-HSR0000000000000000",
+        "type": "PRODUCTION",
+        "value": 0.0
+    },
+    {
+        "thingId": "sajhybrid:battery:94-HSR0000000000000000",
+        "type": "CONSUMPTION",
+        "value": 0.0
+    }
+]

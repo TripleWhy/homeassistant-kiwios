@@ -25,6 +25,7 @@ from custom_components.kiwios.kiwi_os_api import (
 
 from .fakes import FakeSession
 
+
 class FakeApi:
     """Stand-in for KiwiOsApi used by the config flow."""
 
@@ -32,15 +33,18 @@ class FakeApi:
         self,
         *,
         login_error: Exception | None = None,
-        rest_error: Exception | None = None,
+        detection_error: Exception | None = None,
+        gateway_info: dict[str, Any] | None = None,
         session_id: str = "test-session",
     ) -> None:
         """Store the behaviour the tests want to exercise."""
         self.login_error = login_error
-        self.rest_error = rest_error
+        self.detection_error = detection_error
+        self.gateway_info = gateway_info
         self.session_id = session_id
         self.logged_in = False
-        self.rest_called = False
+        self.detection_called = False
+        self.items_called = False
 
     async def login(self) -> None:
         """Optionally raise, otherwise record the login."""
@@ -48,12 +52,17 @@ class FakeApi:
         if self.login_error is not None:
             raise self.login_error
 
-    async def get_rest(self) -> Any:
-        """Optionally raise, otherwise return a payload."""
-        self.rest_called = True
-        if self.rest_error is not None:
-            raise self.rest_error
-        return {"ok": True}
+    async def get_edge_gateway_info_if_present(self) -> dict[str, Any] | None:
+        """Optionally raise, otherwise report the API the device serves."""
+        self.detection_called = True
+        if self.detection_error is not None:
+            raise self.detection_error
+        return self.gateway_info
+
+    async def get_items(self) -> list[dict[str, Any]]:
+        """Record that the per-channel API was used for validation."""
+        self.items_called = True
+        return []
 
     def get_kiwisessionid(self) -> str:
         """Return the configured session id."""
@@ -127,7 +136,9 @@ async def test_user_step_creates_entry_with_password(
         "kiwisessionid": "abc123",
     }
     assert api.logged_in is True
-    assert api.rest_called is True
+    assert api.detection_called is True
+    # A device without the current API is validated through the older one.
+    assert api.items_called is True
     assert captured["password"] == "secret"
     assert captured["session"] is session
     assert session.detached is True
@@ -150,9 +161,28 @@ async def test_user_step_skips_login_without_password(
     assert result["type"] is FlowResultType.CREATE_ENTRY
     assert result["data"][CONF_PASSWORD] == ""
     assert api.logged_in is False
-    assert api.rest_called is True
+    assert api.detection_called is True
     assert captured["password"] == ""
     assert session.detached is True
+
+
+async def test_user_step_accepts_current_firmware(
+    hass: HomeAssistant, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """A device serving the current API needs no second validation request."""
+    session = FakeSession()
+    api = FakeApi(gateway_info={"serialNumber": "EHC01"})
+    install_api(monkeypatch, session, api)
+
+    result = await start_flow(hass)
+    result = await hass.config_entries.flow.async_configure(
+        result["flow_id"],
+        {CONF_URL: "http://box.local/"},
+    )
+
+    assert result["type"] is FlowResultType.CREATE_ENTRY
+    assert api.detection_called is True
+    assert api.items_called is False
 
 
 async def test_user_step_adds_scheme_and_strips_slash(
@@ -218,7 +248,7 @@ async def test_user_step_unexpected_response(
         Mock(), (), status=500, message="server exploded"
     )
     session = FakeSession()
-    api = FakeApi(rest_error=error)
+    api = FakeApi(detection_error=error)
     install_api(monkeypatch, session, api)
 
     result = await start_flow(hass)
@@ -236,7 +266,7 @@ async def test_user_step_timeout(
 ) -> None:
     """A timeout is reported as such."""
     session = FakeSession()
-    api = FakeApi(rest_error=TimeoutError())
+    api = FakeApi(detection_error=TimeoutError())
     install_api(monkeypatch, session, api)
 
     result = await start_flow(hass)
@@ -254,7 +284,7 @@ async def test_user_step_cannot_connect(
     """A connection error is reported as such."""
     error = aiohttp.ClientConnectorError(None, OSError("no route"))
     session = FakeSession()
-    api = FakeApi(rest_error=error)
+    api = FakeApi(detection_error=error)
     install_api(monkeypatch, session, api)
 
     result = await start_flow(hass)
@@ -272,7 +302,7 @@ async def test_user_step_generic_client_error(
     """Any other client error is reported with its detail."""
     error = aiohttp.ClientError("boom")
     session = FakeSession()
-    api = FakeApi(rest_error=error)
+    api = FakeApi(detection_error=error)
     install_api(monkeypatch, session, api)
 
     result = await start_flow(hass)

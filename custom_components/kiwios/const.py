@@ -4,6 +4,9 @@ import aiohttp
 
 DOMAIN = "kiwios"
 
+# Prefix of the aggregated REST API of firmware running KiwiOS Edge.
+EDGE_API_PATH = "/rest/hems-configurator"
+
 # Cookie the device uses to keep an authenticated session.
 CONF_KIWISESSIONID = "kiwisessionid"
 

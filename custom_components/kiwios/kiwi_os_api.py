@@ -14,7 +14,7 @@ from typing import Any
 import aiohttp
 from yarl import URL
 
-from .const import CONF_KIWISESSIONID
+from .const import CONF_KIWISESSIONID, EDGE_API_PATH
 
 # The device does not reliably tag its JSON replies with the application/json
 # content type, so response decoding must not validate it.
@@ -204,10 +204,6 @@ class KiwiOsApi:
         )
         return cookie.value if cookie is not None else ""
 
-    async def get_rest(self) -> Any:
-        """Fetch the /rest endpoint."""
-        return await self._get_json("/rest")
-
     async def get_things(self) -> Any:
         """Fetch the /rest/things endpoint."""
         return await self._get_json("/rest/things")
@@ -215,3 +211,39 @@ class KiwiOsApi:
     async def get_items(self) -> Any:
         """Fetch the /rest/items endpoint."""
         return await self._get_json("/rest/items")
+
+    # -- KiwiOS Edge ----------------------------------------------------
+
+    async def get_edge_things(self) -> Any:
+        """Fetch the configured devices of a KiwiOS Edge device."""
+        return await self._get_json(f"{EDGE_API_PATH}/things")
+
+    async def get_edge_gateway_info(self) -> Any:
+        """Fetch the gateway identity and the installed versions."""
+        return await self._get_json(f"{EDGE_API_PATH}/public/gateway/info")
+
+    async def get_edge_gateway_info_if_present(self) -> Any | None:
+        """Return the gateway info, or None for firmware serving the older API.
+
+        The current API is assumed first, so a device running it spends no
+        request on detection: the answer is the one the setup needs anyway.
+        Firmware without it answers 404 and falls back to the per-channel API.
+        """
+        try:
+            return await self.get_edge_gateway_info()
+        except aiohttp.ClientResponseError as error:
+            if error.status != 404:
+                raise
+            return None
+
+    async def get_edge_energy_overview(self) -> Any:
+        """Fetch the aggregated power flows of the whole installation."""
+        return await self._get_json(f"{EDGE_API_PATH}/energy-overview")
+
+    async def get_edge_power_indicators(self) -> Any:
+        """Fetch the instantaneous power of every device."""
+        return await self._get_json(f"{EDGE_API_PATH}/power-indicator")
+
+    async def get_edge_pv_plants(self) -> Any:
+        """Fetch the configured PV plants."""
+        return await self._get_json(f"{EDGE_API_PATH}/pv-plants")

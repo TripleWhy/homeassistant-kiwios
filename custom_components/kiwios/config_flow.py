@@ -65,7 +65,10 @@ class KiwiOsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         )
         if password:
             await api.login()
-        await api.get_rest()
+        if await api.get_edge_gateway_info_if_present() is None:
+            # Firmware without the current API has to be recognised by the
+            # per-channel one instead, otherwise this is not a KiwiOS device.
+            await api.get_items()
         return url, password, api.get_kiwisessionid()
 
     async def async_step_user(

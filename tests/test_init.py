@@ -27,6 +27,7 @@ from custom_components.kiwios import (
 )
 from custom_components.kiwios.const import DOMAIN
 from custom_components.kiwios.kiwi_os_api import KiwiOsApi
+from custom_components.kiwios.kiwi_os_edge_parser import KiwiOsEdgeParser
 
 from .fakes import FakeSession
 
@@ -41,8 +42,7 @@ async def session(monkeypatch: pytest.MonkeyPatch) -> FakeSession:
     """Replace the aiohttp session with a fake one."""
     fake_session = FakeSession()
     monkeypatch.setattr(
-        "custom_components.kiwios.aiohttp_client."
-        "async_create_clientsession",
+        "custom_components.kiwios.aiohttp_client.async_create_clientsession",
         lambda *args, **kwargs: fake_session,
     )
     return fake_session
@@ -53,9 +53,33 @@ def api(monkeypatch: pytest.MonkeyPatch, things, json_items) -> dict[str, Any]:
     """Return patched API methods for the setup flow."""
     get_things = AsyncMock(return_value=things)
     get_items = AsyncMock(return_value=json_items)
+    detection = AsyncMock(return_value=None)
     monkeypatch.setattr(KiwiOsApi, "get_things", get_things)
     monkeypatch.setattr(KiwiOsApi, "get_items", get_items)
-    return {"get_things": get_things, "get_items": get_items}
+    monkeypatch.setattr(KiwiOsApi, "get_edge_gateway_info_if_present", detection)
+    return {"get_things": get_things, "get_items": get_items, "detection": detection}
+
+
+@pytest.fixture
+def edge_api(
+    monkeypatch: pytest.MonkeyPatch,
+    edge_things,
+    edge_gateway_info,
+    edge_energy_overview,
+    edge_power_indicators,
+    edge_pv_plants,
+) -> dict[str, Any]:
+    """Return patched API methods for a device running KiwiOS Edge."""
+    methods = {
+        "get_edge_gateway_info_if_present": AsyncMock(return_value=edge_gateway_info),
+        "get_edge_things": AsyncMock(return_value=edge_things),
+        "get_edge_power_indicators": AsyncMock(return_value=edge_power_indicators),
+        "get_edge_pv_plants": AsyncMock(return_value=edge_pv_plants),
+        "get_edge_energy_overview": AsyncMock(return_value=edge_energy_overview),
+    }
+    for name, method in methods.items():
+        monkeypatch.setattr(KiwiOsApi, name, method)
+    return methods
 
 
 def make_entry(**data: Any) -> MockConfigEntry:
@@ -104,7 +128,11 @@ async def test_setup_entry(
     assert len(hass.states.async_entity_ids("sensor")) == 99
 
     # The initial fetch uses the coordinator's update method.
+    # Detection and both fetches are separate: the per-channel API is only
+    # asked for after the current one answered 404.
+    assert api["detection"].await_count == 1
     assert api["get_things"].await_count == 1
+    # Once to build the entities and once for the initial refresh.
     assert api["get_items"].await_count == 2
 
 
@@ -156,8 +184,7 @@ async def test_setup_entry_session_options(
         return session
 
     monkeypatch.setattr(
-        "custom_components.kiwios.aiohttp_client."
-        "async_create_clientsession",
+        "custom_components.kiwios.aiohttp_client.async_create_clientsession",
         create_session,
     )
     entry = make_entry()
@@ -265,3 +292,73 @@ async def test_unload_entry_returns_platform_result(
     )
 
     assert await async_unload_entry(hass, entry) is False
+
+
+async def test_setup_entry_edge_device(
+    hass: HomeAssistant,
+    session: FakeSession,
+    edge_api: dict[str, Any],
+) -> None:
+    """A device running KiwiOS Edge is set up from its aggregated API."""
+    entry = make_entry()
+    entry.add_to_hass(hass)
+
+    assert await hass.config_entries.async_setup(entry.entry_id) is True
+    await hass.async_block_till_done()
+
+    assert entry.state is ConfigEntryState.LOADED
+    data = entry.runtime_data
+    assert isinstance(data.parser, KiwiOsEdgeParser)
+    # One version sensor, six aggregated power flows, six device statuses,
+    # three device powers and three configuration sensors of the PV plant.
+    assert len(data.parser.get_entities()) == 19
+    assert len(hass.states.async_entity_ids("sensor")) == 19
+
+    states = {
+        state.attributes.get("friendly_name"): state
+        for state in hass.states.async_all("sensor")
+    }
+    household = states["KiwiOS Gateway Household consumption"]
+    assert household.state == "511.0"
+    assert household.attributes["unit_of_measurement"] == "W"
+
+    purchase = states["AMPERE.StoragePro Meter A (HSR0000000000000000) Purchase power"]
+    assert purchase.state == "514.0"
+
+    status = states["AMPERE.StoragePro Inverter (HSR0000000000000000) Status"]
+    assert status.state == "ONLINE"
+
+    plant = states["PV Anlage 1 Peak power"]
+    assert plant.state == "7200.0"
+
+    installation_date = states["PV Anlage 1 Installation date"]
+    assert installation_date.state == "2021-06-01"
+
+    # Every endpoint is read once: the setup keeps the values it fetched, so
+    # there is no initial refresh on top.
+    assert edge_api["get_edge_gateway_info_if_present"].await_count == 1
+    assert edge_api["get_edge_things"].await_count == 1
+    assert edge_api["get_edge_power_indicators"].await_count == 1
+    assert edge_api["get_edge_pv_plants"].await_count == 1
+    assert edge_api["get_edge_energy_overview"].await_count == 1
+
+    # A later poll goes through the coordinator's update method.
+    await data.coordinator.async_refresh()
+    assert data.coordinator.last_update_success is True
+    assert edge_api["get_edge_things"].await_count == 2
+    assert edge_api["get_edge_energy_overview"].await_count == 2
+    assert edge_api["get_edge_gateway_info_if_present"].await_count == 1
+
+
+async def test_setup_entry_edge_device_fails_without_data(
+    hass: HomeAssistant,
+    session: FakeSession,
+    edge_api: dict[str, Any],
+) -> None:
+    """An edge device that stops answering fails the initial refresh."""
+    edge_api["get_edge_energy_overview"].side_effect = aiohttp.ClientError("gone")
+    entry = make_entry()
+    entry.add_to_hass(hass)
+
+    assert await hass.config_entries.async_setup(entry.entry_id) is False
+    assert entry.state is ConfigEntryState.SETUP_ERROR

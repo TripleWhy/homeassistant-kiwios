@@ -1,0 +1,556 @@
+[
+    {
+        "id": "sajhybrid:powermeter:94-HSR0000000000000000",
+        "label": "AMPERE.StoragePro Meter A (HSR0000000000000000)",
+        "thingType": {
+            "id": "sajhybrid:powermeter",
+            "title": "Meter - AMPERE.StoragePro",
+            "category": {
+                "type": "POWER_METERS",
+                "sortId": 3
+            },
+            "description": null,
+            "image": null,
+            "bridge": false,
+            "supportsAutodiscovery": true,
+            "configParameters": []
+        },
+        "statusInfo": {
+            "status": "ONLINE",
+            "statusDetail": "NONE",
+            "description": null
+        },
+        "config": {},
+        "connectedThings": [],
+        "dimming": {
+            "supported": false,
+            "relevant": false
+        },
+        "connectableWith": [
+            "HOUSEHOLD",
+            "GRID"
+        ],
+        "serialNumber": "HSR0000000000000000",
+        "balancingType": null,
+        "responsibleBridge": {
+            "id": "sajhybrid:hybrid:00000000000a",
+            "label": "AMPERE.StoragePro",
+            "assignedToLabel": null
+        }
+    },
+    {
+        "id": "sajhybrid:inverter:94-HSR0000000000000000",
+        "label": "AMPERE.StoragePro Inverter (HSR0000000000000000)",
+        "thingType": {
+            "id": "sajhybrid:inverter",
+            "title": "Inverter - AMPERE.StoragePro",
+            "category": {
+                "type": "INVERTERS",
+                "sortId": 2
+            },
+            "description": null,
+            "image": null,
+            "bridge": false,
+            "supportsAutodiscovery": true,
+            "configParameters": []
+        },
+        "statusInfo": {
+            "status": "ONLINE",
+            "statusDetail": "NONE",
+            "description": null
+        },
+        "config": {},
+        "connectedThings": [],
+        "dimming": {
+            "supported": false,
+            "relevant": false
+        },
+        "connectableWith": [
+            "HOUSEHOLD",
+            "DC_BATTERY",
+            "PV_PLANT",
+            "GRID"
+        ],
+        "serialNumber": "HSR0000000000000000",
+        "balancingType": null,
+        "responsibleBridge": {
+            "id": "sajhybrid:hybrid:00000000000a",
+            "label": "AMPERE.StoragePro",
+            "assignedToLabel": null
+        }
+    },
+    {
+        "id": "kiwigrid-location:standard:00000000000b",
+        "label": "Location",
+        "thingType": {
+            "id": "kiwigrid-location:standard",
+            "title": "Standort",
+            "category": {
+                "type": "OTHERS",
+                "sortId": 100
+            },
+            "description": "Bilanzierung von Standortgeräten",
+            "image": null,
+            "bridge": false,
+            "supportsAutodiscovery": false,
+            "configParameters": [
+                {
+                    "context": null,
+                    "defaultValue": null,
+                    "description": "Bilanzierungsgraph",
+                    "label": "Graph",
+                    "name": "graph",
+                    "required": true,
+                    "type": "TEXT",
+                    "min": null,
+                    "max": null,
+                    "stepsize": null,
+                    "pattern": null,
+                    "readOnly": false,
+                    "multiple": false,
+                    "multipleLimit": null,
+                    "groupName": null,
+                    "advanced": false,
+                    "verify": false,
+                    "limitToOptions": true,
+                    "unit": null,
+                    "unitLabel": null,
+                    "options": []
+                },
+                {
+                    "context": null,
+                    "defaultValue": null,
+                    "description": "Location City",
+                    "label": "City",
+                    "name": "city",
+                    "required": false,
+                    "type": "TEXT",
+                    "min": null,
+                    "max": 100,
+                    "stepsize": null,
+                    "pattern": null,
+                    "readOnly": false,
+                    "multiple": false,
+                    "multipleLimit": null,
+                    "groupName": null,
+                    "advanced": false,
+                    "verify": false,
+                    "limitToOptions": true,
+                    "unit": null,
+                    "unitLabel": null,
+                    "options": []
+                },
+                {
+                    "context": null,
+                    "defaultValue": null,
+                    "description": "Location Country (ISO2)",
+                    "label": "Country code",
+                    "name": "countryCode",
+                    "required": false,
+                    "type": "TEXT",
+                    "min": null,
+                    "max": null,
+                    "stepsize": null,
+                    "pattern": "^[A-Z]{2}",
+                    "readOnly": false,
+                    "multiple": false,
+                    "multipleLimit": null,
+                    "groupName": null,
+                    "advanced": false,
+                    "verify": false,
+                    "limitToOptions": true,
+                    "unit": null,
+                    "unitLabel": null,
+                    "options": []
+                },
+                {
+                    "context": null,
+                    "defaultValue": null,
+                    "description": "Location postal code",
+                    "label": "Postal code",
+                    "name": "postalCode",
+                    "required": false,
+                    "type": "TEXT",
+                    "min": null,
+                    "max": 20,
+                    "stepsize": null,
+                    "pattern": null,
+                    "readOnly": false,
+                    "multiple": false,
+                    "multipleLimit": null,
+                    "groupName": null,
+                    "advanced": false,
+                    "verify": false,
+                    "limitToOptions": true,
+                    "unit": null,
+                    "unitLabel": null,
+                    "options": []
+                }
+            ]
+        },
+        "statusInfo": {
+            "status": "ONLINE",
+            "statusDetail": "NONE",
+            "description": null
+        },
+        "config": {
+            "city": "Musterstadt",
+            "countryCode": "DE",
+            "graph": "{\"links\":[{\"id\":\"pvplant:standard:00000000000c~sajhybrid:battery:94-HSR0000000000000000\",\"source\":\"pvplant:standard:00000000000c\",\"target\":\"sajhybrid:battery:94-HSR0000000000000000\"},{\"id\":\"sajhybrid:battery:94-HSR0000000000000000~sajhybrid:inverter:94-HSR0000000000000000\",\"source\":\"sajhybrid:battery:94-HSR0000000000000000\",\"target\":\"sajhybrid:inverter:94-HSR0000000000000000\"},{\"id\":\"sajhybrid:powermeter:94-HSR0000000000000000~household\",\"source\":\"sajhybrid:powermeter:94-HSR0000000000000000\",\"target\":\"household\"},{\"id\":\"sajhybrid:powermeter:94-HSR0000000000000000~grid\",\"source\":\"sajhybrid:powermeter:94-HSR0000000000000000\",\"target\":\"grid\"},{\"id\":\"household~sajhybrid:inverter:94-HSR0000000000000000\",\"source\":\"household\",\"target\":\"sajhybrid:inverter:94-HSR0000000000000000\"}],\"nodes\":[{\"id\":\"pvplant:standard:00000000000c\",\"uuid\":\"00000000-0000-4000-8000-000000000001\",\"type\":\"PV_PLANT\",\"label\":\"PV Anlage 1\",\"additionalProperties\":{}},{\"id\":\"sajhybrid:battery:94-HSR0000000000000000\",\"uuid\":\"00000000-0000-4000-8000-000000000002\",\"type\":\"DC_BATTERY\",\"label\":\"AMPERE.StoragePro Battery (HSR0000000000000000)\",\"additionalProperties\":{}},{\"id\":\"sajhybrid:powermeter:94-HSR0000000000000000\",\"uuid\":\"00000000-0000-4000-8000-000000000003\",\"type\":\"BIDIRECTIONAL_ENERGY_METER\",\"label\":\"AMPERE.StoragePro Meter A (HSR0000000000000000)\",\"additionalProperties\":{}},{\"id\":\"grid\",\"uuid\":null,\"type\":\"GRID\",\"label\":\"Stromnetz\",\"additionalProperties\":{}},{\"id\":\"household\",\"uuid\":null,\"type\":\"HOUSEHOLD\",\"label\":\"Haushalt\",\"additionalProperties\":{}},{\"id\":\"sajhybrid:inverter:94-HSR0000000000000000\",\"uuid\":\"00000000-0000-4000-8000-000000000004\",\"type\":\"INVERTER\",\"label\":\"AMPERE.StoragePro Inverter (HSR0000000000000000)\",\"additionalProperties\":{}}]}",
+            "postalCode": "00000"
+        },
+        "connectedThings": [],
+        "dimming": {
+            "supported": false,
+            "relevant": false
+        },
+        "connectableWith": [],
+        "serialNumber": null,
+        "balancingType": null,
+        "responsibleBridge": null
+    },
+    {
+        "id": "sajhybrid:battery:94-HSR0000000000000000",
+        "label": "AMPERE.StoragePro Battery (HSR0000000000000000)",
+        "thingType": {
+            "id": "sajhybrid:battery",
+            "title": "Battery - AMPERE.StoragePro",
+            "category": {
+                "type": "STORAGES",
+                "sortId": 1
+            },
+            "description": null,
+            "image": null,
+            "bridge": false,
+            "supportsAutodiscovery": true,
+            "configParameters": []
+        },
+        "statusInfo": {
+            "status": "ONLINE",
+            "statusDetail": "NONE",
+            "description": null
+        },
+        "config": {},
+        "connectedThings": [],
+        "dimming": {
+            "supported": false,
+            "relevant": false
+        },
+        "connectableWith": [
+            "INVERTER",
+            "INVERTER_REPLACEMENT",
+            "PV_PLANT"
+        ],
+        "serialNumber": "HSR0000000000000000",
+        "balancingType": null,
+        "responsibleBridge": {
+            "id": "sajhybrid:hybrid:00000000000a",
+            "label": "AMPERE.StoragePro",
+            "assignedToLabel": null
+        }
+    },
+    {
+        "id": "sajhybrid:hybrid:00000000000a",
+        "label": "AMPERE.StoragePro",
+        "thingType": {
+            "id": "sajhybrid:hybrid",
+            "title": "AMPERE.StoragePro",
+            "category": {
+                "type": "INVERTERS",
+                "sortId": 2
+            },
+            "description": "AMPERE.StoragePro Wechselrichter",
+            "image": null,
+            "bridge": true,
+            "supportsAutodiscovery": false,
+            "configParameters": [
+                {
+                    "context": "network-address",
+                    "defaultValue": null,
+                    "description": "Hostname or IP address of the device",
+                    "label": "Host",
+                    "name": "host",
+                    "required": true,
+                    "type": "TEXT",
+                    "min": null,
+                    "max": null,
+                    "stepsize": null,
+                    "pattern": null,
+                    "readOnly": false,
+                    "multiple": false,
+                    "multipleLimit": null,
+                    "groupName": null,
+                    "advanced": false,
+                    "verify": false,
+                    "limitToOptions": false,
+                    "unit": null,
+                    "unitLabel": null,
+                    "options": []
+                },
+                {
+                    "context": null,
+                    "defaultValue": "502",
+                    "description": "Modbus TCP Port of the device",
+                    "label": "Modbus TCP Port",
+                    "name": "port",
+                    "required": true,
+                    "type": "INTEGER",
+                    "min": 1,
+                    "max": 65535,
+                    "stepsize": null,
+                    "pattern": null,
+                    "readOnly": false,
+                    "multiple": false,
+                    "multipleLimit": null,
+                    "groupName": null,
+                    "advanced": true,
+                    "verify": false,
+                    "limitToOptions": false,
+                    "unit": null,
+                    "unitLabel": null,
+                    "options": []
+                },
+                {
+                    "context": null,
+                    "defaultValue": "1",
+                    "description": "Modbus Unit ID of the device",
+                    "label": "Modbus Unit ID",
+                    "name": "unitId",
+                    "required": true,
+                    "type": "INTEGER",
+                    "min": 1,
+                    "max": 254,
+                    "stepsize": null,
+                    "pattern": null,
+                    "readOnly": false,
+                    "multiple": false,
+                    "multipleLimit": null,
+                    "groupName": null,
+                    "advanced": true,
+                    "verify": false,
+                    "limitToOptions": false,
+                    "unit": null,
+                    "unitLabel": null,
+                    "options": []
+                }
+            ]
+        },
+        "statusInfo": {
+            "status": "ONLINE",
+            "statusDetail": "NONE",
+            "description": null
+        },
+        "config": {
+            "host": "192.0.2.44",
+            "port": 502.0,
+            "unitId": 1.0
+        },
+        "connectedThings": [
+            {
+                "id": "sajhybrid:battery:94-HSR0000000000000000",
+                "label": "AMPERE.StoragePro Battery (HSR0000000000000000)",
+                "assignedToLabel": null
+            },
+            {
+                "id": "sajhybrid:inverter:94-HSR0000000000000000",
+                "label": "AMPERE.StoragePro Inverter (HSR0000000000000000)",
+                "assignedToLabel": null
+            },
+            {
+                "id": "sajhybrid:powermeter:94-HSR0000000000000000",
+                "label": "AMPERE.StoragePro Meter A (HSR0000000000000000)",
+                "assignedToLabel": null
+            }
+        ],
+        "dimming": {
+            "supported": false,
+            "relevant": false
+        },
+        "connectableWith": [],
+        "serialNumber": "HSR0000000000000000",
+        "balancingType": null,
+        "responsibleBridge": null
+    },
+    {
+        "id": "pvplant:standard:00000000000c",
+        "label": "PV Anlage 1",
+        "thingType": {
+            "id": "pvplant:standard",
+            "title": "Standard-PV-Anlage",
+            "category": {
+                "type": "OTHERS",
+                "sortId": 100
+            },
+            "description": "Standardversion für Photovoltaikanlagen",
+            "image": null,
+            "bridge": false,
+            "supportsAutodiscovery": false,
+            "configParameters": [
+                {
+                    "context": null,
+                    "defaultValue": null,
+                    "description": "Dieser Wert ist relevant für die Berechnung der Abregelung und eine korrekte Prognose.",
+                    "label": "Installierte Modulleistung",
+                    "name": "powerInstalledPeak",
+                    "required": true,
+                    "type": "INTEGER",
+                    "min": 0,
+                    "max": null,
+                    "stepsize": null,
+                    "pattern": null,
+                    "readOnly": false,
+                    "multiple": false,
+                    "multipleLimit": null,
+                    "groupName": null,
+                    "advanced": false,
+                    "verify": false,
+                    "limitToOptions": false,
+                    "unit": null,
+                    "unitLabel": "W",
+                    "options": []
+                },
+                {
+                    "context": null,
+                    "defaultValue": null,
+                    "description": "Das System steuert intelligent den Stromfluss. Anlagen bis 10 kWp müssen in Deutschland standardmäßig auf 70% ihrer Maximalleistung (kWp) begrenzt/abgeregelt werden.",
+                    "label": "Verbrauchsabhängige Abregelung",
+                    "name": "deratingLimit",
+                    "required": true,
+                    "type": "INTEGER",
+                    "min": 0,
+                    "max": 100,
+                    "stepsize": null,
+                    "pattern": null,
+                    "readOnly": false,
+                    "multiple": false,
+                    "multipleLimit": null,
+                    "groupName": null,
+                    "advanced": false,
+                    "verify": false,
+                    "limitToOptions": false,
+                    "unit": null,
+                    "unitLabel": "%",
+                    "options": []
+                },
+                {
+                    "context": null,
+                    "defaultValue": null,
+                    "description": "Dieser Wert basiert auf den EEG-Fördersätzen der Bundesnetzagentur.",
+                    "label": "Einspeisevergütung",
+                    "name": "priceProfitFeedin",
+                    "required": false,
+                    "type": "DECIMAL",
+                    "min": null,
+                    "max": null,
+                    "stepsize": 0.1,
+                    "pattern": null,
+                    "readOnly": false,
+                    "multiple": false,
+                    "multipleLimit": null,
+                    "groupName": null,
+                    "advanced": false,
+                    "verify": false,
+                    "limitToOptions": false,
+                    "unit": null,
+                    "unitLabel": "¢/kWh",
+                    "options": []
+                },
+                {
+                    "context": "date",
+                    "defaultValue": null,
+                    "description": "Datum der Inbetriebnahme dieser PV-Anlage",
+                    "label": "Datum der Inbetriebnahme",
+                    "name": "dateInstallation",
+                    "required": false,
+                    "type": "TEXT",
+                    "min": null,
+                    "max": null,
+                    "stepsize": null,
+                    "pattern": null,
+                    "readOnly": false,
+                    "multiple": false,
+                    "multipleLimit": null,
+                    "groupName": null,
+                    "advanced": false,
+                    "verify": false,
+                    "limitToOptions": false,
+                    "unit": null,
+                    "unitLabel": null,
+                    "options": []
+                },
+                {
+                    "context": null,
+                    "defaultValue": null,
+                    "description": "Für die Prognose ist es relevant, die Abweichung von der Südausrichtung in Grad anzugeben. Süden sind 0 Grad, Westen sind 90 Grad, Osten sind -90 Grad.",
+                    "label": "Ausrichtung der PV-Anlage",
+                    "name": "degreeDirection",
+                    "required": false,
+                    "type": "INTEGER",
+                    "min": -180,
+                    "max": 180,
+                    "stepsize": null,
+                    "pattern": null,
+                    "readOnly": false,
+                    "multiple": false,
+                    "multipleLimit": null,
+                    "groupName": null,
+                    "advanced": false,
+                    "verify": false,
+                    "limitToOptions": false,
+                    "unit": null,
+                    "unitLabel": "°",
+                    "options": []
+                },
+                {
+                    "context": null,
+                    "defaultValue": null,
+                    "description": "Für die Prognose ist es relevant, die vertikale Neigung in Grad anzugeben.",
+                    "label": "Vertikale Neigung",
+                    "name": "degreeInclination",
+                    "required": false,
+                    "type": "INTEGER",
+                    "min": 0,
+                    "max": 90,
+                    "stepsize": null,
+                    "pattern": null,
+                    "readOnly": false,
+                    "multiple": false,
+                    "multipleLimit": null,
+                    "groupName": null,
+                    "advanced": false,
+                    "verify": false,
+                    "limitToOptions": false,
+                    "unit": null,
+                    "unitLabel": "°",
+                    "options": []
+                }
+            ]
+        },
+        "statusInfo": {
+            "status": "ONLINE",
+            "statusDetail": "NONE",
+            "description": null
+        },
+        "config": {
+            "priceProfitFeedin": 8.03,
+            "deratingLimit": 100,
+            "powerInstalledPeak": 7200,
+            "dateInstallation": "2021-06-01"
+        },
+        "connectedThings": [],
+        "dimming": {
+            "supported": false,
+            "relevant": false
+        },
+        "connectableWith": [
+            "HOUSEHOLD",
+            "DC_BATTERY",
+            "INVERTER",
+            "INVERTER_REPLACEMENT",
+            "GRID"
+        ],
+        "serialNumber": null,
+        "balancingType": null,
+        "responsibleBridge": null
+    }
+]

@@ -82,9 +82,11 @@ async def test_get_json_success(api: KiwiOsApi, session: FakeSession) -> None:
     response = FakeResponse(json_data={"ok": True})
     session.queue_get(response)
 
-    assert await api.get_rest() == {"ok": True}
+    assert await api.get_edge_energy_overview() == {"ok": True}
 
-    assert session.get_calls == [(URL("http://box.local/rest"), False)]
+    assert session.get_calls == [
+        (URL("http://box.local/rest/hems-configurator/energy-overview"), False)
+    ]
     assert response.released is True
     # The integration intentionally disables content-type checking.
     assert response.json_content_type is None
@@ -100,6 +102,59 @@ async def test_get_things_and_items_paths(api: KiwiOsApi, session: FakeSession) 
     assert [call[0] for call in session.get_calls] == [
         URL("http://box.local/rest/things"),
         URL("http://box.local/rest/items"),
+    ]
+
+
+async def test_gateway_info_of_current_firmware(
+    api: KiwiOsApi, session: FakeSession
+) -> None:
+    """The current firmware answers detection with the info setup needs."""
+    session.queue_get(FakeResponse(json_data={"serialNumber": "EHC01"}))
+
+    assert await api.get_edge_gateway_info_if_present() == {"serialNumber": "EHC01"}
+    assert [call[0] for call in session.get_calls] == [
+        URL("http://box.local/rest/hems-configurator/public/gateway/info")
+    ]
+
+
+async def test_gateway_info_absent_on_older_firmware(
+    api: KiwiOsApi, session: FakeSession
+) -> None:
+    """A 404 means firmware that serves the per-channel API instead."""
+    session.queue_get(FakeResponse(404))
+
+    assert await api.get_edge_gateway_info_if_present() is None
+
+
+async def test_gateway_info_reraises_other_errors(
+    api: KiwiOsApi, session: FakeSession
+) -> None:
+    """Errors other than a 404 are not mistaken for another API."""
+    session.queue_get(FakeResponse(500))
+
+    with pytest.raises(aiohttp.ClientResponseError) as exc_info:
+        await api.get_edge_gateway_info_if_present()
+
+    assert exc_info.value.status == 500
+
+
+async def test_edge_paths(api: KiwiOsApi, session: FakeSession) -> None:
+    """Every KiwiOS Edge endpoint is requested below its own prefix."""
+    for payload in ([], {}, [], [], []):
+        session.queue_get(FakeResponse(json_data=payload))
+
+    assert await api.get_edge_things() == []
+    assert await api.get_edge_gateway_info() == {}
+    assert await api.get_edge_energy_overview() == []
+    assert await api.get_edge_power_indicators() == []
+    assert await api.get_edge_pv_plants() == []
+
+    assert [call[0] for call in session.get_calls] == [
+        URL("http://box.local/rest/hems-configurator/things"),
+        URL("http://box.local/rest/hems-configurator/public/gateway/info"),
+        URL("http://box.local/rest/hems-configurator/energy-overview"),
+        URL("http://box.local/rest/hems-configurator/power-indicator"),
+        URL("http://box.local/rest/hems-configurator/pv-plants"),
     ]
 
 
@@ -138,7 +193,7 @@ async def test_get_retries_after_logon_redirect(
     session.queue_post(login)
     session.queue_get(retried)
 
-    assert await api.get_rest() == {"retried": True}
+    assert await api.get_edge_things() == {"retried": True}
     assert redirect.released is True
     assert retried.released is True
 

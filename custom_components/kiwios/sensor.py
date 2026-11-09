@@ -10,8 +10,11 @@ from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
 if TYPE_CHECKING:
-    from .__init__ import KiwiOsConfigEntry, KiwiOsDataUpdateCoordinator
-    from .kiwi_os_parser import KiwiOsParser
+    from .__init__ import (
+        KiwiOsAnyParser,
+        KiwiOsConfigEntry,
+        KiwiOsDataUpdateCoordinator,
+    )
 
 
 async def async_setup_entry(
@@ -20,7 +23,7 @@ async def async_setup_entry(
     async_add_entities: AddConfigEntryEntitiesCallback,
 ) -> None:
     """Set up the sensor platform from a config entry."""
-    parser: KiwiOsParser = entry.runtime_data.parser
+    parser: KiwiOsAnyParser = entry.runtime_data.parser
     async_add_entities(parser.get_entities())
 
 

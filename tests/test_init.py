@@ -14,6 +14,8 @@ from yarl import URL
 from homeassistant.config_entries import ConfigEntryState
 from homeassistant.const import CONF_PASSWORD, CONF_URL, STATE_UNAVAILABLE
 from homeassistant.core import HomeAssistant
+from homeassistant.helpers import entity_registry as er
+from homeassistant.helpers.entity_registry import RegistryEntryDisabler
 from homeassistant.setup import async_setup_component
 
 from custom_components.ampere_iq_smartbox_homeassistant import (
@@ -97,11 +99,47 @@ async def test_setup_entry(
     assert len(entities) == 161
     # 99 value sensors and 62 embedded timestamp sensors.
     assert len(data.parser._value_sensors) == 99
-    assert len(hass.states.async_entity_ids("sensor")) == 161
+    # Timestamp sensors are registered but hidden, so only the value sensors
+    # have states.
+    assert len(hass.states.async_entity_ids("sensor")) == 99
 
     # The initial fetch uses the coordinator's update method.
     assert api["get_things"].await_count == 1
     assert api["get_items"].await_count == 2
+
+
+async def test_setup_entry_disables_timestamp_sensors(
+    hass: HomeAssistant,
+    session: FakeSession,
+    api: dict[str, Any],
+) -> None:
+    """Timestamp sensors are registered, but only value sensors are enabled."""
+    entry = make_entry()
+    entry.add_to_hass(hass)
+
+    assert await hass.config_entries.async_setup(entry.entry_id) is True
+    await hass.async_block_till_done()
+
+    registry = er.async_get(hass)
+    registered = er.async_entries_for_config_entry(registry, entry.entry_id)
+    assert len(registered) == 161
+
+    timestamp_entries = [
+        item for item in registered if item.unique_id.endswith("_timestamp")
+    ]
+    value_entries = [
+        item for item in registered if not item.unique_id.endswith("_timestamp")
+    ]
+    assert len(timestamp_entries) == 62
+    assert len(value_entries) == 99
+
+    for item in timestamp_entries:
+        assert item.disabled_by is RegistryEntryDisabler.INTEGRATION
+        assert hass.states.get(item.entity_id) is None
+
+    for item in value_entries:
+        assert item.disabled_by is None
+        assert hass.states.get(item.entity_id) is not None
 
 
 async def test_setup_entry_session_options(

@@ -1,4 +1,4 @@
-"""The Ampere.IQ integration."""
+"""The KiwiOS integration."""
 
 from __future__ import annotations
 
@@ -36,7 +36,7 @@ type KiwiOsDataUpdateCoordinator = DataUpdateCoordinator[KiwiOsApiItems]
 
 @dataclass
 class KiwiOsData:
-    """Data for the Ampere.IQ integration."""
+    """Data for the KiwiOS integration."""
 
     coordinator: KiwiOsDataUpdateCoordinator
     api: KiwiOsApi
@@ -81,7 +81,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: KiwiOsConfigEntry) -> bo
         hass,
         _LOGGER,
         config_entry=entry,
-        name="ampereiq",
+        name="kiwios",
         update_method=async_update_data,
         update_interval=timedelta(seconds=UPDATE_INTERVAL),
         request_refresh_debouncer=Debouncer(
@@ -100,7 +100,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: KiwiOsConfigEntry) -> bo
     # The first refresh initializes the coordinator before entities are added.
     await coordinator.async_refresh()
     if not coordinator.last_update_success:
-        _LOGGER.error("Failed to fetch initial data from AmpereIQ")
+        _LOGGER.error("Failed to fetch initial data from KiwiOS")
         return False
 
     entry.runtime_data = KiwiOsData(coordinator=coordinator, api=api, parser=parser)

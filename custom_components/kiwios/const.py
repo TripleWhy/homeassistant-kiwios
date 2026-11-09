@@ -1,8 +1,8 @@
-"""Constants for the Ampere.IQ integration."""
+"""Constants for the KiwiOS integration."""
 
 import aiohttp
 
-DOMAIN = "ampere_iq_smartbox_homeassistant"
+DOMAIN = "kiwios"
 
 # Cookie the device uses to keep an authenticated session.
 CONF_KIWISESSIONID = "kiwisessionid"

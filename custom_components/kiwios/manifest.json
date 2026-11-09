@@ -1,11 +1,12 @@
 {
+  "domain": "kiwios",
+  "name": "KiwiOS",
   "codeowners": ["@TripleWhy"],
   "config_flow": true,
   "dependencies": [],
   "documentation": "https://github.com/TripleWhy/ampere_iq_smartbox_homeassistant",
-  "domain": "ampere_iq_smartbox_homeassistant",
+  "integration_type": "hub",
   "iot_class": "local_polling",
-  "name": "Ampere.IQ SmartBox Home Assistant",
   "requirements": [],
-  "version": "1.0.0"
+  "version": "2.0.0"
 }

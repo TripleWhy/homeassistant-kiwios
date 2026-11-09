@@ -18,15 +18,15 @@ from homeassistant.helpers import entity_registry as er
 from homeassistant.helpers.entity_registry import RegistryEntryDisabler
 from homeassistant.setup import async_setup_component
 
-from custom_components.ampere_iq_smartbox_homeassistant import (
+from custom_components.kiwios import (
     _PLATFORMS,
     REQUEST_REFRESH_DELAY,
     UPDATE_INTERVAL,
     KiwiOsData,
     async_unload_entry,
 )
-from custom_components.ampere_iq_smartbox_homeassistant.const import DOMAIN
-from custom_components.ampere_iq_smartbox_homeassistant.kiwi_os_api import KiwiOsApi
+from custom_components.kiwios.const import DOMAIN
+from custom_components.kiwios.kiwi_os_api import KiwiOsApi
 
 from .fakes import FakeSession
 
@@ -41,7 +41,7 @@ async def session(monkeypatch: pytest.MonkeyPatch) -> FakeSession:
     """Replace the aiohttp session with a fake one."""
     fake_session = FakeSession()
     monkeypatch.setattr(
-        "custom_components.ampere_iq_smartbox_homeassistant.aiohttp_client."
+        "custom_components.kiwios.aiohttp_client."
         "async_create_clientsession",
         lambda *args, **kwargs: fake_session,
     )
@@ -156,7 +156,7 @@ async def test_setup_entry_session_options(
         return session
 
     monkeypatch.setattr(
-        "custom_components.ampere_iq_smartbox_homeassistant.aiohttp_client."
+        "custom_components.kiwios.aiohttp_client."
         "async_create_clientsession",
         create_session,
     )

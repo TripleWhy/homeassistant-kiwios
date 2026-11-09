@@ -5,24 +5,24 @@
             "statusDetail": "NONE"
         },
         "editable": true,
-        "label": "AMPERE.StoragePro Meter A (HSR2103J2344E27920)",
-        "bridgeUID": "sajhybrid:hybrid:e4ea3ad870f0",
+        "label": "AMPERE.StoragePro Meter A (HSR0000000000000000)",
+        "bridgeUID": "sajhybrid:hybrid:00000000000a",
         "configuration": {},
         "properties": {
             "modelId": "94",
             "displayName": "AMPERE.StoragePro",
             "controlSWVersionHost": "2.066",
             "controlSWVersionSlave": "UNDEF",
-            "uuid": "7163ef55-f6f3-4a0a-a87d-62ae611ab091",
+            "uuid": "00000000-0000-4000-8000-000000000001",
             "bindingVersion": "1.150.1",
             "vendor": "AMPERE",
-            "pcNumber": "1020092500EN023354",
-            "generatedLabel": "AMPERE.StoragePro Meter A (HSR2103J2344E27920)",
+            "pcNumber": "0000000000EN000000",
+            "generatedLabel": "AMPERE.StoragePro Meter A (HSR0000000000000000)",
             "kig.meta.uiCategory": "POWER_METERS",
             "firmwareVersion": "",
-            "identifier": "94-HSR2103J2344E27920",
+            "identifier": "94-HSR0000000000000000",
             "ratedPower": "10000 W",
-            "serialNumber": "HSR2103J2344E27920",
+            "serialNumber": "HSR0000000000000000",
             "startAddress": "41020",
             "controlHWVersion": "1.100",
             "kig.meta.deviceClass": "com.kiwigrid.devices.powermeter.PowerMeter",
@@ -36,14 +36,14 @@
             "directionMetering": "BIDIRECTIONAL",
             "maxPower": "10000 W"
         },
-        "UID": "sajhybrid:powermeter:94-HSR2103J2344E27920",
+        "UID": "sajhybrid:powermeter:94-HSR0000000000000000",
         "thingTypeUID": "sajhybrid:powermeter",
         "channels": [
             {
                 "linkedItems": [
-                    "sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_totalImport"
+                    "sajhybrid_powermeter_94_HSR0000000000000000_powermeter_totalImport"
                 ],
-                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:powermeter#totalImport",
+                "uid": "sajhybrid:powermeter:94-HSR0000000000000000:powermeter#totalImport",
                 "id": "powermeter#totalImport",
                 "channelTypeUID": "sajhybrid:roEnergy",
                 "itemType": "Number:Energy",
@@ -58,9 +58,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_powermeter_94_HSR2103J2344E27920_harmonized_power_in"
+                    "sajhybrid_powermeter_94_HSR0000000000000000_harmonized_power_in"
                 ],
-                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:harmonized#power_in",
+                "uid": "sajhybrid:powermeter:94-HSR0000000000000000:harmonized#power_in",
                 "id": "harmonized#power_in",
                 "channelTypeUID": "sajhybrid:harmonized",
                 "itemType": "String",
@@ -76,9 +76,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_powermeter_94_HSR2103J2344E27920_harmonized_work_in"
+                    "sajhybrid_powermeter_94_HSR0000000000000000_harmonized_work_in"
                 ],
-                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:harmonized#work_in",
+                "uid": "sajhybrid:powermeter:94-HSR0000000000000000:harmonized#work_in",
                 "id": "harmonized#work_in",
                 "channelTypeUID": "sajhybrid:harmonized",
                 "itemType": "String",
@@ -93,9 +93,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_powermeter_94_HSR2103J2344E27920_harmonized_power_out"
+                    "sajhybrid_powermeter_94_HSR0000000000000000_harmonized_power_out"
                 ],
-                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:harmonized#power_out",
+                "uid": "sajhybrid:powermeter:94-HSR0000000000000000:harmonized#power_out",
                 "id": "harmonized#power_out",
                 "channelTypeUID": "sajhybrid:harmonized",
                 "itemType": "String",
@@ -111,9 +111,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_totalExport"
+                    "sajhybrid_powermeter_94_HSR0000000000000000_powermeter_totalExport"
                 ],
-                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:powermeter#totalExport",
+                "uid": "sajhybrid:powermeter:94-HSR0000000000000000:powermeter#totalExport",
                 "id": "powermeter#totalExport",
                 "channelTypeUID": "sajhybrid:roEnergy",
                 "itemType": "Number:Energy",
@@ -128,9 +128,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_powermeter_94_HSR2103J2344E27920_harmonized_work_out"
+                    "sajhybrid_powermeter_94_HSR0000000000000000_harmonized_work_out"
                 ],
-                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:harmonized#work_out",
+                "uid": "sajhybrid:powermeter:94-HSR0000000000000000:harmonized#work_out",
                 "id": "harmonized#work_out",
                 "channelTypeUID": "sajhybrid:harmonized",
                 "itemType": "String",
@@ -145,11 +145,11 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_powermeter_94_HSR2103J2344E27920_metering_getProduction_P_active",
-                    "sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_realPower",
-                    "sajhybrid_powermeter_94_HSR2103J2344E27920_metering_getConsumption_P_active"
+                    "sajhybrid_powermeter_94_HSR0000000000000000_metering_getProduction_P_active",
+                    "sajhybrid_powermeter_94_HSR0000000000000000_powermeter_realPower",
+                    "sajhybrid_powermeter_94_HSR0000000000000000_metering_getConsumption_P_active"
                 ],
-                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:powermeter#realPower",
+                "uid": "sajhybrid:powermeter:94-HSR0000000000000000:powermeter#realPower",
                 "id": "powermeter#realPower",
                 "channelTypeUID": "sajhybrid:roPower",
                 "itemType": "Number:Power",
@@ -163,9 +163,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_real_power_1"
+                    "sajhybrid_powermeter_94_HSR0000000000000000_powermeter_real_power_1"
                 ],
-                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:powermeter#real_power_1",
+                "uid": "sajhybrid:powermeter:94-HSR0000000000000000:powermeter#real_power_1",
                 "id": "powermeter#real_power_1",
                 "channelTypeUID": "sajhybrid:roPower",
                 "itemType": "Number:Power",
@@ -179,9 +179,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_real_power_3"
+                    "sajhybrid_powermeter_94_HSR0000000000000000_powermeter_real_power_3"
                 ],
-                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:powermeter#real_power_3",
+                "uid": "sajhybrid:powermeter:94-HSR0000000000000000:powermeter#real_power_3",
                 "id": "powermeter#real_power_3",
                 "channelTypeUID": "sajhybrid:roPower",
                 "itemType": "Number:Power",
@@ -195,9 +195,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_powermeter_94_HSR2103J2344E27920_powermeter_real_power_2"
+                    "sajhybrid_powermeter_94_HSR0000000000000000_powermeter_real_power_2"
                 ],
-                "uid": "sajhybrid:powermeter:94-HSR2103J2344E27920:powermeter#real_power_2",
+                "uid": "sajhybrid:powermeter:94-HSR0000000000000000:powermeter#real_power_2",
                 "id": "powermeter#real_power_2",
                 "channelTypeUID": "sajhybrid:roPower",
                 "itemType": "Number:Power",
@@ -217,24 +217,24 @@
             "statusDetail": "NONE"
         },
         "editable": true,
-        "label": "AMPERE.StoragePro Inverter (HSR2103J2344E27920)",
-        "bridgeUID": "sajhybrid:hybrid:e4ea3ad870f0",
+        "label": "AMPERE.StoragePro Inverter (HSR0000000000000000)",
+        "bridgeUID": "sajhybrid:hybrid:00000000000a",
         "configuration": {},
         "properties": {
             "modelId": "94",
             "displayName": "AMPERE.StoragePro",
             "controlSWVersionHost": "2.066",
             "controlSWVersionSlave": "UNDEF",
-            "uuid": "94eeac47-9c48-4dca-816d-e913ff22fb86",
+            "uuid": "00000000-0000-4000-8000-000000000002",
             "bindingVersion": "1.150.1",
             "vendor": "AMPERE",
-            "pcNumber": "1020092500EN023354",
-            "generatedLabel": "AMPERE.StoragePro Inverter (HSR2103J2344E27920)",
+            "pcNumber": "0000000000EN000000",
+            "generatedLabel": "AMPERE.StoragePro Inverter (HSR0000000000000000)",
             "kig.meta.uiCategory": "INVERTERS",
             "firmwareVersion": "",
             "ratedPower": "10000 W",
-            "identifier": "94-HSR2103J2344E27920",
-            "serialNumber": "HSR2103J2344E27920",
+            "identifier": "94-HSR0000000000000000",
+            "serialNumber": "HSR0000000000000000",
             "controlHWVersion": "1.100",
             "kig.meta.deviceClass": "com.kiwigrid.devices.inverter.HybridInverter",
             "modelName": "HS2",
@@ -246,14 +246,14 @@
             "displayHWVersion": "1.100",
             "maxPower": "10000 W"
         },
-        "UID": "sajhybrid:inverter:94-HSR2103J2344E27920",
+        "UID": "sajhybrid:inverter:94-HSR0000000000000000",
         "thingTypeUID": "sajhybrid:inverter",
         "channels": [
             {
                 "linkedItems": [
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_work_out"
+                    "sajhybrid_inverter_94_HSR0000000000000000_harmonized_work_out"
                 ],
-                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:harmonized#work_out",
+                "uid": "sajhybrid:inverter:94-HSR0000000000000000:harmonized#work_out",
                 "id": "harmonized#work_out",
                 "channelTypeUID": "sajhybrid:harmonized",
                 "itemType": "String",
@@ -268,9 +268,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_activePower"
+                    "sajhybrid_inverter_94_HSR0000000000000000_inverter_activePower"
                 ],
-                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:inverter#activePower",
+                "uid": "sajhybrid:inverter:94-HSR0000000000000000:inverter#activePower",
                 "id": "inverter#activePower",
                 "channelTypeUID": "sajhybrid:roPower",
                 "itemType": "Number:Power",
@@ -284,9 +284,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_pvEnergy"
+                    "sajhybrid_inverter_94_HSR0000000000000000_inverter_pvEnergy"
                 ],
-                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:inverter#pvEnergy",
+                "uid": "sajhybrid:inverter:94-HSR0000000000000000:inverter#pvEnergy",
                 "id": "inverter#pvEnergy",
                 "channelTypeUID": "sajhybrid:roEnergy",
                 "itemType": "Number:Energy",
@@ -300,9 +300,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_mppt_dc_work_total_extrapolated"
+                    "sajhybrid_inverter_94_HSR0000000000000000_harmonized_mppt_dc_work_total_extrapolated"
                 ],
-                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:harmonized#mppt_dc_work_total_extrapolated",
+                "uid": "sajhybrid:inverter:94-HSR0000000000000000:harmonized#mppt_dc_work_total_extrapolated",
                 "id": "harmonized#mppt_dc_work_total_extrapolated",
                 "channelTypeUID": "sajhybrid:roEnergy",
                 "itemType": "Number:Energy",
@@ -316,9 +316,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_activePowerRaw"
+                    "sajhybrid_inverter_94_HSR0000000000000000_inverter_activePowerRaw"
                 ],
-                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:inverter#activePowerRaw",
+                "uid": "sajhybrid:inverter:94-HSR0000000000000000:inverter#activePowerRaw",
                 "id": "inverter#activePowerRaw",
                 "channelTypeUID": "sajhybrid:roPower",
                 "itemType": "Number:Power",
@@ -332,9 +332,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_power_in"
+                    "sajhybrid_inverter_94_HSR0000000000000000_harmonized_power_in"
                 ],
-                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:harmonized#power_in",
+                "uid": "sajhybrid:inverter:94-HSR0000000000000000:harmonized#power_in",
                 "id": "harmonized#power_in",
                 "channelTypeUID": "sajhybrid:harmonized",
                 "itemType": "String",
@@ -350,9 +350,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_energyOut"
+                    "sajhybrid_inverter_94_HSR0000000000000000_inverter_energyOut"
                 ],
-                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:inverter#energyOut",
+                "uid": "sajhybrid:inverter:94-HSR0000000000000000:inverter#energyOut",
                 "id": "inverter#energyOut",
                 "channelTypeUID": "sajhybrid:roEnergy",
                 "itemType": "Number:Energy",
@@ -367,11 +367,11 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_pvPowerMPPT",
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_metering_getProduction_P_active",
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_pv_power_production_measurable_pvPowerProduction_P_pv"
+                    "sajhybrid_inverter_94_HSR0000000000000000_inverter_pvPowerMPPT",
+                    "sajhybrid_inverter_94_HSR0000000000000000_metering_getProduction_P_active",
+                    "sajhybrid_inverter_94_HSR0000000000000000_pv_power_production_measurable_pvPowerProduction_P_pv"
                 ],
-                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:inverter#pvPowerMPPT",
+                "uid": "sajhybrid:inverter:94-HSR0000000000000000:inverter#pvPowerMPPT",
                 "id": "inverter#pvPowerMPPT",
                 "channelTypeUID": "sajhybrid:roPower",
                 "itemType": "Number:Power",
@@ -385,9 +385,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_work_in"
+                    "sajhybrid_inverter_94_HSR0000000000000000_harmonized_work_in"
                 ],
-                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:harmonized#work_in",
+                "uid": "sajhybrid:inverter:94-HSR0000000000000000:harmonized#work_in",
                 "id": "harmonized#work_in",
                 "channelTypeUID": "sajhybrid:harmonized",
                 "itemType": "String",
@@ -402,9 +402,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_mppt_dc_work"
+                    "sajhybrid_inverter_94_HSR0000000000000000_harmonized_mppt_dc_work"
                 ],
-                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:harmonized#mppt_dc_work",
+                "uid": "sajhybrid:inverter:94-HSR0000000000000000:harmonized#mppt_dc_work",
                 "id": "harmonized#mppt_dc_work",
                 "channelTypeUID": "sajhybrid:harmonized",
                 "itemType": "String",
@@ -419,9 +419,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_power_out"
+                    "sajhybrid_inverter_94_HSR0000000000000000_harmonized_power_out"
                 ],
-                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:harmonized#power_out",
+                "uid": "sajhybrid:inverter:94-HSR0000000000000000:harmonized#power_out",
                 "id": "harmonized#power_out",
                 "channelTypeUID": "sajhybrid:harmonized",
                 "itemType": "String",
@@ -437,9 +437,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_pvPower"
+                    "sajhybrid_inverter_94_HSR0000000000000000_inverter_pvPower"
                 ],
-                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:inverter#pvPower",
+                "uid": "sajhybrid:inverter:94-HSR0000000000000000:inverter#pvPower",
                 "id": "inverter#pvPower",
                 "channelTypeUID": "sajhybrid:roPower",
                 "itemType": "Number:Power",
@@ -453,9 +453,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_apparentPower"
+                    "sajhybrid_inverter_94_HSR0000000000000000_inverter_apparentPower"
                 ],
-                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:inverter#apparentPower",
+                "uid": "sajhybrid:inverter:94-HSR0000000000000000:inverter#apparentPower",
                 "id": "inverter#apparentPower",
                 "channelTypeUID": "sajhybrid:roPower",
                 "itemType": "Number:Power",
@@ -469,9 +469,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_controlling_powerAcOutLimit"
+                    "sajhybrid_inverter_94_HSR0000000000000000_controlling_powerAcOutLimit"
                 ],
-                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:controlling#powerAcOutLimit",
+                "uid": "sajhybrid:inverter:94-HSR0000000000000000:controlling#powerAcOutLimit",
                 "id": "controlling#powerAcOutLimit",
                 "channelTypeUID": "sajhybrid:roPower",
                 "itemType": "Number:Power",
@@ -486,9 +486,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_selfConsumptionPower"
+                    "sajhybrid_inverter_94_HSR0000000000000000_inverter_selfConsumptionPower"
                 ],
-                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:inverter#selfConsumptionPower",
+                "uid": "sajhybrid:inverter:94-HSR0000000000000000:inverter#selfConsumptionPower",
                 "id": "inverter#selfConsumptionPower",
                 "channelTypeUID": "sajhybrid:roPower",
                 "itemType": "Number:Power",
@@ -502,9 +502,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_inverter_energyIn"
+                    "sajhybrid_inverter_94_HSR0000000000000000_inverter_energyIn"
                 ],
-                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:inverter#energyIn",
+                "uid": "sajhybrid:inverter:94-HSR0000000000000000:inverter#energyIn",
                 "id": "inverter#energyIn",
                 "channelTypeUID": "sajhybrid:roEnergy",
                 "itemType": "Number:Energy",
@@ -519,9 +519,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_inverter_94_HSR2103J2344E27920_harmonized_mppt_dc_power"
+                    "sajhybrid_inverter_94_HSR0000000000000000_harmonized_mppt_dc_power"
                 ],
-                "uid": "sajhybrid:inverter:94-HSR2103J2344E27920:harmonized#mppt_dc_power",
+                "uid": "sajhybrid:inverter:94-HSR0000000000000000:harmonized#mppt_dc_power",
                 "id": "harmonized#mppt_dc_power",
                 "channelTypeUID": "sajhybrid:harmonized",
                 "itemType": "String",
@@ -544,27 +544,27 @@
         "editable": true,
         "label": "Location",
         "configuration": {
-            "city": "Unterschleißheim",
+            "city": "Musterstadt",
             "countryCode": "DE",
-            "graph": "{\"links\":[{\"id\":\"pvplant:standard:0f7c4ded025b~sajhybrid:battery:94-HSR2103J2344E27920\",\"source\":\"pvplant:standard:0f7c4ded025b\",\"target\":\"sajhybrid:battery:94-HSR2103J2344E27920\"},{\"id\":\"sajhybrid:battery:94-HSR2103J2344E27920~sajhybrid:inverter:94-HSR2103J2344E27920\",\"source\":\"sajhybrid:battery:94-HSR2103J2344E27920\",\"target\":\"sajhybrid:inverter:94-HSR2103J2344E27920\"},{\"id\":\"sajhybrid:powermeter:94-HSR2103J2344E27920~household\",\"source\":\"sajhybrid:powermeter:94-HSR2103J2344E27920\",\"target\":\"household\"},{\"id\":\"sajhybrid:powermeter:94-HSR2103J2344E27920~grid\",\"source\":\"sajhybrid:powermeter:94-HSR2103J2344E27920\",\"target\":\"grid\"},{\"id\":\"household~sajhybrid:inverter:94-HSR2103J2344E27920\",\"source\":\"household\",\"target\":\"sajhybrid:inverter:94-HSR2103J2344E27920\"}],\"nodes\":[{\"id\":\"pvplant:standard:0f7c4ded025b\",\"uuid\":\"9c25a3bb-4a71-471c-b9b0-c79d9d910ce5\",\"type\":\"PV_PLANT\",\"label\":\"PV Anlage 1\",\"additionalProperties\":{}},{\"id\":\"sajhybrid:battery:94-HSR2103J2344E27920\",\"uuid\":\"24464503-2d2e-4612-bbc3-c86e6b637b64\",\"type\":\"DC_BATTERY\",\"label\":\"AMPERE.StoragePro Battery (HSR2103J2344E27920)\",\"additionalProperties\":{}},{\"id\":\"sajhybrid:powermeter:94-HSR2103J2344E27920\",\"uuid\":\"7163ef55-f6f3-4a0a-a87d-62ae611ab091\",\"type\":\"BIDIRECTIONAL_ENERGY_METER\",\"label\":\"AMPERE.StoragePro Meter A (HSR2103J2344E27920)\",\"additionalProperties\":{}},{\"id\":\"grid\",\"uuid\":null,\"type\":\"GRID\",\"label\":\"Stromnetz\",\"additionalProperties\":{}},{\"id\":\"household\",\"uuid\":null,\"type\":\"HOUSEHOLD\",\"label\":\"Haushalt\",\"additionalProperties\":{}},{\"id\":\"sajhybrid:inverter:94-HSR2103J2344E27920\",\"uuid\":\"94eeac47-9c48-4dca-816d-e913ff22fb86\",\"type\":\"INVERTER\",\"label\":\"AMPERE.StoragePro Inverter (HSR2103J2344E27920)\",\"additionalProperties\":{}}]}",
+            "graph": "{\"links\":[{\"id\":\"pvplant:standard:00000000000c~sajhybrid:battery:94-HSR0000000000000000\",\"source\":\"pvplant:standard:00000000000c\",\"target\":\"sajhybrid:battery:94-HSR0000000000000000\"},{\"id\":\"sajhybrid:battery:94-HSR0000000000000000~sajhybrid:inverter:94-HSR0000000000000000\",\"source\":\"sajhybrid:battery:94-HSR0000000000000000\",\"target\":\"sajhybrid:inverter:94-HSR0000000000000000\"},{\"id\":\"sajhybrid:powermeter:94-HSR0000000000000000~household\",\"source\":\"sajhybrid:powermeter:94-HSR0000000000000000\",\"target\":\"household\"},{\"id\":\"sajhybrid:powermeter:94-HSR0000000000000000~grid\",\"source\":\"sajhybrid:powermeter:94-HSR0000000000000000\",\"target\":\"grid\"},{\"id\":\"household~sajhybrid:inverter:94-HSR0000000000000000\",\"source\":\"household\",\"target\":\"sajhybrid:inverter:94-HSR0000000000000000\"}],\"nodes\":[{\"id\":\"pvplant:standard:00000000000c\",\"uuid\":\"00000000-0000-4000-8000-000000000006\",\"type\":\"PV_PLANT\",\"label\":\"PV Anlage 1\",\"additionalProperties\":{}},{\"id\":\"sajhybrid:battery:94-HSR0000000000000000\",\"uuid\":\"00000000-0000-4000-8000-000000000004\",\"type\":\"DC_BATTERY\",\"label\":\"AMPERE.StoragePro Battery (HSR0000000000000000)\",\"additionalProperties\":{}},{\"id\":\"sajhybrid:powermeter:94-HSR0000000000000000\",\"uuid\":\"00000000-0000-4000-8000-000000000001\",\"type\":\"BIDIRECTIONAL_ENERGY_METER\",\"label\":\"AMPERE.StoragePro Meter A (HSR0000000000000000)\",\"additionalProperties\":{}},{\"id\":\"grid\",\"uuid\":null,\"type\":\"GRID\",\"label\":\"Stromnetz\",\"additionalProperties\":{}},{\"id\":\"household\",\"uuid\":null,\"type\":\"HOUSEHOLD\",\"label\":\"Haushalt\",\"additionalProperties\":{}},{\"id\":\"sajhybrid:inverter:94-HSR0000000000000000\",\"uuid\":\"00000000-0000-4000-8000-000000000002\",\"type\":\"INVERTER\",\"label\":\"AMPERE.StoragePro Inverter (HSR0000000000000000)\",\"additionalProperties\":{}}]}",
             "postalCode": "00000"
         },
         "properties": {
             "kig.meta.deviceClassVersion": "5.23.0.0",
             "kig.meta.selfMigrating": "true",
             "kig.meta.deviceClass": "com.kiwigrid.devices.location.Location",
-            "idDevicesMap": "{\n  \"POWERMETER_CONSUMPTION\" : [ \"7163ef55-f6f3-4a0a-a87d-62ae611ab091\" ],\n  \"POWERMETER_PRODUCTION\" : [ \"7163ef55-f6f3-4a0a-a87d-62ae611ab091\" ],\n  \"INNER_BUFFER\" : [ \"24464503-2d2e-4612-bbc3-c86e6b637b64\" ],\n  \"INNER_PRODUCER\" : [ \"9c25a3bb-4a71-471c-b9b0-c79d9d910ce5\" ]\n}",
-            "uuid": "a5658fbf-941e-4aed-bb39-0acd15f0beae",
+            "idDevicesMap": "{\n  \"POWERMETER_CONSUMPTION\" : [ \"00000000-0000-4000-8000-000000000001\" ],\n  \"POWERMETER_PRODUCTION\" : [ \"00000000-0000-4000-8000-000000000001\" ],\n  \"INNER_BUFFER\" : [ \"00000000-0000-4000-8000-000000000004\" ],\n  \"INNER_PRODUCER\" : [ \"00000000-0000-4000-8000-000000000006\" ]\n}",
+            "uuid": "00000000-0000-4000-8000-000000000003",
             "bindingVersion": "3.136.0"
         },
-        "UID": "kiwigrid-location:standard:332de268316e",
+        "UID": "kiwigrid-location:standard:00000000000b",
         "thingTypeUID": "kiwigrid-location:standard",
         "channels": [
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_power_in"
+                    "kiwigrid_location_standard_00000000000b_harmonized_power_in"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_in",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#power_in",
                 "id": "harmonized#power_in",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -580,9 +580,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_power_out"
+                    "kiwigrid_location_standard_00000000000b_harmonized_power_out"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_out",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#power_out",
                 "id": "harmonized#power_out",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -598,9 +598,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_power_out_from_producers"
+                    "kiwigrid_location_standard_00000000000b_harmonized_power_out_from_producers"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_out_from_producers",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#power_out_from_producers",
                 "id": "harmonized#power_out_from_producers",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -616,9 +616,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_power_out_from_storage"
+                    "kiwigrid_location_standard_00000000000b_harmonized_power_out_from_storage"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_out_from_storage",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#power_out_from_storage",
                 "id": "harmonized#power_out_from_storage",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -634,9 +634,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_power_consumed"
+                    "kiwigrid_location_standard_00000000000b_harmonized_power_consumed"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_consumed",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#power_consumed",
                 "id": "harmonized#power_consumed",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -652,9 +652,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_power_consumed_from_grid"
+                    "kiwigrid_location_standard_00000000000b_harmonized_power_consumed_from_grid"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_consumed_from_grid",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#power_consumed_from_grid",
                 "id": "harmonized#power_consumed_from_grid",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -670,9 +670,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_power_consumed_from_producers"
+                    "kiwigrid_location_standard_00000000000b_harmonized_power_consumed_from_producers"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_consumed_from_producers",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#power_consumed_from_producers",
                 "id": "harmonized#power_consumed_from_producers",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -688,9 +688,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_power_consumed_from_storage"
+                    "kiwigrid_location_standard_00000000000b_harmonized_power_consumed_from_storage"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_consumed_from_storage",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#power_consumed_from_storage",
                 "id": "harmonized#power_consumed_from_storage",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -706,9 +706,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_power_produced"
+                    "kiwigrid_location_standard_00000000000b_harmonized_power_produced"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_produced",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#power_produced",
                 "id": "harmonized#power_produced",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -724,9 +724,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_power_released"
+                    "kiwigrid_location_standard_00000000000b_harmonized_power_released"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_released",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#power_released",
                 "id": "harmonized#power_released",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -742,9 +742,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_power_buffered"
+                    "kiwigrid_location_standard_00000000000b_harmonized_power_buffered"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_buffered",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#power_buffered",
                 "id": "harmonized#power_buffered",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -760,9 +760,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_power_buffered_from_grid"
+                    "kiwigrid_location_standard_00000000000b_harmonized_power_buffered_from_grid"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_buffered_from_grid",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#power_buffered_from_grid",
                 "id": "harmonized#power_buffered_from_grid",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -778,9 +778,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_power_buffered_from_producers"
+                    "kiwigrid_location_standard_00000000000b_harmonized_power_buffered_from_producers"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_buffered_from_producers",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#power_buffered_from_producers",
                 "id": "harmonized#power_buffered_from_producers",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -796,9 +796,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_power_self_consumed"
+                    "kiwigrid_location_standard_00000000000b_harmonized_power_self_consumed"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_self_consumed",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#power_self_consumed",
                 "id": "harmonized#power_self_consumed",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -814,9 +814,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_power_self_supplied"
+                    "kiwigrid_location_standard_00000000000b_harmonized_power_self_supplied"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#power_self_supplied",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#power_self_supplied",
                 "id": "harmonized#power_self_supplied",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -832,9 +832,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_in"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_in"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_in",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_in",
                 "id": "harmonized#work_in",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -850,9 +850,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_in_total"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_in_total"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_in_total",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_in_total",
                 "id": "harmonized#work_in_total",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -868,9 +868,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_out"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_out"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_out",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_out",
                 "id": "harmonized#work_out",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -886,9 +886,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_out_total"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_out_total"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_out_total",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_out_total",
                 "id": "harmonized#work_out_total",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -904,9 +904,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_out_from_producers"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_out_from_producers"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_out_from_producers",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_out_from_producers",
                 "id": "harmonized#work_out_from_producers",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -922,9 +922,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_out_from_producers_total"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_out_from_producers_total"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_out_from_producers_total",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_out_from_producers_total",
                 "id": "harmonized#work_out_from_producers_total",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -940,9 +940,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_out_from_storage"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_out_from_storage"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_out_from_storage",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_out_from_storage",
                 "id": "harmonized#work_out_from_storage",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -958,9 +958,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_out_from_storage_total"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_out_from_storage_total"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_out_from_storage_total",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_out_from_storage_total",
                 "id": "harmonized#work_out_from_storage_total",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -976,9 +976,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_consumed"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_consumed"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_consumed",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_consumed",
                 "id": "harmonized#work_consumed",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -994,9 +994,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_total"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_consumed_total"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_consumed_total",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_consumed_total",
                 "id": "harmonized#work_consumed_total",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1012,9 +1012,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_grid"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_consumed_from_grid"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_consumed_from_grid",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_consumed_from_grid",
                 "id": "harmonized#work_consumed_from_grid",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1030,9 +1030,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_grid_total"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_consumed_from_grid_total"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_consumed_from_grid_total",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_consumed_from_grid_total",
                 "id": "harmonized#work_consumed_from_grid_total",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1048,9 +1048,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_producers"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_consumed_from_producers"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_consumed_from_producers",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_consumed_from_producers",
                 "id": "harmonized#work_consumed_from_producers",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1066,9 +1066,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_producers_total"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_consumed_from_producers_total"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_consumed_from_producers_total",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_consumed_from_producers_total",
                 "id": "harmonized#work_consumed_from_producers_total",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1084,9 +1084,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_storage"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_consumed_from_storage"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_consumed_from_storage",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_consumed_from_storage",
                 "id": "harmonized#work_consumed_from_storage",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1102,9 +1102,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_consumed_from_storage_total"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_consumed_from_storage_total"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_consumed_from_storage_total",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_consumed_from_storage_total",
                 "id": "harmonized#work_consumed_from_storage_total",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1120,9 +1120,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_produced"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_produced"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_produced",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_produced",
                 "id": "harmonized#work_produced",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1138,9 +1138,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_produced_total"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_produced_total"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_produced_total",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_produced_total",
                 "id": "harmonized#work_produced_total",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1156,9 +1156,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_released"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_released"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_released",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_released",
                 "id": "harmonized#work_released",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1174,9 +1174,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_released_total"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_released_total"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_released_total",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_released_total",
                 "id": "harmonized#work_released_total",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1192,9 +1192,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_buffered"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_buffered"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_buffered",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_buffered",
                 "id": "harmonized#work_buffered",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1210,9 +1210,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_buffered_total"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_buffered_total"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_buffered_total",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_buffered_total",
                 "id": "harmonized#work_buffered_total",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1228,9 +1228,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_buffered_from_grid"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_buffered_from_grid"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_buffered_from_grid",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_buffered_from_grid",
                 "id": "harmonized#work_buffered_from_grid",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1246,9 +1246,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_buffered_from_grid_total"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_buffered_from_grid_total"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_buffered_from_grid_total",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_buffered_from_grid_total",
                 "id": "harmonized#work_buffered_from_grid_total",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1264,9 +1264,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_buffered_from_producers"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_buffered_from_producers"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_buffered_from_producers",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_buffered_from_producers",
                 "id": "harmonized#work_buffered_from_producers",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1282,9 +1282,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_buffered_from_producers_total"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_buffered_from_producers_total"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_buffered_from_producers_total",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_buffered_from_producers_total",
                 "id": "harmonized#work_buffered_from_producers_total",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1300,9 +1300,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_self_consumed"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_self_consumed"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_self_consumed",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_self_consumed",
                 "id": "harmonized#work_self_consumed",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1318,9 +1318,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_self_consumed_total"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_self_consumed_total"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_self_consumed_total",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_self_consumed_total",
                 "id": "harmonized#work_self_consumed_total",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1336,9 +1336,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_self_supplied"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_self_supplied"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_self_supplied",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_self_supplied",
                 "id": "harmonized#work_self_supplied",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1354,9 +1354,9 @@
             },
             {
                 "linkedItems": [
-                    "kiwigrid_location_standard_332de268316e_harmonized_work_self_supplied_total"
+                    "kiwigrid_location_standard_00000000000b_harmonized_work_self_supplied_total"
                 ],
-                "uid": "kiwigrid-location:standard:332de268316e:harmonized#work_self_supplied_total",
+                "uid": "kiwigrid-location:standard:00000000000b:harmonized#work_self_supplied_total",
                 "id": "harmonized#work_self_supplied_total",
                 "channelTypeUID": "kiwigrid-location:harmonized",
                 "itemType": "String",
@@ -1378,26 +1378,26 @@
             "statusDetail": "NONE"
         },
         "editable": true,
-        "label": "AMPERE.StoragePro Battery (HSR2103J2344E27920)",
-        "bridgeUID": "sajhybrid:hybrid:e4ea3ad870f0",
+        "label": "AMPERE.StoragePro Battery (HSR0000000000000000)",
+        "bridgeUID": "sajhybrid:hybrid:00000000000a",
         "configuration": {},
         "properties": {
             "modelId": "94",
             "displayName": "AMPERE.StoragePro",
             "controlSWVersionHost": "2.066",
             "controlSWVersionSlave": "UNDEF",
-            "uuid": "24464503-2d2e-4612-bbc3-c86e6b637b64",
+            "uuid": "00000000-0000-4000-8000-000000000004",
             "minSoC": "10 %",
             "bindingVersion": "1.150.1",
             "vendor": "AMPERE",
             "batMaxDischargingPower": "9216.0 W",
-            "pcNumber": "1020092500EN023354",
-            "generatedLabel": "AMPERE.StoragePro Battery (HSR2103J2344E27920)",
+            "pcNumber": "0000000000EN000000",
+            "generatedLabel": "AMPERE.StoragePro Battery (HSR0000000000000000)",
             "kig.meta.uiCategory": "STORAGES",
             "firmwareVersion": "",
-            "identifier": "94-HSR2103J2344E27920",
+            "identifier": "94-HSR0000000000000000",
             "ratedPower": "10000 W",
-            "serialNumber": "HSR2103J2344E27920",
+            "serialNumber": "HSR0000000000000000",
             "controlHWVersion": "1.100",
             "kig.meta.deviceClass": "com.kiwigrid.devices.batteryconverter.BatteryConverter",
             "nominalCapacity": "",
@@ -1413,14 +1413,14 @@
             "moduleCount": "3",
             "maxPower": "10000 W"
         },
-        "UID": "sajhybrid:battery:94-HSR2103J2344E27920",
+        "UID": "sajhybrid:battery:94-HSR0000000000000000",
         "thingTypeUID": "sajhybrid:battery",
         "channels": [
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_3_voltage"
+                    "sajhybrid_battery_94_HSR0000000000000000_battery_bms_3_voltage"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#bms_3_voltage",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:battery#bms_3_voltage",
                 "id": "battery#bms_3_voltage",
                 "channelTypeUID": "sajhybrid:roVoltage",
                 "itemType": "Number:ElectricPotential",
@@ -1434,9 +1434,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_4_voltage"
+                    "sajhybrid_battery_94_HSR0000000000000000_battery_bms_4_voltage"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#bms_4_voltage",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:battery#bms_4_voltage",
                 "id": "battery#bms_4_voltage",
                 "channelTypeUID": "sajhybrid:roVoltage",
                 "itemType": "Number:ElectricPotential",
@@ -1450,9 +1450,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_mode"
+                    "sajhybrid_battery_94_HSR0000000000000000_battery_mode"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#mode",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:battery#mode",
                 "id": "battery#mode",
                 "channelTypeUID": "sajhybrid:roNumber",
                 "itemType": "Number",
@@ -1466,9 +1466,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_harmonized_work_out_total_extrapolated"
+                    "sajhybrid_battery_94_HSR0000000000000000_harmonized_work_out_total_extrapolated"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:harmonized#work_out_total_extrapolated",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:harmonized#work_out_total_extrapolated",
                 "id": "harmonized#work_out_total_extrapolated",
                 "channelTypeUID": "sajhybrid:roEnergy",
                 "itemType": "Number:Energy",
@@ -1483,9 +1483,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_totalDischargeEnergy"
+                    "sajhybrid_battery_94_HSR0000000000000000_battery_totalDischargeEnergy"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#totalDischargeEnergy",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:battery#totalDischargeEnergy",
                 "id": "battery#totalDischargeEnergy",
                 "channelTypeUID": "sajhybrid:roEnergy",
                 "itemType": "Number:Energy",
@@ -1499,9 +1499,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_temperature"
+                    "sajhybrid_battery_94_HSR0000000000000000_battery_temperature"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#temperature",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:battery#temperature",
                 "id": "battery#temperature",
                 "channelTypeUID": "sajhybrid:roTemperature",
                 "itemType": "Number:Temperature",
@@ -1516,10 +1516,10 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_has_max_power_production_maxPowerProduction_P_production_max",
-                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_maxDischargePower"
+                    "sajhybrid_battery_94_HSR0000000000000000_has_max_power_production_maxPowerProduction_P_production_max",
+                    "sajhybrid_battery_94_HSR0000000000000000_battery_maxDischargePower"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#maxDischargePower",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:battery#maxDischargePower",
                 "id": "battery#maxDischargePower",
                 "channelTypeUID": "sajhybrid:roPower",
                 "itemType": "Number:Power",
@@ -1533,10 +1533,10 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_maxChargePower",
-                    "sajhybrid_battery_94_HSR2103J2344E27920_has_max_power_consumption_maxPowerConsumption_P_consumption_max"
+                    "sajhybrid_battery_94_HSR0000000000000000_battery_maxChargePower",
+                    "sajhybrid_battery_94_HSR0000000000000000_has_max_power_consumption_maxPowerConsumption_P_consumption_max"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#maxChargePower",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:battery#maxChargePower",
                 "id": "battery#maxChargePower",
                 "channelTypeUID": "sajhybrid:roPower",
                 "itemType": "Number:Power",
@@ -1550,9 +1550,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_2_voltage"
+                    "sajhybrid_battery_94_HSR0000000000000000_battery_bms_2_voltage"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#bms_2_voltage",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:battery#bms_2_voltage",
                 "id": "battery#bms_2_voltage",
                 "channelTypeUID": "sajhybrid:roVoltage",
                 "itemType": "Number:ElectricPotential",
@@ -1566,9 +1566,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_harmonized_work_in"
+                    "sajhybrid_battery_94_HSR0000000000000000_harmonized_work_in"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:harmonized#work_in",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:harmonized#work_in",
                 "id": "harmonized#work_in",
                 "channelTypeUID": "sajhybrid:harmonized",
                 "itemType": "String",
@@ -1583,9 +1583,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_harmonized_work_in_total_extrapolated"
+                    "sajhybrid_battery_94_HSR0000000000000000_harmonized_work_in_total_extrapolated"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:harmonized#work_in_total_extrapolated",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:harmonized#work_in_total_extrapolated",
                 "id": "harmonized#work_in_total_extrapolated",
                 "channelTypeUID": "sajhybrid:roEnergy",
                 "itemType": "Number:Energy",
@@ -1600,9 +1600,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_stateOfCharge"
+                    "sajhybrid_battery_94_HSR0000000000000000_battery_stateOfCharge"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#stateOfCharge",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:battery#stateOfCharge",
                 "id": "battery#stateOfCharge",
                 "channelTypeUID": "sajhybrid:roDimensionless",
                 "itemType": "Number:Dimensionless",
@@ -1617,9 +1617,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_1_voltage"
+                    "sajhybrid_battery_94_HSR0000000000000000_battery_bms_1_voltage"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#bms_1_voltage",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:battery#bms_1_voltage",
                 "id": "battery#bms_1_voltage",
                 "channelTypeUID": "sajhybrid:roVoltage",
                 "itemType": "Number:ElectricPotential",
@@ -1633,9 +1633,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_totalChargeEnergy"
+                    "sajhybrid_battery_94_HSR0000000000000000_battery_totalChargeEnergy"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#totalChargeEnergy",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:battery#totalChargeEnergy",
                 "id": "battery#totalChargeEnergy",
                 "channelTypeUID": "sajhybrid:roEnergy",
                 "itemType": "Number:Energy",
@@ -1649,9 +1649,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_power"
+                    "sajhybrid_battery_94_HSR0000000000000000_battery_power"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#power",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:battery#power",
                 "id": "battery#power",
                 "channelTypeUID": "sajhybrid:roPower",
                 "itemType": "Number:Power",
@@ -1665,9 +1665,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_3_current"
+                    "sajhybrid_battery_94_HSR0000000000000000_battery_bms_3_current"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#bms_3_current",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:battery#bms_3_current",
                 "id": "battery#bms_3_current",
                 "channelTypeUID": "sajhybrid:roCurrent",
                 "itemType": "Number:ElectricCurrent",
@@ -1681,9 +1681,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_4_current"
+                    "sajhybrid_battery_94_HSR0000000000000000_battery_bms_4_current"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#bms_4_current",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:battery#bms_4_current",
                 "id": "battery#bms_4_current",
                 "channelTypeUID": "sajhybrid:roCurrent",
                 "itemType": "Number:ElectricCurrent",
@@ -1697,9 +1697,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_harmonized_power_in"
+                    "sajhybrid_battery_94_HSR0000000000000000_harmonized_power_in"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:harmonized#power_in",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:harmonized#power_in",
                 "id": "harmonized#power_in",
                 "channelTypeUID": "sajhybrid:harmonized",
                 "itemType": "String",
@@ -1715,9 +1715,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_harmonized_power_out"
+                    "sajhybrid_battery_94_HSR0000000000000000_harmonized_power_out"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:harmonized#power_out",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:harmonized#power_out",
                 "id": "harmonized#power_out",
                 "channelTypeUID": "sajhybrid:harmonized",
                 "itemType": "String",
@@ -1733,9 +1733,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_modeConverter"
+                    "sajhybrid_battery_94_HSR0000000000000000_battery_modeConverter"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#modeConverter",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:battery#modeConverter",
                 "id": "battery#modeConverter",
                 "channelTypeUID": "sajhybrid:roString",
                 "itemType": "String",
@@ -1750,11 +1750,11 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_power_production_measurable_powerProduction_P",
-                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_power_calculated",
-                    "sajhybrid_battery_94_HSR2103J2344E27920_power_consumption_measurable_powerConsumption_P"
+                    "sajhybrid_battery_94_HSR0000000000000000_power_production_measurable_powerProduction_P",
+                    "sajhybrid_battery_94_HSR0000000000000000_battery_power_calculated",
+                    "sajhybrid_battery_94_HSR0000000000000000_power_consumption_measurable_powerConsumption_P"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#power_calculated",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:battery#power_calculated",
                 "id": "battery#power_calculated",
                 "channelTypeUID": "sajhybrid:roPower",
                 "itemType": "Number:Power",
@@ -1768,9 +1768,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_1_current"
+                    "sajhybrid_battery_94_HSR0000000000000000_battery_bms_1_current"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#bms_1_current",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:battery#bms_1_current",
                 "id": "battery#bms_1_current",
                 "channelTypeUID": "sajhybrid:roCurrent",
                 "itemType": "Number:ElectricCurrent",
@@ -1784,9 +1784,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_harmonized_work_out"
+                    "sajhybrid_battery_94_HSR0000000000000000_harmonized_work_out"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:harmonized#work_out",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:harmonized#work_out",
                 "id": "harmonized#work_out",
                 "channelTypeUID": "sajhybrid:harmonized",
                 "itemType": "String",
@@ -1801,9 +1801,9 @@
             },
             {
                 "linkedItems": [
-                    "sajhybrid_battery_94_HSR2103J2344E27920_battery_bms_2_current"
+                    "sajhybrid_battery_94_HSR0000000000000000_battery_bms_2_current"
                 ],
-                "uid": "sajhybrid:battery:94-HSR2103J2344E27920:battery#bms_2_current",
+                "uid": "sajhybrid:battery:94-HSR0000000000000000:battery#bms_2_current",
                 "id": "battery#bms_2_current",
                 "channelTypeUID": "sajhybrid:roCurrent",
                 "itemType": "Number:ElectricCurrent",
@@ -1825,30 +1825,30 @@
         "editable": true,
         "label": "AMPERE.StoragePro",
         "configuration": {
-            "host": "192.168.178.44",
+            "host": "192.0.2.44",
             "port": 502,
             "unitId": 1
         },
         "properties": {
             "ratedPower": "10000 W",
-            "serialNumber": "HSR2103J2344E27920",
+            "serialNumber": "HSR0000000000000000",
             "modelId": "94",
             "displayName": "AMPERE.StoragePro",
             "controlSWVersionHost": "2.066",
             "controlHWVersion": "1.100",
             "controlSWVersionSlave": "UNDEF",
-            "uuid": "3836c329-c9ed-460c-aca7-5dbd8e28b620",
+            "uuid": "00000000-0000-4000-8000-000000000005",
             "bindingVersion": "1.150.1",
             "modelName": "HS2",
             "displaySWVersion": "2.532",
             "kig.meta.selfMigrating": "true",
             "vendor": "AMPERE",
-            "pcNumber": "1020092500EN023354",
+            "pcNumber": "0000000000EN000000",
             "displayHWVersion": "1.100",
             "kig.meta.uiCategory": "INVERTERS",
             "maxPower": "10000 W"
         },
-        "UID": "sajhybrid:hybrid:e4ea3ad870f0",
+        "UID": "sajhybrid:hybrid:00000000000a",
         "thingTypeUID": "sajhybrid:hybrid",
         "channels": []
     },
@@ -1863,25 +1863,25 @@
             "priceProfitFeedin": 8.03,
             "deratingLimit": 100,
             "powerInstalledPeak": 7200,
-            "dateInstallation": "2024-10-15"
+            "dateInstallation": "2024-01-01"
         },
         "properties": {
             "kig.meta.balancingtype": "PV_PLANT",
             "kig.meta.deviceClassVersion": "5.23.0.0",
             "kig.meta.selfMigrating": "true",
             "kig.meta.deviceClass": "com.kiwigrid.devices.pvplant.PVPlant",
-            "inverters": "[\"94eeac47-9c48-4dca-816d-e913ff22fb86\"]",
-            "uuid": "9c25a3bb-4a71-471c-b9b0-c79d9d910ce5",
+            "inverters": "[\"00000000-0000-4000-8000-000000000002\"]",
+            "uuid": "00000000-0000-4000-8000-000000000006",
             "bindingVersion": "1.110.0"
         },
-        "UID": "pvplant:standard:0f7c4ded025b",
+        "UID": "pvplant:standard:00000000000c",
         "thingTypeUID": "pvplant:standard",
         "channels": [
             {
                 "linkedItems": [
-                    "pvplant_standard_0f7c4ded025b_harmonized_power_out"
+                    "pvplant_standard_00000000000c_harmonized_power_out"
                 ],
-                "uid": "pvplant:standard:0f7c4ded025b:harmonized#power_out",
+                "uid": "pvplant:standard:00000000000c:harmonized#power_out",
                 "id": "harmonized#power_out",
                 "channelTypeUID": "pvplant:harmonized",
                 "itemType": "String",
@@ -1897,9 +1897,9 @@
             },
             {
                 "linkedItems": [
-                    "pvplant_standard_0f7c4ded025b_harmonized_work_out_total"
+                    "pvplant_standard_00000000000c_harmonized_work_out_total"
                 ],
-                "uid": "pvplant:standard:0f7c4ded025b:harmonized#work_out_total",
+                "uid": "pvplant:standard:00000000000c:harmonized#work_out_total",
                 "id": "harmonized#work_out_total",
                 "channelTypeUID": "pvplant:harmonized",
                 "itemType": "String",
@@ -1915,9 +1915,9 @@
             },
             {
                 "linkedItems": [
-                    "pvplant_standard_0f7c4ded025b_harmonized_work_out"
+                    "pvplant_standard_00000000000c_harmonized_work_out"
                 ],
-                "uid": "pvplant:standard:0f7c4ded025b:harmonized#work_out",
+                "uid": "pvplant:standard:00000000000c:harmonized#work_out",
                 "id": "harmonized#work_out",
                 "channelTypeUID": "pvplant:harmonized",
                 "itemType": "String",

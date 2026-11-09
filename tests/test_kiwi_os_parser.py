@@ -129,7 +129,7 @@ def test_parse_things_from_capture(things: list[dict[str, Any]]) -> None:
 
     # The bridge thing has no channels and must not produce sensors.
     assert all(
-        sensor._attr_unique_id.find("sajhybrid:hybrid:e4ea3ad870f0") == -1
+        sensor._attr_unique_id.find("sajhybrid:hybrid:00000000000a") == -1
         for sensor in sensors
     )
 
@@ -146,13 +146,13 @@ def test_parse_things_device_info(things: list[dict[str, Any]]) -> None:
     )
     device_info = sensor.device_info
     assert device_info["identifiers"] == {
-        (DOMAIN, "sajhybrid:powermeter:94-HSR2103J2344E27920")
+        (DOMAIN, "sajhybrid:powermeter:94-HSR0000000000000000")
     }
     assert device_info["manufacturer"] == "AMPERE"
     assert device_info["model"] == "HS2"
     assert device_info["model_id"] == "94"
-    assert device_info["name"] == ("AMPERE.StoragePro Meter A (HSR2103J2344E27920)")
-    assert device_info["serial_number"] == "HSR2103J2344E27920"
+    assert device_info["name"] == ("AMPERE.StoragePro Meter A (HSR0000000000000000)")
+    assert device_info["serial_number"] == "HSR0000000000000000"
     assert device_info["sw_version"] == "2.532"
     assert device_info["hw_version"] == "1.100"
     assert device_info["created_at"] == ""

@@ -2,45 +2,25 @@
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
-from homeassistant.components.sensor import (
-    SensorDeviceClass,
-    SensorEntity,
-    SensorStateClass,
-)
+from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import (
-    CoordinatorEntity,
-    DataUpdateCoordinator,
-)
-
-from typing import TYPE_CHECKING
+from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
 if TYPE_CHECKING:
-    from .__init__ import KiwiOsConfigEntry, KiwiOsData, KiwiOsDataUpdateCoordinator
+    from .__init__ import KiwiOsConfigEntry, KiwiOsDataUpdateCoordinator
     from .kiwi_os_parser import KiwiOsParser
-from .kiwi_os_api import KiwiOsApi, KiwiOsApiItems
-
-# from __init__ import KiwiOsConfigEntry, KiwiOsData, KiwiOsDataUpdateCoordinator
-# from const import DOMAIN
-# from kiwi_os_api import KiwiOsApi, KiwiOsApiItems
-# from kiwi_os_parser import KiwiOsParser
 
 
 async def async_setup_entry(
     hass: HomeAssistant,
     entry: KiwiOsConfigEntry,
-    # async_add_entities: AddEntitiesCallback,
     async_add_entities: AddConfigEntryEntitiesCallback,
 ) -> None:
     """Set up the sensor platform from a config entry."""
-    data: KiwiOsData = entry.runtime_data
-    api: KiwiOsApi = data.api
-    coordinator: DataUpdateCoordinator = data.coordinator
-    parser: KiwiOsParser = data.parser
-
+    parser: KiwiOsParser = entry.runtime_data.parser
     async_add_entities(parser.get_entities())
 
 
@@ -54,9 +34,9 @@ class KiwiOsSensorEntity(CoordinatorEntity, SensorEntity):
         coordinator: KiwiOsDataUpdateCoordinator,
         item_name: str,
         item_id: str,
-        **kwargs,
+        **kwargs: Any,
     ) -> None:
-        """Initialize a city with a name and population."""
+        """Initialize the sensor and apply any ``_attr_*`` overrides."""
         super().__init__(coordinator)
         for name, value in kwargs.items():
             if hasattr(self, name) or hasattr(type(self), name):
@@ -71,20 +51,18 @@ class KiwiOsSensorEntity(CoordinatorEntity, SensorEntity):
 
 
 class KiwiOsTimestampSensorEntity(CoordinatorEntity, SensorEntity):
-    """Representation of a single KiwiOs timestamp sensor entity."""
+    """Timestamp accompanying a KiwiOs value sensor."""
 
     _attr_has_entity_name = True
     _attr_native_unit_of_measurement = None
     _attr_device_class = SensorDeviceClass.TIMESTAMP
-    _attr_state_class = SensorStateClass.MEASUREMENT
+    # Home Assistant requires timestamp sensors to have no state class.
+    _attr_state_class = None
 
-    def __init__(
-        self,
-        value_sensor: KiwiOsSensorEntity,
-    ) -> None:
-        """Initialize a city with a name and population."""
+    def __init__(self, value_sensor: KiwiOsSensorEntity) -> None:
+        """Initialize the timestamp sensor from its value sensor."""
         super().__init__(value_sensor.coordinator)
-        self.valueSensor: KiwiOsSensorEntity = value_sensor
+        self.value_sensor: KiwiOsSensorEntity = value_sensor
         self._attr_device_info = value_sensor.device_info
         self._attr_name = f"{value_sensor._attr_name} Timestamp"
         self._attr_unique_id = f"{value_sensor._attr_unique_id}_timestamp"

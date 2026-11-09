@@ -1,12 +1,13 @@
+"""Parser that turns Ampere.IQ REST payloads into sensor entities."""
+
 from __future__ import annotations
 
 from datetime import UTC, datetime
-import json
+import logging
 import re
-from typing import Any, cast
+from typing import TYPE_CHECKING, Any, cast
 
 from homeassistant.components.sensor import (
-    _LOGGER,
     SensorDeviceClass,
     SensorEntity,
     SensorStateClass,
@@ -23,111 +24,159 @@ from homeassistant.helpers.device_registry import DeviceInfo
 
 from .const import DOMAIN
 from .kiwi_os_api import KiwiOsApiItems
-from typing import TYPE_CHECKING
 
-# Import sensor classes lazily inside functions to avoid circular imports at module
-# import time (sensor.py imports this parser). For typing only, import under
-# TYPE_CHECKING.
 if TYPE_CHECKING:
-    from .sensor import (
-        KiwiOsDataUpdateCoordinator,
-        KiwiOsSensorEntity,
-        KiwiOsTimestampSensorEntity,
-    )
+    from .sensor import KiwiOsDataUpdateCoordinator, KiwiOsSensorEntity
 
-# from const import DOMAIN
-# from sensor import (
-#     KiwiOsApiItems,
-#     KiwiOsDataUpdateCoordinator,
-#     KiwiOsSensorEntity,
-#     KiwiOsTimestampSensorEntity,
-# )
+_LOGGER = logging.getLogger(__name__)
 
 ALWAYS_INCLUDE_ID_IN_NAME = True
+
+_UNIT_SPECS: dict[str, tuple[float, str, SensorDeviceClass, SensorStateClass]] = {
+    " W": (
+        1.0,
+        UnitOfPower.WATT,
+        SensorDeviceClass.POWER,
+        SensorStateClass.MEASUREMENT,
+    ),
+    " °C": (
+        1.0,
+        UnitOfTemperature.CELSIUS,
+        SensorDeviceClass.TEMPERATURE,
+        SensorStateClass.MEASUREMENT,
+    ),
+    " Ws": (
+        1.0 / (60 * 60 * 1000),
+        UnitOfEnergy.KILO_WATT_HOUR,
+        SensorDeviceClass.ENERGY,
+        SensorStateClass.TOTAL_INCREASING,
+    ),
+    " Wh": (
+        1.0 / 1000,
+        UnitOfEnergy.KILO_WATT_HOUR,
+        SensorDeviceClass.ENERGY,
+        SensorStateClass.TOTAL_INCREASING,
+    ),
+    " kWh": (
+        1.0,
+        UnitOfEnergy.KILO_WATT_HOUR,
+        SensorDeviceClass.ENERGY,
+        SensorStateClass.TOTAL_INCREASING,
+    ),
+    " V": (
+        1.0,
+        UnitOfElectricPotential.VOLT,
+        SensorDeviceClass.VOLTAGE,
+        SensorStateClass.MEASUREMENT,
+    ),
+    " A": (
+        1.0,
+        UnitOfElectricCurrent.AMPERE,
+        SensorDeviceClass.CURRENT,
+        SensorStateClass.MEASUREMENT,
+    ),
+}
+
+# Units implied by an item type whose state is still "UNDEF".
+_UNDEFINED_STATE_UNITS: dict[str, str] = {
+    "Number:Power": " W",
+    "Number:Temperature": " °C",
+    "Number:Energy": " Ws",  # " kWh" is also possible
+    "Number:ElectricPotential": " V",
+    "Number:ElectricCurrent": " A",
+    "Number:Dimensionless": " %",
+}
 
 
 class KiwiOsParser:
     """API Parser for Ampere IQ Smartbox."""
 
-    def __init__(
-        self,
-    ) -> None:
+    def __init__(self) -> None:
+        """Initialize an empty parser."""
         self._value_sensors: list[KiwiOsSensorEntity] = []
         self._entities: list[SensorEntity] = []
-        pass
+
+    # -- things ---------------------------------------------------------
+
+    @staticmethod
+    def _device_info(thing: dict[str, Any]) -> DeviceInfo:
+        """Build the Home Assistant device information for a thing."""
+        configuration = thing.get("configuration", {})
+        properties = thing.get("properties", {})
+        return DeviceInfo(
+            created_at=configuration.get("dateInstallation", ""),
+            identifiers={(DOMAIN, thing["UID"])},
+            manufacturer=properties.get("vendor", ""),
+            model=properties.get("modelName", ""),
+            model_id=properties.get("modelId", ""),
+            name=thing.get("label", thing["UID"]),
+            serial_number=properties.get("serialNumber", ""),
+            sw_version=properties.get("displaySWVersion", ""),
+            hw_version=properties.get("displayHWVersion", ""),
+        )
 
     def parse_things(
         self, things: Any, coordinator: KiwiOsDataUpdateCoordinator
     ) -> list[KiwiOsSensorEntity]:
-        # Import here to avoid circular import at module import time
+        """Create one value sensor for every channel that links an item."""
+        # Imported lazily to avoid a circular import with sensor.py.
         from .sensor import KiwiOsSensorEntity
 
         value_sensors: list[KiwiOsSensorEntity] = []
-        all_labels: set[str] = set()
+        labels: set[str] = set()
         duplicate_labels: set[str] = set()
+
         for thing in things:
-            thing_uid = thing["UID"]
-            channels = thing.get("channels", [])
-            configuration = thing.get("configuration", {})
-            properties = thing.get("properties", {})
-
-            device_info = DeviceInfo(
-                created_at=configuration.get("dateInstallation", ""),
-                identifiers={(DOMAIN, thing_uid)},
-                manufacturer=properties.get("vendor", ""),
-                model=properties.get("modelName", ""),
-                model_id=properties.get("modelId", ""),
-                name=thing.get("label", thing_uid),
-                serial_number=properties.get("serialNumber", ""),
-                sw_version=properties.get("displaySWVersion", ""),
-                hw_version=properties.get("displayHWVersion", ""),
-            )
-
-            for channel in channels:
+            device_info = self._device_info(thing)
+            for channel in thing.get("channels", []):
                 linked_items = channel.get("linkedItems", [])
                 if not linked_items:
                     continue
 
-                label: str = channel["label"]
-                if label in all_labels:
+                label = channel["label"]
+                if label in labels:
                     duplicate_labels.add(label)
-                all_labels.add(label)
-                value_sensor = KiwiOsSensorEntity(
-                    coordinator=coordinator,
-                    item_name=linked_items[0],
-                    item_id=channel["id"],
-                    _attr_device_info=device_info,
-                    _attr_name=label,
-                    _attr_unique_id=channel["uid"],
+                labels.add(label)
+
+                value_sensors.append(
+                    KiwiOsSensorEntity(
+                        coordinator=coordinator,
+                        item_name=linked_items[0],
+                        item_id=channel["id"],
+                        _attr_device_info=device_info,
+                        _attr_name=label,
+                        _attr_unique_id=channel["uid"],
+                    )
                 )
-                value_sensors.append(value_sensor)
 
         for value_sensor in value_sensors:
-            if ALWAYS_INCLUDE_ID_IN_NAME or value_sensor._attr_name in duplicate_labels:
-                value_sensor._attr_name = (
-                    f"{value_sensor._attr_name} ({value_sensor.item_id})"
-                )
+            name = value_sensor._attr_name
+            if ALWAYS_INCLUDE_ID_IN_NAME or name in duplicate_labels:
+                value_sensor._attr_name = f"{name} ({value_sensor.item_id})"
 
         self._value_sensors = value_sensors
         return value_sensors
 
-    def map_json_items(self, json_items: Any) -> KiwiOsApiItems:
-        items: KiwiOsApiItems = {}
-        for json_item in json_items:
-            items[json_item["name"]] = json_item
-        return items
+    # -- items ----------------------------------------------------------
+
+    @staticmethod
+    def map_json_items(json_items: Any) -> KiwiOsApiItems:
+        """Index the raw item list by item name."""
+        return {json_item["name"]: json_item for json_item in json_items}
 
     def create_entities(
         self,
         items: KiwiOsApiItems,
         value_sensors: list[KiwiOsSensorEntity] | None = None,
     ) -> list[SensorEntity]:
+        """Pair every value sensor with an optional timestamp sensor."""
         if value_sensors is None:
             value_sensors = self._value_sensors
-        entities: list[SensorEntity] = []
-        # Import here to avoid circular import at module import time
+
+        # Imported lazily to avoid a circular import with sensor.py.
         from .sensor import KiwiOsTimestampSensorEntity
 
+        entities: list[SensorEntity] = []
         for value_sensor in value_sensors:
             entities.append(value_sensor)
 
@@ -136,7 +185,7 @@ class KiwiOsParser:
             if "|" not in state:
                 continue
 
-            timestamp_sensor = KiwiOsTimestampSensorEntity(value_sensor=value_sensor)
+            timestamp_sensor = KiwiOsTimestampSensorEntity(value_sensor)
             value_sensor.timestamp_sensor = timestamp_sensor
             entities.append(timestamp_sensor)
 
@@ -144,115 +193,96 @@ class KiwiOsParser:
         return entities
 
     def get_entities(self) -> list[SensorEntity]:
+        """Return the entities created by :meth:`create_entities`."""
         return self._entities
+
+    # -- typing ---------------------------------------------------------
 
     def guess_item_types(
         self,
         items: KiwiOsApiItems,
         value_sensors: list[KiwiOsSensorEntity] | None = None,
     ) -> None:
+        """Derive unit and state metadata for every value sensor."""
         if value_sensors is None:
             value_sensors = self._value_sensors
         for entity in value_sensors:
-            item = items.get(entity.item_name)
-            self.guess_item_type(item, entity)
+            self.guess_item_type(items.get(entity.item_name), entity)
+
+    @staticmethod
+    def _guess_unit(item_state: str, item_type: str) -> str | None:
+        """Return the unit implied by a state or, for UNDEF, by the type."""
+        if item_state == "UNDEF":
+            unit = _UNDEFINED_STATE_UNITS.get(item_type)
+            if unit is None:
+                _LOGGER.warning("Unknown type: %r with state %r", item_type, item_state)
+            return unit
+        if " " in item_state:
+            return item_state[item_state.rfind(" ") :]
+        return None
+
+    @staticmethod
+    def _apply_unit(
+        entity: KiwiOsSensorEntity, unit_string: str, item_name: str
+    ) -> None:
+        """Attach the metadata for a known or unknown unit string."""
+        entity.expected_unit_string = unit_string
+
+        if spec := _UNIT_SPECS.get(unit_string):
+            factor, native_unit, device_class, state_class = spec
+            entity.conversion_factor = factor
+            entity._attr_native_unit_of_measurement = native_unit
+            entity._attr_device_class = device_class
+            entity._attr_state_class = state_class
+            return
+
+        if unit_string == " %":
+            entity.conversion_factor = 1.0
+            entity._attr_native_unit_of_measurement = PERCENTAGE
+            entity._attr_device_class = (
+                SensorDeviceClass.BATTERY
+                if re.search("battery", item_name, re.IGNORECASE)
+                else None
+            )
+            entity._attr_state_class = SensorStateClass.MEASUREMENT
+            return
+
+        _LOGGER.warning("Unknown unit string: %r for item %r", unit_string, item_name)
+        entity.conversion_factor = 1.0
+        entity._attr_native_unit_of_measurement = unit_string[1:]
+        entity._attr_device_class = None
+        entity._attr_state_class = None
+
+    @staticmethod
+    def _apply_unitless_type(
+        entity: KiwiOsSensorEntity, item_type: str, item_name: str
+    ) -> None:
+        """Attach metadata for a unit-less Number or String item."""
+        if item_type not in {"Number", "String"}:
+            _LOGGER.warning("Cannot guess type for item %r", item_name)
+            return
+
+        entity.expected_unit_string = ""
+        entity.conversion_factor = 1.0 if item_type == "Number" else None
+        entity._attr_native_unit_of_measurement = None
+        entity._attr_state_class = SensorStateClass.MEASUREMENT
+        entity._attr_device_class = (
+            SensorDeviceClass.ENUM
+            if re.search("mode", item_name, re.IGNORECASE)
+            else None
+        )
 
     def guess_item_type(self, item: Any, entity: KiwiOsSensorEntity) -> None:
+        """Derive unit, device class and state class from an item."""
         item_state: str = item["state"]
         item_type: str = item["type"]
-        # pattern = item["stateDescription"]["pattern"]
         item_name: str = item["name"]
 
-        unit_string: str | None = None
-        if item_state == "UNDEF":
-            if item_type == "Number:Power":
-                unit_string = " W"
-            elif item_type == "Number:Temperature":
-                unit_string = " °C"
-            elif item_type == "Number:Energy":
-                unit_string = " Ws"  # " kWh" is also possible
-            elif item_type == "Number:ElectricPotential":
-                unit_string = " V"
-            elif item_type == "Number:ElectricCurrent":
-                unit_string = " A"
-            elif item_type == "Number:Dimensionless":
-                unit_string = " %"
-            else:
-                _LOGGER.warning(
-                    f"Unknown type: {item_type!r} with state {item_state!r}"
-                )
-        elif item_state and " " in item_state:
-            unit_string = item_state[item_state.rfind(" ") :]
-
-        if unit_string is not None:
-            entity.expected_unit_string = unit_string
-            if unit_string == " W":
-                entity.conversion_factor = 1.0
-                entity._attr_native_unit_of_measurement = UnitOfPower.WATT
-                entity._attr_device_class = SensorDeviceClass.POWER
-                entity._attr_state_class = SensorStateClass.MEASUREMENT
-            elif unit_string == " °C":
-                entity.conversion_factor = 1.0
-                entity._attr_native_unit_of_measurement = UnitOfTemperature.CELSIUS
-                entity._attr_device_class = SensorDeviceClass.TEMPERATURE
-                entity._attr_state_class = SensorStateClass.MEASUREMENT
-            elif unit_string == " Ws":
-                entity.conversion_factor = 1.0 / (60 * 60 * 1000)
-                entity._attr_native_unit_of_measurement = UnitOfEnergy.KILO_WATT_HOUR
-                entity._attr_device_class = SensorDeviceClass.ENERGY
-                entity._attr_state_class = SensorStateClass.TOTAL_INCREASING
-            elif unit_string == " Wh":
-                entity.conversion_factor = 1.0 / 1000
-                entity._attr_native_unit_of_measurement = UnitOfEnergy.KILO_WATT_HOUR
-                entity._attr_device_class = SensorDeviceClass.ENERGY
-                entity._attr_state_class = SensorStateClass.TOTAL_INCREASING
-            elif unit_string == " kWh":
-                entity.conversion_factor = 1.0
-                entity._attr_native_unit_of_measurement = UnitOfEnergy.KILO_WATT_HOUR
-                entity._attr_device_class = SensorDeviceClass.ENERGY
-                entity._attr_state_class = SensorStateClass.TOTAL_INCREASING
-            elif unit_string == " V":
-                entity.conversion_factor = 1.0
-                entity._attr_native_unit_of_measurement = UnitOfElectricPotential.VOLT
-                entity._attr_device_class = SensorDeviceClass.VOLTAGE
-                entity._attr_state_class = SensorStateClass.MEASUREMENT
-            elif unit_string == " A":
-                entity.conversion_factor = 1.0
-                entity._attr_native_unit_of_measurement = UnitOfElectricCurrent.AMPERE
-                entity._attr_device_class = SensorDeviceClass.CURRENT
-                entity._attr_state_class = SensorStateClass.MEASUREMENT
-            elif unit_string == " %":
-                entity.conversion_factor = 1.0
-                entity._attr_native_unit_of_measurement = PERCENTAGE
-                if re.search("battery", item_name, re.IGNORECASE):
-                    entity._attr_device_class = SensorDeviceClass.BATTERY
-                else:
-                    entity._attr_device_class = None
-                entity._attr_state_class = SensorStateClass.MEASUREMENT
-            else:
-                _LOGGER.warning(
-                    f"Unknown unit string: {unit_string!r} for state: {item_state!r} and type {item_type!r}"
-                )
-                entity.conversion_factor = 1.0
-                entity._attr_native_unit_of_measurement = unit_string[1:]
-                entity._attr_device_class = None
-                entity._attr_state_class = None
-        elif item_type in {"Number", "String"}:
-            entity.expected_unit_string = ""
-            if item_type == "Number":
-                entity.conversion_factor = 1.0
-            else:
-                entity.conversion_factor = None
-            entity._attr_native_unit_of_measurement = None
-            entity._attr_state_class = SensorStateClass.MEASUREMENT
-            if re.search("mode", item_name, re.IGNORECASE):
-                entity._attr_device_class = SensorDeviceClass.ENUM
-            else:
-                entity._attr_device_class = None
+        unit_string = self._guess_unit(item_state, item_type)
+        if unit_string is None:
+            self._apply_unitless_type(entity, item_type, item_name)
         else:
-            _LOGGER.warning(
-                f"Cannot guess type for state: {item_state!r} and type {item_type!r}"
-            )
+            self._apply_unit(entity, unit_string, item_name)
 
         if entity._attr_state_class == SensorStateClass.MEASUREMENT and (
             re.search("total", item_name, re.IGNORECASE)
@@ -260,91 +290,78 @@ class KiwiOsParser:
         ):
             entity._attr_state_class = SensorStateClass.TOTAL
 
+    # -- values ---------------------------------------------------------
+
     def parse_item_values(
         self,
         items: KiwiOsApiItems,
         value_sensors: list[KiwiOsSensorEntity] | None = None,
     ) -> None:
+        """Update every value sensor from the current item values."""
         if value_sensors is None:
             value_sensors = self._value_sensors
         for entity in value_sensors:
-            item = items.get(entity.item_name)
-            self.parse_item_value(item, entity)
+            self.parse_item_value(items.get(entity.item_name), entity)
+
+    @staticmethod
+    def _parse_timestamp(
+        timestamp_str: str,
+        item_state: str,
+        entity: KiwiOsSensorEntity,
+    ) -> None:
+        """Store the leading pipe-separated timestamp on the timestamp sensor."""
+        try:
+            timestamp_ms = int(timestamp_str)
+        except ValueError:
+            _LOGGER.error(
+                "Cannot convert timestamp string to int: %r from state: %r",
+                timestamp_str,
+                item_state,
+            )
+            return
+
+        assert entity.timestamp_sensor is not None
+        entity.timestamp_sensor._attr_native_value = datetime.fromtimestamp(
+            timestamp_ms / 1000, tz=UTC
+        )
 
     def parse_item_value(self, item: Any, entity: KiwiOsSensorEntity) -> None:
+        """Apply one item's state to a value sensor."""
         if entity.timestamp_sensor is not None:
             entity.timestamp_sensor._attr_native_value = None
 
-        item_state = item["state"]
+        item_state: str = item["state"]
         if item_state == "UNDEF":
             entity._attr_native_value = None
             return
 
         if entity.expected_unit_string == "":
             if " " in item_state:
-                self.guess_item_type(entity, item)
+                self.guess_item_type(item, entity)
         elif not item_state.endswith(entity.expected_unit_string):
-            self.guess_item_type(entity, item)
+            self.guess_item_type(item, entity)
         assert item_state.endswith(entity.expected_unit_string)
 
         value_str = item_state
         if entity.expected_unit_string != "":
             value_str = item_state[: -len(entity.expected_unit_string)]
         if "|" in value_str:
-            assert entity.timestamp_sensor is not None
             split = value_str.split("|")
             value_str = split[-1]
-
-            timestamp_str = split[0].strip()
-            try:
-                timestamp_ms = int(timestamp_str)
-                dt = datetime.fromtimestamp(timestamp_ms / 1000, tz=UTC)
-                # iso_string = dt.isoformat()
-                entity.timestamp_sensor._attr_native_value = dt
-            except ValueError:
-                _LOGGER.error(
-                    f"Cannot convert timestamp string to int: {timestamp_str!r} from state: {item_state!r}"
-                )
+            self._parse_timestamp(split[0].strip(), item_state, entity)
 
         value_str = value_str.strip()
 
         if entity.conversion_factor is None:
             entity._attr_native_value = value_str
-        else:
-            try:
-                entity._attr_native_value = float(value_str) * entity.conversion_factor
-            except ValueError:
-                _LOGGER.warning(
-                    f"Cannot convert value string to float: {value_str!r} from state: {item_state!r}"
-                )
-                entity._attr_native_value = value_str
+            return
 
-
-if __name__ == "__main__":
-    parser = KiwiOsParser()
-    things = json.loads(
-        open(
-            "/workspaces/home-assistant-core/ampere-iq-smartbox-homeassistant/test_data/things.json"
-        ).read()
-    )
-    json_items = json.loads(
-        open(
-            "/workspaces/home-assistant-core/ampere-iq-smartbox-homeassistant/test_data/items.json"
-        ).read()
-    )
-    items = parser.map_json_items(json_items)
-    value_sensors = parser.parse_things(things, None)
-    entities = parser.create_entities(items, value_sensors)
-    parser.guess_item_types(items, value_sensors)
-    parser.parse_item_values(items, value_sensors)
-
-    print(
-        f"Parsed {len(entities)} entities: {len(value_sensors)} value sensors, {len(entities) - len(value_sensors)} timestamp sensors"
-    )
-    # for entity in entities:
-    #     state = None
-    #     if isinstance(entity, KiwiOsSensorEntity):
-    #         state = items.get(entity.item_name).get("state", "")
-    #     print(
-    #         f"{state!r}: {entity._attr_native_value!r}, {entity._attr_native_unit_of_measurement!r}, {entity._attr_device_class!r}, {entity._attr_state_class!r}, {entity._attr_name!r}"
-    #     )
+        try:
+            entity._attr_native_value = float(value_str) * entity.conversion_factor
+        except ValueError:
+            _LOGGER.warning(
+                "Cannot convert value string to float: %r from state: %r",
+                value_str,
+                item_state,
+            )
+            entity._attr_native_value = value_str

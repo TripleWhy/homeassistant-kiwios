@@ -12,7 +12,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant import loader
 
 COMPONENTS_DIR = Path(__file__).parent.parent / "custom_components"
-ALIAS_DOMAIN = "ampere_iq_smartbox"
+ALIAS_DOMAIN = "ampere_iq_smartbox_local"
 
 
 def load_manifest(domain: str) -> dict[str, Any]:
@@ -36,7 +36,7 @@ def test_ampere_iq_smartbox_is_a_virtual_integration() -> None:
     manifest = load_manifest(ALIAS_DOMAIN)
 
     assert manifest["domain"] == ALIAS_DOMAIN
-    assert manifest["name"] == "EKD Ampere.IQ Smartbox"
+    assert manifest["name"] == "EKD Ampere.IQ Smartbox (local REST API)"
     assert manifest["integration_type"] == "virtual"
     assert manifest["supported_by"] == DOMAIN
     # Home Assistant refuses to load a custom integration without a version,

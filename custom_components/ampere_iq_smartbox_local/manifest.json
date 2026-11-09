@@ -1,0 +1,7 @@
+{
+  "domain": "ampere_iq_smartbox_local",
+  "name": "EKD Ampere.IQ Smartbox (local REST API)",
+  "integration_type": "virtual",
+  "supported_by": "kiwios",
+  "version": "1.0.0"
+}

@@ -11,7 +11,25 @@ than the box it happens to run on.
 | Name | Domain | What it is |
 | --- | --- | --- |
 | KiwiOS | `kiwios` | The integration. This is what you set up. |
-| EKD Ampere.IQ Smartbox | `ampere_iq_smartbox` | A [virtual integration](https://developers.home-assistant.io/docs/creating_integration_manifest#virtual-integration): a manifest-only alias that points at `kiwios`, so the product can be listed under its sales name. |
+| EKD Ampere.IQ Smartbox (local REST API) | `ampere_iq_smartbox_local` | A [virtual integration](https://developers.home-assistant.io/docs/creating_integration_manifest#virtual-integration): a manifest-only alias that points at `kiwios`, so the product can be listed under its sales name. |
+
+There is more than one way to reach EKD hardware, and they differ in what they
+offer:
+
+- **Local REST API** — what this integration speaks: the box exposes its
+  measurements at `/rest/things` and `/rest/items` on the local network. Local,
+  no cloud, polling.
+- **Modbus** — some individual devices (inverter, battery) can be polled over
+  Modbus instead of asking the box.
+- **Traffic capture** — on your own network the box can be observed while it
+  talks: Modbus to the devices it manages, TLS to the EKD cloud. The device
+  side carries exactly the values the box itself sees, so a capture shows what
+  is available without asking the box for anything.
+- **EKD cloud service** — what the "Ampere.IQ" Android app talks to. It offers
+  official API keys, and the app's traffic can be reverse engineered.
+
+The alias is therefore named after the transport this integration implements,
+so it does not claim to be *the* EKD integration.
 
 Virtual integrations are a core-only feature. Home Assistant only forwards the
 `supported_by` target for built-in integrations, so in a custom (HACS) install

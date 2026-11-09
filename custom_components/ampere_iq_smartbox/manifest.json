@@ -1,7 +1,0 @@
-{
-  "domain": "ampere_iq_smartbox",
-  "integration_type": "virtual",
-  "name": "EKD Ampere.IQ Smartbox",
-  "supported_by": "kiwios",
-  "version": "1.0.0"
-}

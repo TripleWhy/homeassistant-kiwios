@@ -263,14 +263,25 @@ class KiwiOsParser:
             return
 
         entity.expected_unit_string = ""
-        entity.conversion_factor = 1.0 if item_type == "Number" else None
         entity._attr_native_unit_of_measurement = None
-        entity._attr_state_class = SensorStateClass.MEASUREMENT
+
+        if item_type == "Number":
+            # Numbers carry a value, so they are measurements. A numeric item
+            # cannot be an enum: Home Assistant would expect a text value.
+            entity.conversion_factor = 1.0
+            entity._attr_device_class = None
+            entity._attr_state_class = SensorStateClass.MEASUREMENT
+            return
+
+        # Strings keep their raw text. Enum values must not declare a state
+        # class, Home Assistant rejects any state class for that device class.
+        entity.conversion_factor = None
         entity._attr_device_class = (
             SensorDeviceClass.ENUM
             if re.search("mode", item_name, re.IGNORECASE)
             else None
         )
+        entity._attr_state_class = None
 
     def guess_item_type(self, item: Any, entity: KiwiOsSensorEntity) -> None:
         """Derive unit, device class and state class from an item."""

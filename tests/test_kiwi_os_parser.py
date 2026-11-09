@@ -594,7 +594,8 @@ def test_guess_item_type_string_without_unit() -> None:
     assert value_sensor.expected_unit_string == ""
     assert value_sensor.conversion_factor is None
     assert value_sensor._attr_native_unit_of_measurement is None
-    assert value_sensor._attr_state_class == SensorStateClass.MEASUREMENT
+    # Strings are not measurements: Home Assistant would reject the text value.
+    assert value_sensor._attr_state_class is None
     assert value_sensor._attr_device_class is None
 
 
@@ -609,10 +610,12 @@ def test_guess_item_type_mode_becomes_enum() -> None:
     )
 
     assert value_sensor._attr_device_class == SensorDeviceClass.ENUM
+    # Home Assistant forbids a state class on enum sensors.
+    assert value_sensor._attr_state_class is None
 
 
-def test_guess_item_type_number_mode_becomes_enum() -> None:
-    """A Number item whose name mentions mode is an enum sensor."""
+def test_guess_item_type_number_mode_is_not_enum() -> None:
+    """A numeric item stays a measurement, even when its name mentions mode."""
     parser = KiwiOsParser()
     value_sensor = make_sensor()
 
@@ -621,7 +624,8 @@ def test_guess_item_type_number_mode_becomes_enum() -> None:
         value_sensor,
     )
 
-    assert value_sensor._attr_device_class == SensorDeviceClass.ENUM
+    assert value_sensor._attr_device_class is None
+    assert value_sensor._attr_state_class == SensorStateClass.MEASUREMENT
 
 
 def test_guess_item_type_cannot_guess_warns(

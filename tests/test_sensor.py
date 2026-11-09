@@ -93,3 +93,4 @@ def test_timestamp_sensor_initialization() -> None:
     assert timestamp_sensor._attr_state_class is None
     assert timestamp_sensor._attr_native_unit_of_measurement is None
     assert timestamp_sensor._attr_has_entity_name is True
+    assert timestamp_sensor.entity_registry_enabled_default is False

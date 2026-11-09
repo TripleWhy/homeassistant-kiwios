@@ -58,6 +58,9 @@ class KiwiOsTimestampSensorEntity(CoordinatorEntity, SensorEntity):
     _attr_device_class = SensorDeviceClass.TIMESTAMP
     # Home Assistant requires timestamp sensors to have no state class.
     _attr_state_class = None
+    # These only mirror when the companion value was measured, so they are
+    # hidden unless a user explicitly enables them.
+    _attr_entity_registry_enabled_default = False
 
     def __init__(self, value_sensor: KiwiOsSensorEntity) -> None:
         """Initialize the timestamp sensor from its value sensor."""

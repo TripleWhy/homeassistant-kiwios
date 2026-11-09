@@ -13,12 +13,12 @@ from homeassistant.const import CONF_PASSWORD, CONF_URL
 from homeassistant.core import HomeAssistant
 from homeassistant.data_entry_flow import FlowResultType
 
-from custom_components.ampere_iq_smartbox_homeassistant import config_flow
-from custom_components.ampere_iq_smartbox_homeassistant.config_flow import (
-    AmpereConfigFlow,
+from custom_components.kiwios import config_flow
+from custom_components.kiwios.config_flow import (
+    KiwiOsConfigFlow,
 )
-from custom_components.ampere_iq_smartbox_homeassistant.const import DOMAIN
-from custom_components.ampere_iq_smartbox_homeassistant.kiwi_os_api import (
+from custom_components.kiwios.const import DOMAIN
+from custom_components.kiwios.kiwi_os_api import (
     PasswordInvalidException,
     PasswordRequiredException,
 )
@@ -91,7 +91,7 @@ async def start_flow(hass: HomeAssistant) -> dict[str, Any]:
 
 def test_flow_version() -> None:
     """The config flow version is stable."""
-    assert AmpereConfigFlow.VERSION == 1
+    assert KiwiOsConfigFlow.VERSION == 1
 
 
 async def test_user_step_shows_form(

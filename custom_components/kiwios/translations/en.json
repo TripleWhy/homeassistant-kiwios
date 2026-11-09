@@ -1,0 +1,22 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up KiwiOS",
+        "description": "Connect to a device running KiwiOS, such as the EKD Ampere.IQ Smartbox. Enter the device URL and, if it asks for one, the installer password.",
+        "data": {
+          "url": "URL (include protocol, e.g., http://10.0.0.2/)",
+          "password": "Password (optional)"
+        }
+      }
+    },
+    "error": {
+      "invalid_password": "The password is incorrect.",
+      "unexpected_response": "Unexpected response from device: {error_detail}",
+      "cannot_connect": "Cannot connect to the device.",
+      "timeout": "Connection timed out.",
+      "required": "Password is required for authentication.",
+      "unexpected_error": "An unexpected error occurred: {error_detail}"
+    }
+  }
+}

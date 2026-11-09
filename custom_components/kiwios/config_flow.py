@@ -1,8 +1,9 @@
-"""Config flow for the Ampere IQ SmartBox integration.
+"""Config flow for the KiwiOS integration.
 
-This module implements the UI configuration flow used to set up the Ampere
+This module implements the UI configuration flow used to set up the KiwiOS
 integration, prompting for the device URL and optional password and handling
-authentication and initial API validation.
+authentication and initial API validation. KiwiOS runs on the EKD Ampere.IQ
+Smartbox, which is what most users know the device as.
 """
 
 from __future__ import annotations
@@ -36,8 +37,8 @@ def _normalize_url(raw_url: str) -> URL:
     return URL(url_str)
 
 
-class AmpereConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
-    """Config flow for Ampere PV integration."""
+class KiwiOsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
+    """Config flow for the KiwiOS integration."""
 
     VERSION = 1
 

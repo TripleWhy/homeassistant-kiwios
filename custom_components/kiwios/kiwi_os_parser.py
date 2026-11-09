@@ -1,4 +1,4 @@
-"""Parser that turns Ampere.IQ REST payloads into sensor entities."""
+"""Parser that turns KiwiOS REST payloads into sensor entities."""
 
 from __future__ import annotations
 
@@ -89,7 +89,7 @@ _UNDEFINED_STATE_UNITS: dict[str, str] = {
 
 
 class KiwiOsParser:
-    """API Parser for Ampere IQ Smartbox."""
+    """API Parser for KiwiOS devices."""
 
     def __init__(self) -> None:
         """Initialize an empty parser."""

@@ -8,7 +8,7 @@ import aiohttp
 import pytest
 from yarl import URL
 
-from custom_components.ampere_iq_smartbox_homeassistant.kiwi_os_api import (
+from custom_components.kiwios.kiwi_os_api import (
     KiwiOsApi,
     KiwiOsApiItems,
     PasswordInvalidException,

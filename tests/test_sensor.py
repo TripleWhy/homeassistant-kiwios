@@ -9,11 +9,11 @@ import pytest
 from homeassistant.components.sensor import SensorDeviceClass
 from homeassistant.core import HomeAssistant
 
-from custom_components.ampere_iq_smartbox_homeassistant import (
+from custom_components.kiwios import (
     KiwiOsData,
     sensor as sensor_platform,
 )
-from custom_components.ampere_iq_smartbox_homeassistant.sensor import (
+from custom_components.kiwios.sensor import (
     KiwiOsSensorEntity,
     KiwiOsTimestampSensorEntity,
 )

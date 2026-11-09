@@ -21,12 +21,12 @@ from homeassistant.const import (
     UnitOfPower,
 )
 
-from custom_components.ampere_iq_smartbox_homeassistant.const import DOMAIN
-from custom_components.ampere_iq_smartbox_homeassistant.kiwi_os_parser import (
+from custom_components.kiwios.const import DOMAIN
+from custom_components.kiwios.kiwi_os_parser import (
     ALWAYS_INCLUDE_ID_IN_NAME,
     KiwiOsParser,
 )
-from custom_components.ampere_iq_smartbox_homeassistant.sensor import (
+from custom_components.kiwios.sensor import (
     KiwiOsSensorEntity,
     KiwiOsTimestampSensorEntity,
 )
@@ -227,7 +227,7 @@ def test_parse_things_unique_label_without_forced_id(
 ) -> None:
     """Without ALWAYS_INCLUDE_ID_IN_NAME a unique label is kept as-is."""
     monkeypatch.setattr(
-        "custom_components.ampere_iq_smartbox_homeassistant.kiwi_os_parser."
+        "custom_components.kiwios.kiwi_os_parser."
         "ALWAYS_INCLUDE_ID_IN_NAME",
         False,
     )
@@ -244,7 +244,7 @@ def test_parse_things_duplicate_label_gets_id(
 ) -> None:
     """Without forced ids, duplicate labels are disambiguated with the id."""
     monkeypatch.setattr(
-        "custom_components.ampere_iq_smartbox_homeassistant.kiwi_os_parser."
+        "custom_components.kiwios.kiwi_os_parser."
         "ALWAYS_INCLUDE_ID_IN_NAME",
         False,
     )

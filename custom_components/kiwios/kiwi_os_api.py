@@ -1,7 +1,8 @@
-"""API client for interacting with Ampere IQ Smartbox.
+"""API client for interacting with KiwiOS devices.
 
-This module provides an API wrapper for communicating with Ampere IQ Smartbox
-devices, handling authentication, session management and HTTP requests.
+This module provides an API wrapper for communicating with devices running
+KiwiOS, such as the EKD Ampere.IQ Smartbox, handling authentication, session
+management and HTTP requests.
 """
 
 from __future__ import annotations
@@ -42,10 +43,10 @@ class PasswordInvalidException(Exception):
 
 
 class KiwiOsApi:
-    """API client for Ampere IQ Smartbox.
+    """API client for devices running KiwiOS.
 
     Handles HTTP requests, authentication (login) and session cookie
-    management for communicating with Ampere IQ Smartbox devices.
+    management for communicating with devices running KiwiOS.
     """
 
     def __init__(
